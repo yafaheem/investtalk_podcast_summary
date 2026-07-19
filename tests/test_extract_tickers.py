@@ -1,0 +1,132 @@
+import unittest
+from unittest.mock import patch, MagicMock
+import xml.etree.ElementTree as ET
+
+# Import the functions we want to test
+from rss_extractor import (
+    fetch_rss_data,
+    parse_rss_xml,
+    parse_item_date,
+    filter_episodes
+)
+from extract_tickers import (
+    extract_tickers_from_description,
+    clean_vtt,
+    fetch_transcript_data
+)
+
+class TestInvestTalkNotes(unittest.TestCase):
+
+    def test_extract_tickers_from_description(self):
+        """Test extraction of tickers and filtering of blacklist words."""
+        desc = "Today we discuss Cincinnati Financial (CINF), Reddit (RDDT), and also general topics like AI (AI) and index funds (ETF)."
+        tickers = extract_tickers_from_description(desc)
+        self.assertEqual(tickers, ["CINF", "RDDT"])
+
+        # Test duplicate handling
+        desc_duplicates = "Look at (CINF) and then (CINF) again."
+        tickers_duplicates = extract_tickers_from_description(desc_duplicates)
+        self.assertEqual(tickers_duplicates, ["CINF"])
+
+    def test_clean_vtt(self):
+        """Test cleaning WebVTT transcript into speaker turns text."""
+        raw_vtt = (
+            "WEBVTT\n"
+            "\n"
+            "00:01.087 --> 00:10.292\n"
+            "[SPEAKER_03]: This is Invest Talk.\n"
+            "\n"
+            "NOTE style formatting\n"
+            "STYLE\n"
+            "\n"
+            "00:11.193 --> 00:13.934\n"
+            "[SPEAKER_01]: Here's your host.\n"
+        )
+        cleaned = clean_vtt(raw_vtt)
+        expected = "SPEAKER_03: This is Invest Talk.\nSPEAKER_01: Here's your host."
+        self.assertEqual(cleaned, expected)
+
+    def test_parse_item_date(self):
+        """Test robust date parsing using RFC 822 format."""
+        # Double digit day (noon UTC is Friday morning Pacific)
+        xml_str_1 = "<item><pubDate>Fri, 17 Jul 2026 12:00:00 +0000</pubDate></item>"
+        item_1 = ET.fromstring(xml_str_1)
+        self.assertEqual(parse_item_date(item_1), "2026-07-17")
+
+        # Single digit day
+        xml_str_2 = "<item><pubDate>Fri, 7 Jul 2026 12:00:00 GMT</pubDate></item>"
+        item_2 = ET.fromstring(xml_str_2)
+        self.assertEqual(parse_item_date(item_2), "2026-07-07")
+
+        # Missing date
+        xml_str_3 = "<item></item>"
+        item_3 = ET.fromstring(xml_str_3)
+        self.assertIsNone(parse_item_date(item_3))
+
+    def test_filter_episodes_latest(self):
+        """Test filtering without parameters defaults to latest episode."""
+        xml_str = (
+            "<rss><channel>"
+            "<item>"
+            "  <title>Latest Episode</title>"
+            "  <description>Discussing (RDDT)</description>"
+            "  <pubDate>Fri, 17 Jul 2026 12:00:00 +0000</pubDate>"
+            "</item>"
+            "<item>"
+            "  <title>Older Episode</title>"
+            "  <description>Discussing (CINF)</description>"
+            "  <pubDate>Thu, 16 Jul 2026 12:00:00 +0000</pubDate>"
+            "</item>"
+            "</channel></rss>"
+        )
+        root = ET.fromstring(xml_str)
+        episodes = filter_episodes(root)
+        self.assertEqual(len(episodes), 1)
+        self.assertEqual(episodes[0]['title'], "Latest Episode")
+        self.assertEqual(episodes[0]['date_str'], "2026-07-17")
+
+    def test_filter_episodes_target_date(self):
+        """Test filtering by a specific target date."""
+        xml_str = (
+            "<rss><channel>"
+            "<item>"
+            "  <title>Latest Episode</title>"
+            "  <description>Discussing (RDDT)</description>"
+            "  <pubDate>Fri, 17 Jul 2026 12:00:00 +0000</pubDate>"
+            "</item>"
+            "<item>"
+            "  <title>Older Episode</title>"
+            "  <description>Discussing (CINF)</description>"
+            "  <pubDate>Thu, 16 Jul 2026 12:00:00 +0000</pubDate>"
+            "</item>"
+            "</channel></rss>"
+        )
+        root = ET.fromstring(xml_str)
+        episodes = filter_episodes(root, target_date="2026-07-16")
+        self.assertEqual(len(episodes), 1)
+        self.assertEqual(episodes[0]['title'], "Older Episode")
+
+    @patch("urllib.request.urlopen")
+    def test_fetch_rss_data(self, mock_urlopen):
+        """Test that RSS data fetch handles response reading successfully."""
+        mock_response = MagicMock()
+        mock_response.read.return_value = b"<mock_rss></mock_rss>"
+        mock_urlopen.return_value.__enter__.return_value = mock_response
+
+        rss_data = fetch_rss_data("http://example.com/feed")
+        self.assertEqual(rss_data, b"<mock_rss></mock_rss>")
+        mock_urlopen.assert_called_once()
+
+    @patch("urllib.request.urlopen")
+    def test_fetch_transcript_data(self, mock_urlopen):
+        """Test transcript data fetch returns decoded string."""
+        mock_response = MagicMock()
+        mock_response.read.return_value = b"WEBVTT\n\n00:00 -> 00:01\nHi"
+        mock_urlopen.return_value.__enter__.return_value = mock_response
+
+        vtt_data = fetch_transcript_data("http://example.com/transcript.vtt")
+        self.assertEqual(vtt_data, "WEBVTT\n\n00:00 -> 00:01\nHi")
+        mock_urlopen.assert_called_once()
+
+if __name__ == "__main__":
+    unittest.main()

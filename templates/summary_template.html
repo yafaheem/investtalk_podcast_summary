@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InvestTalk Episode Summaries</title>
+    <style>
+        :root {
+            --bg-color: #0d1117;
+            --container-bg: #161b22;
+            --text-primary: #c9d1d9;
+            --text-secondary: #8b949e;
+            --accent-color: #58a6ff;
+            --border-color: #30363d;
+            --table-header-bg: #21262d;
+            --table-hover-bg: #1f242c;
+            --buy-color: #2ea043;
+            --sell-color: #f85149;
+            --hold-color: #d29922;
+            --neutral-color: #8b949e;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            background-color: var(--bg-color);
+            color: var(--text-primary);
+            margin: 0;
+            padding: 2rem 1rem;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: var(--container-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        .main-header {
+            border-bottom: 2px solid var(--border-color);
+            padding-bottom: 1.5rem;
+            margin-bottom: 2.5rem;
+            text-align: center;
+        }
+
+        .main-header h1 {
+            font-size: 2.2rem;
+            margin: 0 0 0.5rem 0;
+            color: #ffffff;
+            font-weight: 700;
+        }
+
+        .main-header p {
+            color: var(--text-secondary);
+            margin: 0;
+            font-size: 1.1rem;
+        }
+
+        .episode-card {
+            margin-bottom: 1rem;
+        }
+
+        .episode-header {
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 1rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .episode-title {
+            font-size: 1.6rem;
+            margin: 0 0 0.5rem 0;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        .episode-date {
+            color: var(--text-secondary);
+            font-size: 0.95rem;
+        }
+
+        h3 {
+            font-size: 1.2rem;
+            margin-top: 1.5rem;
+            margin-bottom: 0.8rem;
+            color: #ffffff;
+            font-weight: 600;
+        }
+
+        p {
+            margin: 0 0 1.2rem 0;
+            color: #e6edf3;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 0.8rem;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+        }
+
+        th, td {
+            padding: 0.8rem 1rem;
+            text-align: left;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        th {
+            background-color: var(--table-header-bg);
+            color: #ffffff;
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background-color: var(--table-hover-bg);
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 0.25rem 0.6rem;
+            font-size: 0.8rem;
+            font-weight: 600;
+            border-radius: 6px;
+            text-transform: uppercase;
+        }
+
+        .badge-buy {
+            background-color: rgba(46, 160, 67, 0.15);
+            color: #56d364;
+            border: 1px solid rgba(46, 160, 67, 0.4);
+        }
+
+        .badge-sell {
+            background-color: rgba(248, 81, 73, 0.15);
+            color: #ff7b72;
+            border: 1px solid rgba(248, 81, 73, 0.4);
+        }
+
+        .badge-hold {
+            background-color: rgba(210, 153, 34, 0.15);
+            color: #e3b341;
+            border: 1px solid rgba(210, 153, 34, 0.4);
+        }
+
+        .badge-neutral {
+            background-color: rgba(139, 148, 158, 0.15);
+            color: #c9d1d9;
+            border: 1px solid rgba(139, 148, 158, 0.4);
+        }
+
+        .reason-cell {
+            font-size: 0.95rem;
+            color: #d1d7de;
+        }
+
+        .episode-separator {
+            border: 0;
+            height: 2px;
+            background: var(--border-color);
+            margin: 3rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <h1>InvestTalk Episode Summaries</h1>
+            <p>Market Topics & Stock Verdicts Tracker</p>
+        </header>
+
+        {% for date_str in episodes|sort(reverse=True) %}
+            {% set ep = episodes[date_str] %}
+            <article class="episode-card">
+                <header class="episode-header">
+                    <h2 class="episode-title">{{ ep.title }}</h2>
+                    <div class="episode-date"><strong>Date:</strong> {{ date_str }}</div>
+                </header>
+
+                <section class="section">
+                    <h3>Topic Summary</h3>
+                    {% for paragraph in ep.summary.split('\n\n') if paragraph.strip() %}
+                        <p>{{ md_to_html(paragraph) }}</p>
+                    {% endfor %}
+                </section>
+
+                <section class="section">
+                    <h3>Stock Discussions & Verdicts</h3>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th style="width: 15%;">Ticker</th>
+                                <th style="width: 15%;">Verdict</th>
+                                <th style="width: 70%;">Reason</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for rec in ep.recommendations %}
+                                {% set verdict = rec.recommendation | trim %}
+                                {% set verdict_lower = verdict | lower %}
+                                {% if 'buy' in verdict_lower %}
+                                    {% set badge_class = 'badge-buy' %}
+                                {% elif 'sell' in verdict_lower %}
+                                    {% set badge_class = 'badge-sell' %}
+                                {% elif 'hold' in verdict_lower %}
+                                    {% set badge_class = 'badge-hold' %}
+                                {% else %}
+                                    {% set badge_class = 'badge-neutral' %}
+                                {% endif %}
+                                <tr>
+                                    <td><strong>{{ rec.ticker }}</strong></td>
+                                    <td><span class="badge {{ badge_class }}">{{ verdict }}</span></td>
+                                    <td class="reason-cell">{{ md_to_html(rec.reason) }}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </section>
+            </article>
+            {% if not loop.last %}
+                <hr class="episode-separator">
+            {% endif %}
+        {% endfor %}
+    </div>
+</body>
+</html>
