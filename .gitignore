@@ -1,0 +1,17 @@
+# Environment variables and secrets
+.env
+
+# Virtual environment
+venv/
+
+# Python cache and build artifacts
+__pycache__/
+*.pyc
+
+# System / OS files
+.DS_Store
+
+# Temporary runtime logs and metadata
+latest_metadata.json
+latest_transcript.txt
+cron.log
