@@ -4,7 +4,23 @@ on:
   schedule:
     # 7:00 PM Pacific Time Monday-Friday (02:00 AM UTC Tuesday-Saturday)
     - cron: '0 2 * * 2-6'
-  workflow_dispatch: # Allows triggering manually from GitHub Actions tab
+  workflow_dispatch:
+    inputs:
+      force:
+        description: 'Force re-extraction ignoring cache (--force)'
+        required: false
+        type: boolean
+        default: false
+      start_date:
+        description: 'Start date YYYY-MM-DD (optional)'
+        required: false
+        type: string
+        default: ''
+      end_date:
+        description: 'End date YYYY-MM-DD (optional)'
+        required: false
+        type: string
+        default: ''
 
 jobs:
   extract-and-update:
@@ -27,8 +43,11 @@ jobs:
       - name: Run InvestTalk Ticker Extraction
         env:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FORCE_OPT: ${{ inputs.force && '--force' || '' }}
+          START_OPT: ${{ inputs.start_date && format('--start-date {0}', inputs.start_date) || '' }}
+          END_OPT: ${{ inputs.end_date && format('--end-date {0}', inputs.end_date) || '' }}
         run: |
-          python extract_tickers.py
+          python extract_tickers.py $FORCE_OPT $START_OPT $END_OPT
 
       - name: Commit and push updated summaries
         env:
