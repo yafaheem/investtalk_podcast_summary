@@ -266,53 +266,9 @@ def generate_cumulative_html(episodes):
         f.write(html_content)
     print(f"Successfully updated unified HTML summary file: {filename}")
 
-def append_to_google_sheet(sheet_name, rows):
-    """Append rows to a Google Sheet using gspread and default auth."""
-    try:
-        import gspread
-        import google.auth
-        
-        # Try authentication
-        try:
-            creds, _ = google.auth.default(scopes=[
-                'https://www.googleapis.com/auth/spreadsheets',
-                'https://www.googleapis.com/auth/drive'
-            ])
-            gc = gspread.authorize(creds)
-        except Exception as auth_err:
-            print(f"ADC Auth failed: {auth_err}. Attempting local/OAuth credential path...")
-            # Fallback for local testing (will prompt for OAuth login in browser if not in service account)
-            creds_path = os.environ.get("GOOGLE_APPLICATION_CREDENTIALS")
-            if creds_path and os.path.exists(creds_path):
-                gc = gspread.service_account(filename=creds_path)
-            else:
-                gc = gspread.oauth()
-        
-        # Open or create spreadsheet
-        try:
-            sh = gc.open(sheet_name)
-        except gspread.exceptions.SpreadsheetNotFound:
-            print(f"Spreadsheet '{sheet_name}' not found. Creating a new one...")
-            sh = gc.create(sheet_name)
-            print(f"Created new spreadsheet. Share URL: {sh.url}")
-            
-        wks = sh.sheet1
-        existing_values = wks.get_all_values()
-        if not existing_values:
-            wks.append_row(["Date", "Episode Title", "Ticker", "Recommendation", "Reason"])
-            
-        wks.append_rows(rows)
-        print(f"Successfully appended {len(rows)} rows to Google Sheet '{sheet_name}'.")
-    except Exception as e:
-        print(f"Failed to append to Google Sheet: {e}")
-        print("Raw payload for Google Sheet:")
-        for r in rows:
-            print(f"  {r}")
-
 def main():
     parser = argparse.ArgumentParser(description="InvestTalk Stock Ticker Extractor")
     parser.add_argument("--dry-run", action="store_true", help="Download and parse transcript locally without calling API")
-    parser.add_argument("--sheet-name", default="InvestTalk Ticker Tracker", help="Google Sheet name to save results")
     parser.add_argument("--date", help="Target episode publication date (YYYY-MM-DD)")
     parser.add_argument("--start-date", help="Start of range publication date (YYYY-MM-DD)")
     parser.add_argument("--end-date", help="End of range publication date (YYYY-MM-DD)")
@@ -345,9 +301,6 @@ def main():
         except Exception:
             pass
             
-    # Track new rows to write to sheet
-    new_sheet_rows = []
-    
     # API key check
     api_key = None
     if not args.dry_run:
@@ -422,24 +375,10 @@ def main():
         # Save to database
         episodes_db = save_episode_data(date_str, episode['title'], topic_summary, results)
         
-        # Collect sheet rows
-        for res in results:
-            new_sheet_rows.append([
-                date_str,
-                episode['title'],
-                res.get('ticker', ''),
-                res.get('recommendation', ''),
-                res.get('reason', '')
-            ])
-            
     # Post loop updates
     print("\nRegenerating cumulative summary files...")
     generate_cumulative_markdown(episodes_db)
     generate_cumulative_html(episodes_db)
-        
-    # if new_sheet_rows and not args.dry_run:
-    #     print(f"\nSaving {len(new_sheet_rows)} new rows to Google Sheet '{args.sheet_name}'...")
-    #     append_to_google_sheet(args.sheet_name, new_sheet_rows)
         
     print("\nExecution completed successfully!")
 

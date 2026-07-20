@@ -1,6 +1,4 @@
 google-genai>=0.1.0
-google-auth>=2.0.0
-gspread>=5.0.0
 python-dotenv>=1.0.0
 Jinja2>=3.0.0
 MarkupSafe>=2.0.0
