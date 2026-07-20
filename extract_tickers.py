@@ -17,6 +17,28 @@ from rss_extractor import get_feed_url, parse_rss_feed
 from jinja2 import Environment, FileSystemLoader
 from markupsafe import Markup
 
+TICKER_EXCHANGE_MAP = {
+    "AVGO": "NASDAQ", "NEM": "NYSE", "CINF": "NASDAQ", "POWR": "NASDAQ",
+    "VOLT": "NASDAQ", "AIPO": "NASDAQ", "RDDT": "NASDAQ", "SFM": "NASDAQ",
+    "COHR": "NYSE", "DIVB": "NASDAQ", "LII": "NYSE", "ABNB": "NASDAQ",
+    "CHTR": "NASDAQ", "MU": "NASDAQ", "EWY": "NYSEARCA", "SKHY": "NASDAQ",
+    "CELH": "NASDAQ", "COST": "NASDAQ", "SPGI": "NYSE", "ANET": "NYSE",
+    "RELX": "NYSE", "MO": "NYSE", "PM": "NYSE", "ZIM": "NYSE",
+    "NFLX": "NASDAQ", "ZION": "NASDAQ", "AVAV": "NASDAQ", "TTMI": "NASDAQ",
+    "TS": "NYSE", "BTG": "NYSE", "MUSA": "NYSE", "GGG": "NYSE",
+    "RMBS": "NASDAQ", "VRT": "NYSE", "FLIN": "NYSEARCA", "OKE": "NYSE",
+    "MSFT": "NASDAQ", "CNSWF": "OTCMKTS", "KARO": "SGX", "MELI": "NASDAQ",
+    "WMB": "NYSE", "EQT": "NYSE", "MOS": "NYSE", "VHT": "NYSEARCA",
+    "IXJ": "NYSEARCA", "BKE": "NYSE"
+}
+
+def get_google_finance_url(ticker, exchange=None):
+    """Generate a valid Google Finance quote URL for a stock ticker."""
+    if not ticker:
+        return ""
+    ex = exchange or TICKER_EXCHANGE_MAP.get(ticker.upper(), "NASDAQ")
+    return f"https://www.google.com/finance/quote/{ticker.upper()}:{ex.upper()}"
+
 
 def extract_tickers_from_description(description):
     """Extract tickers inside parentheses from the show description."""
@@ -95,14 +117,16 @@ def run_gemini_extraction(transcript, tickers, api_key):
         prompt = (
             f"Analyze the following podcast transcript. Focus on discussions regarding these stock tickers: {', '.join(tickers)}.\n\n"
             "For each ticker, extract the host's opinion and recommendation:\n"
-            "- Recommendation: Buy, Sell, Hold, or Neutral.\n"
+            "- Exchange: The primary listing exchange for the stock (e.g. NASDAQ, NYSE, AMEX, OTCMKTS).\n"
+            "- Recommendation: Buy, Sell, Hold, Watchlist, or Neutral.\n"
             "- Reason: A concise summary of their reasoning or key arguments mentioned.\n\n"
             "Format the output strictly as a JSON list of objects, e.g.:\n"
             "[\n"
-            "  {\"ticker\": \"TICKER\", \"recommendation\": \"Buy/Sell/Hold/Neutral\", \"reason\": \"Summary of arguments\"}\n"
+            "  {\"ticker\": \"TICKER\", \"exchange\": \"NASDAQ/NYSE\", \"recommendation\": \"Buy/Sell/Hold/Neutral\", \"reason\": \"Summary of arguments\"}\n"
             "]\n\n"
             f"Transcript:\n{transcript}"
         )
+
         
         response = client.models.generate_content(
             model='gemini-2.5-flash',
@@ -226,10 +250,14 @@ def generate_cumulative_markdown(episodes):
         
         for rec in ep.get('recommendations', []):
             ticker = rec.get('ticker', '')
+            exchange = rec.get('exchange')
             verdict = rec.get('recommendation', '')
             reason = rec.get('reason', '')
             reason_escaped = reason.replace("|", "\\|")
-            content.append(f"| {ticker} | {verdict} | {reason_escaped} |")
+            url = get_google_finance_url(ticker, exchange)
+            ticker_cell = f"[{ticker}]({url})" if ticker else ""
+            content.append(f"| {ticker_cell} | {verdict} | {reason_escaped} |")
+
             
         content.append("")
         if idx < len(sorted_dates) - 1:
@@ -259,8 +287,10 @@ def generate_cumulative_html(episodes):
     
     html_content = template.render(
         episodes=episodes,
-        md_to_html=md_to_html
+        md_to_html=md_to_html,
+        get_google_finance_url=get_google_finance_url
     )
+
     
     with open(filename, "w", encoding="utf-8") as f:
         f.write(html_content)

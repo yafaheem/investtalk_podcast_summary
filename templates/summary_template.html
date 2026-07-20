@@ -157,6 +157,16 @@
             border: 1px solid rgba(139, 148, 158, 0.4);
         }
 
+        .ticker-link {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .ticker-link:hover {
+            text-decoration: underline;
+        }
+
         .reason-cell {
             font-size: 0.95rem;
             color: #d1d7de;
@@ -216,7 +226,7 @@
                                     {% set badge_class = 'badge-neutral' %}
                                 {% endif %}
                                 <tr>
-                                    <td><strong>{{ rec.ticker }}</strong></td>
+                                    <td><a href="{{ get_google_finance_url(rec.ticker, rec.exchange) }}" target="_blank" class="ticker-link">{{ rec.ticker }}</a></td>
                                     <td><span class="badge {{ badge_class }}">{{ verdict }}</span></td>
                                     <td class="reason-cell">{{ md_to_html(rec.reason) }}</td>
                                 </tr>
