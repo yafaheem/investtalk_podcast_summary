@@ -292,9 +292,13 @@ def generate_cumulative_html(episodes):
     )
 
     
-    with open(filename, "w", encoding="utf-8") as f:
-        f.write(html_content)
-    print(f"Successfully updated unified HTML summary file: {filename}")
+    for fname in ["summary.html", "index.html"]:
+        try:
+            with open(fname, "w", encoding="utf-8") as f:
+                f.write(html_content)
+            print(f"Successfully updated unified HTML summary file: {fname}")
+        except Exception as e:
+            print(f"Warning: Could not write {fname}: {e}")
 
 def main():
     parser = argparse.ArgumentParser(description="InvestTalk Stock Ticker Extractor")
