@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: India's US Trade Deal in 2026: Can It Survive the Iran Oil Shock?
+**Date:** 2026-07-20
+
+### Topic Summary
+The main market, economic, and educational topic discussed by the hosts is the **impact of geopolitical conflicts and energy price volatility on emerging markets, with a specific focus on India.**
+
+The hosts detailed how India faces a "double hit" from the ongoing Iran conflict. As a significant net importer of energy, India is uniquely vulnerable to surging oil and gas import costs from West Asia. This challenge is compounded by a weakening rupee, which makes dollar-denominated oil even more expensive, squeezing corporate margins and complicating trade negotiations with the U.S. The Reserve Bank of India has been actively defending the currency by deploying substantial reserves, diverting capital from other economic priorities, and leading to capital outflows from Indian debt and equities.
+
+Despite these short-term headwinds and the associated market volatility, the podcast highlighted India's underlying economic confidence, driven by its high growth rate, favorable demographics, and advanced digital infrastructure. The discussion then broadened to advise emerging market investors to differentiate their exposure. Investors should consider the oil exposure of individual countries within EM portfolios, favoring oil exporters during persistent energy shocks or tilting towards importers like India if anticipating a return to stability and a "snapback" rally. This serves as a case study for understanding the risks and opportunities inherent in emerging market investing during periods of geopolitical and energy-related stress.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [USB](https://www.google.com/finance/quote/USB:NYSE) | Neutral | Despite strong earnings and raised guidance, the host worries about concentration risk in super regional banks and an expensive valuation (above forward P/E and average P/B), suggesting the asymmetric risk outweighs benefits compared to larger, more stable banks. |
+| [NVDA](https://www.google.com/finance/quote/NVDA:NASDAQ) | Buy | Considered the most important company for the AI era with massive growth and strong, sustainable margins, and currently 'a bit cheaper' than it has been. Recommended as a 'blue chip stable' core holding, but with a warning against expecting the 'outsize returns' seen in previous years. |
+| [GLPI](https://www.google.com/finance/quote/GLPI:NASDAQ) | Neutral | The company has underperformed due to a structural shift in the gambling industry where people can gamble anywhere, reducing the need for brick-and-mortar facilities. The host is 'hesitant to enter'. |
+| [RTX](https://www.google.com/finance/quote/RTX:NYSE) | Neutral | The stock is currently 'a bit expensive' (trading above its average P/E and P/S) after a significant run-up. While it has potential tailwinds from rearming and NATO demand, government budget shifts due to inflation and energy shocks may divert funds away from aerospace defense. |
+| [TROW](https://www.google.com/finance/quote/TROW:NASDAQ) | Neutral | Possesses a solid balance sheet, high free cash flow, sticky AUM in target-date funds, and a strong dividend history (4% yield). However, it faces structural headwinds from the industry's shift from active to passive management, leading to lower fee revenue and compressed valuations, which will likely keep the price suppressed. |
+
+---
+
 ## Episode: War Bonds vs. War Stocks: How Treasuries Are Really Responding to the Iran Conflict
 **Date:** 2026-07-17
 
