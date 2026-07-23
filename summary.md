@@ -2,6 +2,30 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Stocks Beyond Tech: Where Is the Market Actually Working Right Now?
+**Date:** 2026-07-22
+
+### Topic Summary
+The main market topic discussed by the hosts is the ongoing **market rotation away from high-growth technology stocks and towards more defensive, value-oriented, and traditional industrial sectors.**
+
+The podcast highlights that after a period of significant gains driven by large technology companies, often referred to as the "Magnificent Seven," and AI-related names, the market is now experiencing a notable pullback and reassessment of valuations in these sectors. This correction is seen as a potentially healthy development, allowing the market to work off excesses and differentiate between sustainable growth and speculative hype.
+
+As a result, capital flows are shifting. Institutional investors are reportedly rotating funds out of technology and into areas such as healthcare, financials, traditional industrials, and even certain segments of real estate like industrial REITs. Defensive assets like utilities, gold, silver, and material companies are also demonstrating strength. This rotation is attributed to increasing economic uncertainty, geopolitical tensions, rising oil prices reigniting inflation fears, and higher bond yields, which collectively prompt investors to seek more stable and undervalued assets. The host suggests this trend is not a short-term anomaly but could signify a more prolonged "reset" akin to the market dynamics observed in 2022, favoring a value-centric investment approach.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [JXN](https://www.google.com/finance/quote/JXN:NYSE) | Sell | The host sees several red flags, including confusing share count changes, meager profitability metrics despite low P/E (5x), and declining free cash, leading to a strong suspicion that 'something deeper is going on' and it 'doesn't pass the smell test'. |
+| [AVB](https://www.google.com/finance/quote/AVB:NYSE) | Hold | The host is neutral to positive on the proposed 'merger of equals' with Equity Residential, noting it will create a larger company with potential for upside and no immediate tax consequences for existing shareholders. They state, 'I don't mind it' and 'I think this is fine'. |
+| [DKNG](https://www.google.com/finance/quote/DKNG:NASDAQ) | Sell | The host has strong ethical objections, calling the company/industry 'despicable' due to its nature of addiction and 'horrible faith actors'. They also note slowing revenue growth, a 'terrible' chart, and believe the industry will eventually face negative regulation. |
+| [ADC](https://www.google.com/finance/quote/ADC:NYSE) | Buy | The host likes this industrial REIT, highlighting strong projected Funds From Operations (FFO) and revenue growth. They consider it one of their favorite REIT sectors and note it's 'in a strong uptrend'. |
+| [VICI](https://www.google.com/finance/quote/VICI:NYSE) | Sell | The host is negative on this REIT due to its exposure to Las Vegas, citing concerns about reduced travel and rising costs for hotels (due to sale-leaseback arrangements) which are making the Vegas experience less attractive. They also note its chart is 'in a strong downturn'. |
+| [UGI](https://www.google.com/finance/quote/UGI:NYSE) | Sell | Despite a 'quality' business in propane distribution, the host is concerned about the balance sheet, high debt, and an unsustainable dividend. A major red flag was the company stopping its dividend raises in 2023, indicating they 'can't afford' to raise or potentially maintain the current dividend. |
+| [AVUS](https://www.google.com/finance/quote/AVUS:NYSE ARCA) | Buy | Preferred over VTHR for its better diversification across sectors, with a lower weighting in tech (29%) and higher exposure to industrials, financials, consumer cyclicals, and basic materials, which is seen as advantageous in a 'rockier' market outlook. |
+| [VTHR](https://www.google.com/finance/quote/VTHR:NASDAQ) | Neutral | While a straightforward Russell 3000 index fund, the host deems it less favorable than AVUS due to its high concentration in tech (36%), which is a concern given their expectations for a 'rockier' market in the back half of the year and a potential 'reset in the growth universe'. |
+
+---
+
 ## Episode: Can the Magnificent Seven Earnings Hold the Market Up?
 **Date:** 2026-07-21
 
