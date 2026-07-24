@@ -39,3 +39,8 @@ This document tracks completed features, active architectural improvements, and 
 - **Goal:** Output a clean `api/episodes.json` static file on every build.
 - **Benefit:** Makes the historical data easily consumable by third-party mobile apps, widgets, or web portals.
 
+### 6. Credit KPPfinancial
+- **Goal:** Clearly credit KPPfinancial and link to their site in the outputs.
+
+### 7. 'Driving Mode' ReadAloud Integration
+- **Goal:** Add a button to enable a simple chrome extension like ReadAloud that will read back the summary. Call it 'Driving Mode'.
