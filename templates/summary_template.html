@@ -349,19 +349,65 @@
             const allVoices = window.speechSynthesis.getVoices();
             if (!allVoices.length) return;
 
-            // Prioritize high-quality American Male voices (e.g. Alex, Evan, Nathan, David, Guy, Matthew)
-            const maleNames = ['alex', 'evan', 'nathan', 'david', 'guy', 'matthew', 'tom', 'fred', 'george', 'aaron', 'oliver'];
-            const usVoices = allVoices.filter(v => v.lang.replace('_', '-').toLowerCase().startsWith('en-us'));
-            
-            for (let name of maleNames) {
-                const found = usVoices.find(v => v.name.toLowerCase().includes(name));
-                if (found) {
-                    americanMaleVoice = found;
-                    return;
+            // Exclude robotic, muffled, or novelty synthesizers
+            const blacklisted = ['fred', 'ralph', 'zarvox', 'albert', 'trinoids', 'compact', 'bad news', 'good news', 'jester', 'whispering', 'organ', 'boing', 'cellos', 'novelty'];
+            const validVoices = allVoices.filter(v => !blacklisted.some(bad => v.name.toLowerCase().includes(bad)));
+
+            // Strict list of known crystal-clear American Female vocal identities
+            const americanFemaleNames = [
+                'ava',          // Premier high-definition US Female voice on macOS/iOS
+                'sami',         // High-clarity US Female
+                'siri voice 4', // Crystal clear natural US Female on Apple devices
+                'siri voice 2', // Natural US Female on Apple devices
+                'samantha',     // Standard clear US Female on all macOS systems
+                'allison',      // US Female on macOS/iOS
+                'susan',        // US Female on macOS/iOS
+                'jenny',        // Natural US Female on Edge/Neural
+                'aria',         // Natural US Female on Edge/Neural
+                'victoria',     // US Female on macOS
+                'karen'         // US Female on macOS/iOS
+            ];
+
+            // Filter for US English voices first
+            const usVoices = validVoices.filter(v => v.lang.replace('_', '-').toLowerCase().startsWith('en-us'));
+            const candidatePool = usVoices.length > 0 ? usVoices : validVoices;
+
+            let selected = null;
+            let bestScore = -1;
+
+            candidatePool.forEach(v => {
+                const lowerName = v.name.toLowerCase();
+                let score = 0;
+
+                // High-definition neural / premium / enhanced vocal engines give massive fidelity boost
+                if (lowerName.includes('premium')) score += 50;
+                if (lowerName.includes('enhanced')) score += 40;
+                if (lowerName.includes('neural')) score += 50;
+                if (lowerName.includes('natural')) score += 40;
+                if (lowerName.includes('siri') && !lowerName.includes('voice 3')) score += 35;
+                if (lowerName.includes('google') && !lowerName.includes('male')) score += 30;
+
+                // Bonus points for our targeted high-clarity female names
+                const femaleIndex = americanFemaleNames.findIndex(name => lowerName.includes(name));
+                if (femaleIndex !== -1) {
+                    score += (americanFemaleNames.length - femaleIndex) * 10;
                 }
+
+                if (score > bestScore) {
+                    bestScore = score;
+                    selected = v;
+                }
+            });
+
+            // Fallback to Samantha or Ava across any pool, or default to highest scoring voice
+            if (!selected) {
+                selected = allVoices.find(v => v.name.toLowerCase().includes('samantha')) ||
+                           allVoices.find(v => v.name.toLowerCase().includes('ava')) ||
+                           candidatePool[0] || allVoices[0];
             }
-            
-            americanMaleVoice = usVoices.find(v => v.name.toLowerCase().includes('male')) || usVoices[0] || allVoices[0];
+
+            americanMaleVoice = selected; // Using existing variable name to avoid changing downstream code
+            console.log("Selected High-Clarity Voice:", americanMaleVoice ? americanMaleVoice.name : "None");
         }
 
         selectDefaultVoice();
@@ -433,7 +479,7 @@
                 progressBar.value = currentUtteranceIndex;
             }
 
-            utterance.rate = 1.2;
+            utterance.rate = 1.0; // Normal uncompressed speech rate for natural clarity
             if (americanMaleVoice) {
                 utterance.voice = americanMaleVoice;
             }
