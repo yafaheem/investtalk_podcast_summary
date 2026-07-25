@@ -15,3 +15,6 @@ __pycache__/
 latest_metadata.json
 latest_transcript.txt
 cron.log
+summaries_data.json
+summary.html
+summary.md
