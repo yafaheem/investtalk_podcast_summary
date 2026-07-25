@@ -2,6 +2,26 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: The Fed's Impossible Position: War Inflation vs. Rate Cuts
+**Date:** 2026-07-24
+
+### Topic Summary
+The primary market and economic topic discussed by the hosts is the Federal Reserve's "impossible position" in navigating persistent inflation amidst calls for interest rate cuts. The podcast highlights a complex economic landscape characterized by "sticky inflation" driven by various factors beyond just geopolitical events.
+
+Specifically, the discussion delves into how rising energy prices, particularly gasoline, are contributing to inflationary pressures, exacerbated by dwindling global oil and refined product inventories. Beyond energy, the hosts point to elevated services inflation, a building pipeline of pressure in core goods due to supply chain factors (PMI prices, delivery times, shipping costs), and the increasing cost of AI-related hardware (memory, components) leading to higher consumer electronics prices. Tariffs are also noted as a background tailwind, pushing up costs for imported goods and subsequently professional services. This multi-faceted inflationary environment creates a challenging dilemma for the Fed, which faces political pressure to cut rates while core inflation remains well above its 2% target. The uncertainty surrounding the Fed's next moves, with varying market expectations for rate hikes or cuts, leads to market rotation, favoring value over growth stocks, and necessitates a focus on shorter-duration investments in this volatile macro environment.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [CCJ](https://www.google.com/finance/quote/CCJ:NYSE) | Buy | Long-term bullish on uranium due to supply constraints (cost of production higher than current price), leading to potential price increases. Recent pullback offers a good support level, and the company has diversified with the Westinghouse acquisition. Host has recently started picking it up for new clients. |
+| [OSCR](https://www.google.com/finance/quote/OSCR:NASDAQ/NYSE) | Sell/Trim | Stock is losing momentum after a significant run-up and a third of the position has already been sold. Profitability is historically meager/negative despite strong cash flow. Advised to at least trim the position by half to rebalance to a more reasonable weighting. |
+| [LITE](https://www.google.com/finance/quote/LITE:NASDAQ/NYSE) | Neutral | While in the heart of the AI data center build-out and earnings are accelerating, the valuation is still expensive (over 20x forward earnings). Cash flow, though improving, is not strong enough for its $55 billion market cap, and overall momentum in the AI space is waning. A specific technical support level ($445) was mentioned as a potential buy point, but not recommended at current levels. |
+| [SOLV](https://www.google.com/finance/quote/SOLV:NASDAQ/NYSE) | Neutral | The stock has been 'kind of okay' since its 2024 spin-off, with a declining earnings trend since 2021. It has negative free cash flow. While profitability metrics like ROE are solid, the host believes there are 'better options out there' in the healthcare space and passes on it. |
+| [DOV](https://www.google.com/finance/quote/DOV:NYSE) | Buy | Well-diversified industrial company with a positive earnings trend, solid profitability, and good cash flow. The recent pullback after a slight earnings miss is viewed as a buying opportunity, not a falling knife, especially given increased incoming orders and raised full-year EPS guidance. |
+| [LVWR](https://www.google.com/finance/quote/LVWR:NASDAQ/NYSE) | Neutral | A high-risk penny stock with a history of deep losses and negative cash flow. Despite a recent surge (87% on earnings news) due to a new low-priced model aiming for profitability next year, the odds of sustained success are considered low, though the company has some cash runway. It's suggested as something 'to look into' for high-risk, high-reward speculation rather than a definite buy. |
+
+---
+
 ## Episode: Dollar vs. Emerging Market Currencies: Is the Safe-Haven Rally a Trap?
 **Date:** 2026-07-23
 
