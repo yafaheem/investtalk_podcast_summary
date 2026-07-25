@@ -191,31 +191,27 @@
             flex-wrap: wrap;
             gap: 0.8rem;
         }
-        .dm-btn {
-            background-color: var(--container-bg);
+        .dm-play-btn {
+            background-color: rgba(255, 255, 255, 0.06);
             color: var(--text-primary);
-            border: 1px solid var(--border-color);
-            padding: 0.4rem 0.8rem;
-            border-radius: 6px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            width: 28px;
+            height: 28px;
+            border-radius: 50%;
             cursor: pointer;
-            font-size: 0.95rem;
-            font-weight: 600;
             display: flex;
             align-items: center;
-            gap: 0.4rem;
-            transition: background-color 0.2s;
+            justify-content: center;
+            transition: transform 0.15s ease, background-color 0.2s;
+            padding: 0;
+            flex-shrink: 0;
         }
-        .dm-btn:hover {
-            background-color: var(--table-hover-bg);
+        .dm-play-btn:hover {
+            transform: scale(1.08);
+            background-color: rgba(255, 255, 255, 0.14);
         }
-        .dm-select {
-            background-color: var(--container-bg);
-            color: var(--text-primary);
-            border: 1px solid var(--border-color);
-            padding: 0.4rem;
-            border-radius: 6px;
-            font-size: 0.9rem;
-            cursor: pointer;
+        .dm-play-btn:active {
+            transform: scale(0.95);
         }
         .dm-status {
             font-size: 0.85rem;
@@ -281,18 +277,10 @@
                     <div class="episode-date"><strong>Date:</strong> {{ date_str }}</div>
                     
                     <div class="driving-mode-panel">
-                        <button class="dm-btn dm-play-btn" onclick="toggleReadAloud('episode-{{ loop.index }}')">
-                            ▶️
+                        <button class="dm-play-btn" onclick="toggleReadAloud('episode-{{ loop.index }}')" aria-label="Play">
+                            <svg style="margin-left:1px" width="12" height="13" viewBox="0 0 14 16" fill="currentColor"><path d="M1 1.5V14.5L13 8L1 1.5Z"/></svg>
                         </button>
                         <input type="range" class="dm-progress" id="progress-episode-{{ loop.index }}" min="0" value="0" max="0" step="1" onchange="seekReadAloud('episode-{{ loop.index }}', this.value)" oninput="updateSeekPreview('episode-{{ loop.index }}', this.value)" disabled>
-                        <select class="dm-select dm-speed">
-                            <option value="1.0">1.0x</option>
-                            <option value="1.1">1.1x</option>
-                            <option value="1.2" selected>1.2x</option>
-                            <option value="1.25">1.25x</option>
-                            <option value="1.5">1.5x</option>
-                        </select>
-                        <select class="dm-select dm-voice"></select>
                         <span class="dm-status">Idle</span>
                     </div>
                 </header>
@@ -344,48 +332,41 @@
     </div>
 
     <script>
+        // Apple Podcasts style minimalist SVG icons (smaller 28px button design)
+        const PLAY_ICON = `<svg style="margin-left:1px" width="12" height="13" viewBox="0 0 14 16" fill="currentColor"><path d="M1 1.5V14.5L13 8L1 1.5Z"/></svg>`;
+        const PAUSE_ICON = `<svg width="11" height="13" viewBox="0 0 14 16" fill="currentColor"><path d="M3 2H5V14H3V2ZM9 2H11V14H9V2Z"/></svg>`;
+
         // Driving Mode - Text To Speech Engine
         let currentEpisodeId = null;
         let isPlaying = false;
         let isPaused = false;
         let utteranceQueue = [];
-        let voices = [];
+        let americanMaleVoice = null;
         let currentUtteranceIndex = 0;
         let activeElement = null;
 
-        function populateVoiceList() {
-            voices = window.speechSynthesis.getVoices();
-            if (voices.length === 0) return;
+        function selectDefaultVoice() {
+            const allVoices = window.speechSynthesis.getVoices();
+            if (!allVoices.length) return;
 
-            // Sort voices: Google, Siri, Natural first
-            voices.sort((a, b) => {
-                const getScore = (v) => {
-                    let score = 0;
-                    const name = v.name.toLowerCase();
-                    if (name.includes('google')) score += 3;
-                    if (name.includes('siri')) score += 3;
-                    if (name.includes('natural')) score += 3;
-                    if (name.includes('premium')) score += 2;
-                    if (v.lang.startsWith('en')) score += 1;
-                    return score;
-                };
-                return getScore(b) - getScore(a);
-            });
-
-            document.querySelectorAll('.dm-voice').forEach(select => {
-                select.innerHTML = '';
-                voices.forEach((voice, index) => {
-                    const option = document.createElement('option');
-                    option.textContent = `${voice.name} (${voice.lang})`;
-                    option.value = index;
-                    select.appendChild(option);
-                });
-            });
+            // Prioritize high-quality American Male voices (e.g. Alex, Evan, Nathan, David, Guy, Matthew)
+            const maleNames = ['alex', 'evan', 'nathan', 'david', 'guy', 'matthew', 'tom', 'fred', 'george', 'aaron', 'oliver'];
+            const usVoices = allVoices.filter(v => v.lang.replace('_', '-').toLowerCase().startsWith('en-us'));
+            
+            for (let name of maleNames) {
+                const found = usVoices.find(v => v.name.toLowerCase().includes(name));
+                if (found) {
+                    americanMaleVoice = found;
+                    return;
+                }
+            }
+            
+            americanMaleVoice = usVoices.find(v => v.name.toLowerCase().includes('male')) || usVoices[0] || allVoices[0];
         }
 
-        populateVoiceList();
+        selectDefaultVoice();
         if (speechSynthesis.onvoiceschanged !== undefined) {
-            speechSynthesis.onvoiceschanged = populateVoiceList;
+            speechSynthesis.onvoiceschanged = selectDefaultVoice;
         }
 
         function extractEpisodeContent(episodeId) {
@@ -446,17 +427,15 @@
             const utterance = new SpeechSynthesisUtterance(item.text);
 
             const activePanel = document.getElementById(currentEpisodeId);
-            const speedSelect = activePanel.querySelector('.dm-speed');
-            const voiceSelect = activePanel.querySelector('.dm-voice');
             const progressBar = activePanel.querySelector('.dm-progress');
 
             if(progressBar) {
                 progressBar.value = currentUtteranceIndex;
             }
 
-            utterance.rate = parseFloat(speedSelect.value) || 1.2;
-            if (voiceSelect.value && voices[voiceSelect.value]) {
-                utterance.voice = voices[voiceSelect.value];
+            utterance.rate = 1.2;
+            if (americanMaleVoice) {
+                utterance.voice = americanMaleVoice;
             }
 
             utterance.onstart = () => {
@@ -494,13 +473,13 @@
                 if (isPaused) {
                     isPaused = false;
                     const btn = document.querySelector(`#${episodeId} .dm-play-btn`);
-                    if(btn) btn.innerHTML = '⏸️';
+                    if(btn) btn.innerHTML = PAUSE_ICON;
                     playQueue(); // Resume from start of current chunk
                 } else {
                     isPaused = true;
                     window.speechSynthesis.cancel();
                     const btn = document.querySelector(`#${episodeId} .dm-play-btn`);
-                    if(btn) btn.innerHTML = '▶️';
+                    if(btn) btn.innerHTML = PLAY_ICON;
                     updateStatus(episodeId, 'Paused');
                 }
                 return;
@@ -525,7 +504,7 @@
             }
 
             const btn = activePanel.querySelector('.dm-play-btn');
-            if(btn) btn.innerHTML = '⏸️';
+            if(btn) btn.innerHTML = PAUSE_ICON;
             
             playQueue();
         }
@@ -550,7 +529,7 @@
 
             isPaused = false;
             const btn = document.querySelector(`#${episodeId} .dm-play-btn`);
-            if(btn) btn.innerHTML = '⏸️';
+            if(btn) btn.innerHTML = PAUSE_ICON;
 
             currentUtteranceIndex = Math.min(index, utteranceQueue.length - 1);
             
@@ -586,7 +565,7 @@
 
             if (currentEpisodeId) {
                 const btn = document.querySelector(`#${currentEpisodeId} .dm-play-btn`);
-                if(btn) btn.innerHTML = '▶️';
+                if(btn) btn.innerHTML = PLAY_ICON;
                 
                 const progressBar = document.querySelector(`#${currentEpisodeId} .dm-progress`);
                 if(progressBar) {
