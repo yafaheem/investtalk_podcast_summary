@@ -59,6 +59,41 @@
             font-size: 1.1rem;
         }
 
+        .header-credits {
+            margin-top: 1.2rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            background-color: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+
+        .header-credits a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: opacity 0.2s, text-decoration 0.2s;
+        }
+
+        .header-credits a:hover {
+            text-decoration: underline;
+            opacity: 0.9;
+        }
+
+        .header-credits .divider {
+            color: var(--border-color);
+        }
+
+        .podcast-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+
         .episode-card {
             margin-bottom: 1rem;
         }
@@ -267,6 +302,11 @@
         <header class="main-header">
             <h1>InvestTalk Episode Summaries</h1>
             <p>Market Topics & Stock Verdicts Tracker</p>
+            <div class="header-credits">
+                <span>A personal project summarizing the 1-hour weekday podcast created by <a href="https://kppfinancial.com" target="_blank" rel="noopener noreferrer">KPP Financial</a></span>
+                <span class="divider">•</span>
+                <a href="https://kppfinancial.com/investtalk/" target="_blank" rel="noopener noreferrer" class="podcast-link">🎧 Listen to Full Episodes</a>
+            </div>
         </header>
 
         {% for date_str in episodes|sort(reverse=True) %}
