@@ -2,6 +2,29 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Is the US Dollar Losing Its Edge? The Dollar Outlook in the Age of Oil Shocks and Geopolitical Risk
+**Date:** 2026-07-29
+
+### Topic Summary
+The podcast primarily discusses the current market volatility and shifts driven by key economic and monetary factors, emphasizing their implications for investment strategies.
+
+The central topic revolves around the market's reaction to the Federal Reserve's monetary policy and communication. Following a "FED Day" characterized by a perceived lack of clarity from the new Fed Chair regarding inflation targets, the market experienced significant volatility, a broad sell-off in U.S. equities (especially the tech sector), and a sharp rise in treasury rates, with the 30-year treasury hitting multi-decade highs. This reaction signals a market concern about the Fed's future direction and its ability to manage inflation.
+
+Further compounding market pressures, particularly in the tech sector, is the massive capital allocation towards Artificial Intelligence (AI) infrastructure. This spending shift is diverting free cash flow that previously funded stock buybacks, which had historically masked the dilutive effects of stock-based compensation for employees. With buybacks slowing, shareholder dilution is becoming more apparent, adding another layer of pressure to tech company valuations. Additionally, the market downturn in AI stocks is triggering collateral demands from Wall Street banks to hedge funds, leading to forced selling and contributing to broader market instability and an "unorderly market."
+
+Beyond domestic market dynamics, the host also highlights the significance of currency fluctuations, specifically the U.S. dollar's strength or weakness against other global currencies. The dollar's movement, influenced by factors like interest rate differentials and geopolitical risks, has direct implications for foreign equity and bond exposure, making it a critical consideration for investors evaluating international diversification and portfolio strategy.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [BN](https://www.google.com/finance/quote/BN:NYSE) | Watchlist | Diverse exposure across booming infrastructure/renewable power and struggling private equity/credit. Prefers BN over sister company BAM. Technicals are weakening, and he prefers to be patient for a better entry point to avoid current private credit exposure. |
+| [AMZN](https://www.google.com/finance/quote/AMZN:NASDAQ) | Neutral | Struggling with 'Mag 7' issues like stock-based compensation/dilution. The Amazon store model is seen as vulnerable in the long term to AI-driven agentic shopping, which could find cheaper alternatives. Technicals are not looking great, and he is 'passing on Amazon'. |
+| [KO](https://www.google.com/finance/quote/KO:NYSE) | Buy | Strong technicals and not drastically impacted by inflation, leading to good margins. Exhibits consistent earnings growth, broad distribution, and strong cash flows, making it a reliable value creator for shareholders. Considered a 'clear winner' compared to struggling tech stocks. |
+| [TRGP](https://www.google.com/finance/quote/TRGP:NYSE) | Buy | Operates in natural gas gathering, processing, and transportation, a business model he likes, with natural gas being a key energy source. High profitability (73% ROE) and strong dividend growth (from $0.10 to $1.25 since 2021). Considered a 'very good business' with 'good cash flow'. |
+| [EME](https://www.google.com/finance/quote/EME:NYSE) | Watchlist | Provides electrical and mechanical construction services, benefiting from AI infrastructure buildout. However, earnings growth is slowing, and the current valuation (22x forward earnings, 16x EV/EBITDA) is not considered cheap historically (prefers closer to 10x). Expects more downside due to broader market deleveraging, suggesting a buying opportunity around $560-ish. |
+
+---
+
 ## Episode: Bond Market Outlook 2026: What Treasury Yields Near Multi-Year Highs Mean for Your Portfolio
 **Date:** 2026-07-28
 
