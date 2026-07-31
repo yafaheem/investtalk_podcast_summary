@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: AI's Spending Problem: When Does the Massive Cash Burn Start Paying Off?
+**Date:** 2026-07-30
+
+### Topic Summary
+The main topic discussed by the hosts is the substantial investment in Artificial Intelligence (AI) infrastructure, termed the "AI spending problem," and the significant concerns surrounding its monetization and potential returns for investors.
+
+The podcast highlights that companies are pouring trillions of dollars into AI development and infrastructure – with estimated spending reaching $900 billion this year and projected to hit $1.4 trillion next year. This massive capital expenditure, described as one of the largest investment surges in history, is raising questions about its financial viability. The hosts express skepticism about when, and if, this infrastructure boom will translate into substantial profits, noting that current AI-related revenue across the industry is a fraction of the investment.
+
+A core issue identified is the slow adoption of paid AI solutions by consumers and businesses; a significant portion of AI users currently rely on free models, and many executives report no tangible impact on productivity from AI use. This creates a significant disconnect between the enormous investment and the actual revenue being generated. Furthermore, the hosts point out the growing "concentration risk" this AI build-out poses across financial markets, not just in equities but also in bond markets, as "hyperscalers" issue vast amounts of debt to fund their AI initiatives. This aggressive debt issuance is starting to show signs of market resistance, suggesting a potential "AI backlash" as investors grow wary of the lofty valuations and uncertain returns, drawing parallels to past market bubbles.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [PH](https://www.google.com/finance/quote/PH:NYSE) | Sell (Trim) | The stock is currently expensive, trading near its highest valuation levels (20x forward EV/EBITDA) in a decade. While it's a very well-run business with secular trends and a growing dividend, it has lost momentum. Trim the position to take profits and add it to a watchlist to buy if it pulls back to value territory. |
+| [STT](https://www.google.com/finance/quote/STT:NYSE) | Hold | A solid, consistent business providing services to institutional investors with good earnings growth (up 32% this year, 12% next). Based on next year's earnings, it's 'relatively cheap'. It has a good balance sheet and consistently raises its dividend with plenty of room for further increases. Do not mistake its price appreciation for being expensive. |
+| [CRWD](https://www.google.com/finance/quote/CRWD:NASDAQ) | Sell | CrowdStrike is in the overvalued tech sector, which the market is rotating out of. Its valuation is 'absurd' with an Enterprise Value to EBIT of 101. Avoid this name and rotate into other sectors like industrials, materials, or healthcare. |
+| [MLI](https://www.google.com/finance/quote/MLI:NYSE) | Sell | The stock has had a big run due to demand from data centers (HVAC systems), but has peaked and is losing momentum. Historically, it's a 'math business' (decent, not amazing) and currently trades at an Enterprise Value of 10 times, significantly higher than its historical 3-4 times. It is currently too expensive at $66; patience is advised, and consider buying if it pulls back to the low $40s. |
+| [KMI](https://www.google.com/finance/quote/KMI:NYSE) | Hold | Likes the midstream pipeline business model, which collects a toll for moving products like natural gas, crude oil, and renewable fuels. It offers a nice 3.7% dividend yield that is consistently being raised. While it won't 'knock your socks off' with rapid growth, it provides a 'fairly consistent' and stable investment. |
+
+---
+
 ## Episode: Is the US Dollar Losing Its Edge? The Dollar Outlook in the Age of Oil Shocks and Geopolitical Risk
 **Date:** 2026-07-29
 
