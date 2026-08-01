@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Tariffs Are Here to Stay: How Permanent Trade Barriers Are Reshaping Long-Term Investing
+**Date:** 2026-07-31
+
+### Topic Summary
+The main market and economic topic discussed by the hosts is the increasing permanence of elevated trade tariffs and their structural implications for long-term investing. The hosts emphasize that these tariffs are not temporary headwinds but a lasting feature of the global economy, necessitating a fundamental adjustment in investment strategies.
+
+The discussion highlights that recent Section 301 tariffs, backed by established legal precedents and bipartisan political support, are unlikely to be easily removed. This shift mandates that investors structurally price in the drag of tariffs on global growth. The economic impacts are broad, leading to higher costs for consumer goods lacking domestic substitutes (like electronics and apparel), compounding effects for supply chains sourcing components from multiple countries, and structural margin compression for retailers built on low-cost global sourcing. While direct "reshoring" to the U.S. remains limited for most consumer goods, supply chains are nonetheless restructuring away from traditional Asian hubs, with strategic industries like semiconductors and defense being exceptions due to national security interests.
+
+For investors, this new normal implies potential inflationary pressures, estimated to add 30-50 basis points to structural pricing, and an average tax increase for households. Certain sectors may benefit, including domestic industrials, infrastructure companies protected from foreign competition, small-cap funds with predominantly domestic revenue bases, defense and aerospace, and U.S.-produced commodities. The core message is that given the historical difficulty in unwinding tariffs, investors must adapt their portfolios to a world where trade barriers are a permanent and defining characteristic of the investment landscape.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [CRS](https://www.google.com/finance/quote/CRS:NYSE) | Sell | Host advises trimming back the position, not a full exit, due to expensive valuation compared to industry peers and a potential momentum fade, despite strong fundamentals and industry-leading margins. Caller mentioned it's been an 'ATM machine' but is at its 100-day moving average. |
+| [BSX](https://www.google.com/finance/quote/BSX:NYSE) | Neutral | Considered a 'solid company' but less preferred than GILD due to cutting full-year guidance and adding significant acquisition debt. It's also seen as less recession-proof than its peer. |
+| [VRT](https://www.google.com/finance/quote/VRT:NYSE) | Watchlist | The host is hesitant to open a new position or enter at current levels, advising to wait for some sort of support level. The stock has experienced a precipitous fall (down 26.46% in 3 months) due to a revenue miss driven by supply chain timing issues (input volatility, shipping delays), despite record orders and strong EPS/free cash flow growth. |
+| [FOXA](https://www.google.com/finance/quote/FOXA:NASDAQ) | Hold | The host's firm holds the stock for clients, albeit at a slightly lower weight. They 'like it' for its focused live content platform, bold acquisition of Roku, and creation of a massive TV ecosystem. Anticipated positive surprises from World Cup rights, midterm ads, and NFL package. Structural headwinds include an aging Fox News audience and expected earnings decline. |
+| [TLT](https://www.google.com/finance/quote/TLT:NASDAQ) | Sell | Host advises against purchasing, stating 'no, rates are moving higher.' Explains that bond ETFs like TLT don't return capital at maturity (unlike individual bonds), and their value is based on price, which can suffer 'historic destruction of value and capital' in a rising rate environment. |
+
+---
+
 ## Episode: AI's Spending Problem: When Does the Massive Cash Burn Start Paying Off?
 **Date:** 2026-07-30
 
