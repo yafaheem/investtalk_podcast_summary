@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Iran Peace Signals and Market Volatility: How to Invest When Headlines Move Markets
+**Date:** 2026-08-05
+
+### Topic Summary
+The podcast extensively discusses key principles for effective long-term investing, emphasizing a rational, fundamentally-driven approach over emotional reactions to short-term market noise. A central theme revolves around the importance of a well-diversified and adaptable asset allocation strategy. The host argues that investors should look beyond passive investment in broad market indexes, particularly in evolving economic landscapes, and consider incorporating a wider range of asset classes such as precious metals (gold and silver), foreign equities, and small-to-mid capitalization companies to capitalize on shifting market leadership and secular trends. This includes strategically rebalancing portfolios, even in tax-deferred accounts, by taking profits from outperforming segments to allocate to areas with better long-term potential.
+
+Another significant educational topic is navigating market volatility and filtering out the "noise" from daily headlines. Investors are advised against making impulsive decisions based on immediate news, especially geopolitical events, as their first-order effects are often quickly priced into the market. Instead, the focus should be on understanding the second and third-order economic consequences of these events and their long-term impact on specific sectors, broader economic trends like supply chain resilience, and corporate fundamentals. Diversification is presented as a key tool for building resilience against unpredictable market movements.
+
+The podcast also touches on the dynamic evolution of business models and economic realities across various sectors. For instance, it highlights how the airline industry's profitability has increasingly shifted towards revenue generated from credit card loyalty programs rather than solely transportation services. Similarly, in the technology sector, the discussion points to the maturing adoption of Artificial Intelligence, where companies are moving beyond initial hype to critically assess and manage the costs associated with AI usage, influencing choices between models and providers. These examples illustrate the continuous need for investors to understand the fundamental changes impacting industries and individual companies for sound investment decision-making.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [DIS](https://www.google.com/finance/quote/DIS:NYSE) | Neutral | Earnings trending up and valuation looks decent at mid-to-low teens multiple, but faces long-term structural challenges from changing content consumption habits, declining profitability (ROE), and a fractured media landscape for its legacy businesses like ESPN. |
+| [AYA](https://www.google.com/finance/quote/AYA:OTCMKTS) | Buy | Strong momentum, breaking out, high free cash flow yield, and robust return on equity (22%), outperforming the broader gold and silver sector. |
+| [EXPE](https://www.google.com/finance/quote/EXPE:NASDAQ) | Watchlist | Solid business with strong cash flow and high return on equity (65%). Currently overpriced and over-extended, host would consider buying if it pulls back to the mid-$200s. |
+| [PANW](https://www.google.com/finance/quote/PANW:NASDAQ) | Sell | Good business but 'very, very overpriced' at 80x forward earnings multiple with a low 7% ROE. Has experienced a parabolic run, making it prudent risk management to trim profits. |
+| [AMD](https://www.google.com/finance/quote/AMD:NASDAQ) | Neutral | Strong earnings growth, but the market reaction was negative. Host believes the opportunity has been missed due to high valuation (30x forward earnings) and foresees long-term risks from decreasing AI compute costs, companies scrutinizing AI spending, and competition from cheaper Chinese AI models and on-device solutions. |
+
+---
+
 ## Episode: Are Prediction Markets Legal? The Kalshi Lawsuit and What It Means for Investors
 **Date:** 2026-08-04
 
