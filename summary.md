@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: The AI Arms Race: Is the US Lead Over China Already Gone?
+**Date:** 2026-08-06
+
+### Topic Summary
+The main market, economic, or educational topic discussed by the host is the **competitive landscape of Artificial Intelligence (AI), specifically the perceived "AI arms race" between the United States and China, and its investment implications.**
+
+The host delves into a recent report indicating that China has rapidly narrowed the gap with the US in AI model capabilities, prompting a discussion about what this shift means for investors and the long-term economic leadership of the US. He emphasizes that the challenge for investors is to correctly interpret this competitive shift, distinguishing between a sustained demand for American AI infrastructure and potential erosion of pricing power within specific layers of the AI ecosystem, particularly the "model layer" where cheaper Chinese alternatives are emerging.
+
+The educational takeaway for investors is to look beyond daily "noise" like headlines and benchmark scores, focusing instead on long-term "signals" such as demand, capacity backlogs, and capital expenditure guidance. He advises understanding the different layers of the AI supply chain (compute, power, models, applications) and whether one's AI investments are predicated on scarcity or volume. Furthermore, investors are cautioned against building portfolios that rely on specific, unpredictable policy outcomes, as government regulations and trade policies can shift rapidly. The host suggests that the compute and power layers of the AI ecosystem may offer more stable investment opportunities compared to the model layer, which faces increasing competition.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [DLR](https://www.google.com/finance/quote/DLR:NYSE) | Neutral | Benefiting from AI spending and strong fundamentals (record FFO, raised guidance, huge backlog). However, valuation is expensive (price to book near all-time high) and momentum has been poor in the last three months, with potential rotation out of AI infrastructure names. |
+| [APP](https://www.google.com/finance/quote/APP:NASDAQ) | Sell | Significant stock price drop (20% today, 50% YTD), disappointing earnings, collapse in free cash flow margin from 70% to 45%. Structurally and technically not looking great, suggesting better opportunities elsewhere. |
+| [TSM](https://www.google.com/finance/quote/TSM:NYSE) | Buy | Dominant position as the sole manufacturer of leading-edge chips for major tech companies and AI accelerators. Explosive revenue growth (21% annualized), strong margins, and reasonable valuation compared to historical levels after a flattening period. |
+| [STRL](https://www.google.com/finance/quote/STRL:NASDAQ) | Buy | Dominant contractor for AI data center ground-up development. Crushed recent earnings with strong revenue and EPS growth, raised guidance, and expanding margins. Recent stock pullback offers a more reasonable entry point. |
+| [TRV](https://www.google.com/finance/quote/TRV:NYSE) | Sell | Listener is up 124%; host recommends trimming the position to preserve gains. While a 'gold standard' P&C insurer with strong recent earnings and AI tailwinds, exceptional results were driven by reserve releases and lower-than-normal catastrophe losses, which may not be repeatable. |
+
+---
+
 ## Episode: Iran Peace Signals and Market Volatility: How to Invest When Headlines Move Markets
 **Date:** 2026-08-05
 
