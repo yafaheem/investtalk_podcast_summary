@@ -729,5 +729,36 @@
         "reason": "A high-risk penny stock with a history of deep losses and negative cash flow. Despite a recent surge (87% on earnings news) due to a new low-priced model aiming for profitability next year, the odds of sustained success are considered low, though the company has some cash runway. It's suggested as something 'to look into' for high-risk, high-reward speculation rather than a definite buy."
       }
     ]
+  },
+  "2026-08-05": {
+    "title": "Iran Peace Signals and Market Volatility: How to Invest When Headlines Move Markets",
+    "summary": "This is a dry-run placeholder summary of the main topic.",
+    "recommendations": [
+      {
+        "ticker": "DIS",
+        "recommendation": "Buy (Dry Run Placeholder)",
+        "reason": "Reason (Dry Run Placeholder)"
+      },
+      {
+        "ticker": "AYA",
+        "recommendation": "Buy (Dry Run Placeholder)",
+        "reason": "Reason (Dry Run Placeholder)"
+      },
+      {
+        "ticker": "EXPE",
+        "recommendation": "Buy (Dry Run Placeholder)",
+        "reason": "Reason (Dry Run Placeholder)"
+      },
+      {
+        "ticker": "PANW",
+        "recommendation": "Buy (Dry Run Placeholder)",
+        "reason": "Reason (Dry Run Placeholder)"
+      },
+      {
+        "ticker": "AMD",
+        "recommendation": "Buy (Dry Run Placeholder)",
+        "reason": "Reason (Dry Run Placeholder)"
+      }
+    ]
   }
 }

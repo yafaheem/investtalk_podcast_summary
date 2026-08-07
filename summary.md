@@ -2,6 +2,23 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Iran Peace Signals and Market Volatility: How to Invest When Headlines Move Markets
+**Date:** 2026-08-05
+
+### Topic Summary
+This is a dry-run placeholder summary of the main topic.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [DIS](https://www.google.com/finance/quote/DIS:NASDAQ) | Buy (Dry Run Placeholder) | Reason (Dry Run Placeholder) |
+| [AYA](https://www.google.com/finance/quote/AYA:NASDAQ) | Buy (Dry Run Placeholder) | Reason (Dry Run Placeholder) |
+| [EXPE](https://www.google.com/finance/quote/EXPE:NASDAQ) | Buy (Dry Run Placeholder) | Reason (Dry Run Placeholder) |
+| [PANW](https://www.google.com/finance/quote/PANW:NASDAQ) | Buy (Dry Run Placeholder) | Reason (Dry Run Placeholder) |
+| [AMD](https://www.google.com/finance/quote/AMD:NASDAQ) | Buy (Dry Run Placeholder) | Reason (Dry Run Placeholder) |
+
+---
+
 ## Episode: The Fed's Impossible Position: War Inflation vs. Rate Cuts
 **Date:** 2026-07-24
 

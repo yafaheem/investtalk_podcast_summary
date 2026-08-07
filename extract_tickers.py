@@ -198,6 +198,46 @@ def generate_topic_summary(transcript, api_key):
             raise e
 
 
+def generate_audio_for_episode(date_str, title, summary, recommendations, audio_dir="audio", force=False):
+    """Generate a natural neural MP3 audio file for an episode using edge-tts."""
+    os.makedirs(audio_dir, exist_ok=True)
+    output_file = os.path.join(audio_dir, f"{date_str}.mp3")
+    if os.path.exists(output_file) and not force:
+        return output_file
+
+    lines = [f"InvestTalk Podcast summary for {date_str}. {title}.", ""]
+    lines.append("Topic summary:")
+    clean_summary = re.sub(r'[*_#`]', '', summary)
+    lines.append(clean_summary)
+    lines.append("")
+
+    if recommendations:
+        lines.append("Stock discussions and verdicts:")
+        for rec in recommendations:
+            ticker = rec.get("ticker", "")
+            verdict = rec.get("recommendation", "")
+            reason = rec.get("reason", "")
+            reason_clean = re.sub(r'[*_#`]', '', reason)
+            spaced_ticker = ". ".join(list(ticker.upper())) + "." if ticker else ""
+            lines.append(f"For ticker {spaced_ticker} Verdict: {verdict}. Reason: {reason_clean}")
+
+    script_text = "\n".join(lines)
+
+    async def _speak():
+        import edge_tts
+        communicate = edge_tts.Communicate(script_text, "en-US-AriaNeural")
+        await communicate.save(output_file)
+
+    try:
+        import asyncio
+        print(f"Generating Edge-TTS neural audio for {date_str}...")
+        asyncio.run(_speak())
+        print(f"Successfully saved neural audio to {output_file}")
+        return output_file
+    except Exception as e:
+        print(f"Warning: Failed to generate audio with edge-tts for {date_str}: {e}")
+        return None
+
 def save_episode_data(date_str, title, summary, recommendations):
     """Save episode data to summaries_data.json and return the full dictionary."""
     db_file = "summaries_data.json"
@@ -222,6 +262,7 @@ def save_episode_data(date_str, title, summary, recommendations):
         print(f"Error saving database: {e}")
         
     return data
+
 
 def generate_cumulative_markdown(episodes):
     """Generate a single unified Markdown file with all episodes sorted by date descending."""
@@ -410,9 +451,20 @@ def main():
         episodes_db = save_episode_data(date_str, episode['title'], topic_summary, results)
         
     # Post loop updates
+    print("\nGenerating Neural Edge-TTS audio files for episodes...")
+    for date_str, ep in episodes_db.items():
+        generate_audio_for_episode(
+            date_str,
+            ep.get('title', ''),
+            ep.get('summary', ''),
+            ep.get('recommendations', []),
+            force=args.force
+        )
+
     print("\nRegenerating cumulative summary files...")
     generate_cumulative_markdown(episodes_db)
     generate_cumulative_html(episodes_db)
+
         
     print("\nExecution completed successfully!")
 

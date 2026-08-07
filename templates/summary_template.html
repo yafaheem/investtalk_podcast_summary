@@ -317,10 +317,11 @@
                     <div class="episode-date"><strong>Date:</strong> {{ date_str }}</div>
                     
                     <div class="driving-mode-panel">
+                        <audio class="dm-audio-element" id="audio-episode-{{ loop.index }}" src="audio/{{ date_str }}.mp3" preload="metadata"></audio>
                         <button class="dm-play-btn" onclick="toggleReadAloud('episode-{{ loop.index }}')" aria-label="Play">
                             <svg style="margin-left:1px" width="12" height="13" viewBox="0 0 14 16" fill="currentColor"><path d="M1 1.5V14.5L13 8L1 1.5Z"/></svg>
                         </button>
-                        <input type="range" class="dm-progress" id="progress-episode-{{ loop.index }}" min="0" value="0" max="0" step="1" onchange="seekReadAloud('episode-{{ loop.index }}', this.value)" oninput="updateSeekPreview('episode-{{ loop.index }}', this.value)" disabled>
+                        <input type="range" class="dm-progress" id="progress-episode-{{ loop.index }}" min="0" value="0" max="100" step="1" onchange="seekReadAloud('episode-{{ loop.index }}', this.value)" oninput="updateSeekPreview('episode-{{ loop.index }}', this.value)" disabled>
                         <span class="dm-status">Idle</span>
                     </div>
                 </header>
@@ -376,12 +377,14 @@
         const PLAY_ICON = `<svg style="margin-left:1px" width="12" height="13" viewBox="0 0 14 16" fill="currentColor"><path d="M1 1.5V14.5L13 8L1 1.5Z"/></svg>`;
         const PAUSE_ICON = `<svg width="11" height="13" viewBox="0 0 14 16" fill="currentColor"><path d="M3 2H5V14H3V2ZM9 2H11V14H9V2Z"/></svg>`;
 
-        // Driving Mode - Text To Speech Engine
+        // Audio State Engine (Edge-TTS Neural Audio + Web Speech API Fallback)
         let currentEpisodeId = null;
+        let activeAudioElement = null;
         let isPlaying = false;
         let isPaused = false;
+        let isUsingAudioFile = false;
         let utteranceQueue = [];
-        let americanMaleVoice = null;
+        let americanFemaleVoice = null;
         let currentUtteranceIndex = 0;
         let activeElement = null;
 
@@ -389,26 +392,10 @@
             const allVoices = window.speechSynthesis.getVoices();
             if (!allVoices.length) return;
 
-            // Exclude robotic, muffled, or novelty synthesizers
             const blacklisted = ['fred', 'ralph', 'zarvox', 'albert', 'trinoids', 'compact', 'bad news', 'good news', 'jester', 'whispering', 'organ', 'boing', 'cellos', 'novelty'];
             const validVoices = allVoices.filter(v => !blacklisted.some(bad => v.name.toLowerCase().includes(bad)));
 
-            // Strict list of known crystal-clear American Female vocal identities
-            const americanFemaleNames = [
-                'ava',          // Premier high-definition US Female voice on macOS/iOS
-                'sami',         // High-clarity US Female
-                'siri voice 4', // Crystal clear natural US Female on Apple devices
-                'siri voice 2', // Natural US Female on Apple devices
-                'samantha',     // Standard clear US Female on all macOS systems
-                'allison',      // US Female on macOS/iOS
-                'susan',        // US Female on macOS/iOS
-                'jenny',        // Natural US Female on Edge/Neural
-                'aria',         // Natural US Female on Edge/Neural
-                'victoria',     // US Female on macOS
-                'karen'         // US Female on macOS/iOS
-            ];
-
-            // Filter for US English voices first
+            const americanFemaleNames = ['aria', 'jenny', 'ava', 'sami', 'siri voice 4', 'siri voice 2', 'samantha', 'allison', 'susan', 'victoria', 'karen'];
             const usVoices = validVoices.filter(v => v.lang.replace('_', '-').toLowerCase().startsWith('en-us'));
             const candidatePool = usVoices.length > 0 ? usVoices : validVoices;
 
@@ -418,16 +405,11 @@
             candidatePool.forEach(v => {
                 const lowerName = v.name.toLowerCase();
                 let score = 0;
-
-                // High-definition neural / premium / enhanced vocal engines give massive fidelity boost
-                if (lowerName.includes('premium')) score += 50;
-                if (lowerName.includes('enhanced')) score += 40;
                 if (lowerName.includes('neural')) score += 50;
-                if (lowerName.includes('natural')) score += 40;
-                if (lowerName.includes('siri') && !lowerName.includes('voice 3')) score += 35;
-                if (lowerName.includes('google') && !lowerName.includes('male')) score += 30;
+                if (lowerName.includes('premium')) score += 40;
+                if (lowerName.includes('enhanced')) score += 30;
+                if (lowerName.includes('natural')) score += 30;
 
-                // Bonus points for our targeted high-clarity female names
                 const femaleIndex = americanFemaleNames.findIndex(name => lowerName.includes(name));
                 if (femaleIndex !== -1) {
                     score += (americanFemaleNames.length - femaleIndex) * 10;
@@ -439,15 +421,11 @@
                 }
             });
 
-            // Fallback to Samantha or Ava across any pool, or default to highest scoring voice
             if (!selected) {
-                selected = allVoices.find(v => v.name.toLowerCase().includes('samantha')) ||
-                           allVoices.find(v => v.name.toLowerCase().includes('ava')) ||
-                           candidatePool[0] || allVoices[0];
+                selected = allVoices.find(v => v.name.toLowerCase().includes('samantha')) || candidatePool[0] || allVoices[0];
             }
 
-            americanMaleVoice = selected; // Using existing variable name to avoid changing downstream code
-            console.log("Selected High-Clarity Voice:", americanMaleVoice ? americanMaleVoice.name : "None");
+            americanFemaleVoice = selected;
         }
 
         selectDefaultVoice();
@@ -464,28 +442,25 @@
                 content.push({ text: `Title: ${title.textContent}`, element: title });
             }
 
-            // Extract topic summary paragraphs
             const sections = article.querySelectorAll('.section');
             if (sections.length > 0) {
                 const summaryParas = sections[0].querySelectorAll('p');
                 summaryParas.forEach(p => {
-                    // Strip links and raw markdown if any
                     let cleanText = p.textContent.replace(/[*_]/g, '');
                     content.push({ text: cleanText, element: p });
                 });
             }
 
-            // Extract stock table rows
             if (sections.length > 1) {
                 const tableRows = sections[1].querySelectorAll('tbody tr');
                 if (tableRows.length > 0) {
                     content.push({ text: 'Stock Discussions:', element: sections[1].querySelector('h3') });
                     tableRows.forEach(tr => {
-                        // Spread out the ticker letters so it reads A A P L instead of apple
-                        const ticker = tr.cells[0].textContent.trim().split('').join(' ');
+                        const rawTicker = tr.cells[0].textContent.trim();
+                        const tickerSpaced = rawTicker.split('').join('. ') + '.';
                         const verdict = tr.cells[1].textContent.trim();
                         const reason = tr.cells[2].textContent.trim();
-                        const sentence = `For ticker ${ticker}. Verdict is: ${verdict}. Reason: ${reason}`;
+                        const sentence = `For ticker ${tickerSpaced}. Verdict is: ${verdict}. Reason: ${reason}`;
                         content.push({ text: sentence, element: tr });
                     });
                 }
@@ -502,7 +477,7 @@
         }
 
         function playQueue() {
-            if (!isPlaying || isPaused) return;
+            if (!isPlaying || isPaused || isUsingAudioFile) return;
 
             if (currentUtteranceIndex >= utteranceQueue.length) {
                 stopReadAloud();
@@ -516,12 +491,13 @@
             const progressBar = activePanel.querySelector('.dm-progress');
 
             if(progressBar) {
+                progressBar.max = Math.max(1, utteranceQueue.length - 1);
                 progressBar.value = currentUtteranceIndex;
             }
 
-            utterance.rate = 1.0; // Normal uncompressed speech rate for natural clarity
-            if (americanMaleVoice) {
-                utterance.voice = americanMaleVoice;
+            utterance.rate = 1.0;
+            if (americanFemaleVoice) {
+                utterance.voice = americanFemaleVoice;
             }
 
             utterance.onstart = () => {
@@ -535,17 +511,17 @@
                 
                 let preview = item.text.substring(0, 30);
                 if (item.text.length > 30) preview += '...';
-                updateStatus(currentEpisodeId, `Reading: ${preview}`);
+                updateStatus(currentEpisodeId, `Fallback TTS: ${preview}`);
             };
 
             utterance.onend = () => {
-                if (!isPlaying || isPaused) return;
+                if (!isPlaying || isPaused || isUsingAudioFile) return;
                 currentUtteranceIndex++;
                 playQueue();
             };
 
             utterance.onerror = (e) => {
-                if (!isPlaying || isPaused) return;
+                if (!isPlaying || isPaused || isUsingAudioFile) return;
                 console.error("Speech synthesis error", e);
                 currentUtteranceIndex++;
                 playQueue();
@@ -554,21 +530,63 @@
             window.speechSynthesis.speak(utterance);
         }
 
-        function toggleReadAloud(episodeId) {
-            if (currentEpisodeId === episodeId && isPlaying) {
-                if (isPaused) {
-                    isPaused = false;
-                    const btn = document.querySelector(`#${episodeId} .dm-play-btn`);
-                    if(btn) btn.innerHTML = PAUSE_ICON;
-                    playQueue(); // Resume from start of current chunk
-                } else {
+        function setupAudioElementEvents(audio, episodeId) {
+            const progressBar = document.querySelector(`#${episodeId} .dm-progress`);
+            
+            audio.onplay = () => {
+                isPlaying = true;
+                isPaused = false;
+                const btn = document.querySelector(`#${episodeId} .dm-play-btn`);
+                if (btn) btn.innerHTML = PAUSE_ICON;
+                updateStatus(episodeId, '🔊 Neural AI Voice');
+                if (progressBar) progressBar.disabled = false;
+            };
+
+            audio.ontimeupdate = () => {
+                if (audio.duration && progressBar) {
+                    progressBar.max = 100;
+                    progressBar.value = Math.floor((audio.currentTime / audio.duration) * 100);
+                }
+            };
+
+            audio.onpause = () => {
+                if (!audio.ended) {
                     isPaused = true;
-                    window.speechSynthesis.cancel();
                     const btn = document.querySelector(`#${episodeId} .dm-play-btn`);
-                    if(btn) btn.innerHTML = PLAY_ICON;
+                    if (btn) btn.innerHTML = PLAY_ICON;
                     updateStatus(episodeId, 'Paused');
                 }
-                return;
+            };
+
+            audio.onended = () => {
+                stopReadAloud();
+            };
+        }
+
+        function toggleReadAloud(episodeId) {
+            if (currentEpisodeId === episodeId && isPlaying) {
+                if (isUsingAudioFile && activeAudioElement) {
+                    if (isPaused) {
+                        activeAudioElement.play();
+                    } else {
+                        activeAudioElement.pause();
+                    }
+                    return;
+                } else {
+                    if (isPaused) {
+                        isPaused = false;
+                        const btn = document.querySelector(`#${episodeId} .dm-play-btn`);
+                        if(btn) btn.innerHTML = PAUSE_ICON;
+                        playQueue();
+                    } else {
+                        isPaused = true;
+                        window.speechSynthesis.cancel();
+                        const btn = document.querySelector(`#${episodeId} .dm-play-btn`);
+                        if(btn) btn.innerHTML = PLAY_ICON;
+                        updateStatus(episodeId, 'Paused');
+                    }
+                    return;
+                }
             }
 
             if (currentEpisodeId) {
@@ -576,6 +594,28 @@
             }
 
             currentEpisodeId = episodeId;
+            const audioElem = document.querySelector(`#${episodeId} .dm-audio-element`);
+
+            // Try playing Edge-TTS neural audio file first
+            if (audioElem && audioElem.src) {
+                setupAudioElementEvents(audioElem, episodeId);
+                audioElem.play().then(() => {
+                    activeAudioElement = audioElem;
+                    isUsingAudioFile = true;
+                    isPlaying = true;
+                    isPaused = false;
+                }).catch(() => {
+                    // Audio file not present or block, fallback to SpeechSynthesis
+                    console.log(`Pre-rendered MP3 not available for ${episodeId}, falling back to Web Speech synthesis.`);
+                    startSpeechSynthesisFallback(episodeId);
+                });
+            } else {
+                startSpeechSynthesisFallback(episodeId);
+            }
+        }
+
+        function startSpeechSynthesisFallback(episodeId) {
+            isUsingAudioFile = false;
             isPlaying = true;
             isPaused = false;
             currentUtteranceIndex = 0;
@@ -584,7 +624,7 @@
             const activePanel = document.getElementById(episodeId);
             const progressBar = activePanel.querySelector('.dm-progress');
             if(progressBar) {
-                progressBar.max = Math.max(0, utteranceQueue.length - 1);
+                progressBar.max = Math.max(1, utteranceQueue.length - 1);
                 progressBar.value = 0;
                 progressBar.disabled = false;
             }
@@ -595,10 +635,19 @@
             playQueue();
         }
 
-        function seekReadAloud(episodeId, indexStr) {
-            const index = parseInt(indexStr);
-            if(isNaN(index)) return;
+        function seekReadAloud(episodeId, valStr) {
+            const val = parseFloat(valStr);
+            if(isNaN(val)) return;
 
+            if (currentEpisodeId === episodeId && isUsingAudioFile && activeAudioElement) {
+                if (activeAudioElement.duration) {
+                    activeAudioElement.currentTime = (val / 100) * activeAudioElement.duration;
+                }
+                return;
+            }
+
+            // Fallback SpeechSynthesis seek
+            const index = Math.floor(val);
             if(currentEpisodeId !== episodeId || !isPlaying) {
                 if(currentEpisodeId) stopReadAloud();
                 currentEpisodeId = episodeId;
@@ -608,7 +657,7 @@
                 const activePanel = document.getElementById(episodeId);
                 const progressBar = activePanel.querySelector('.dm-progress');
                 if(progressBar) {
-                    progressBar.max = Math.max(0, utteranceQueue.length - 1);
+                    progressBar.max = Math.max(1, utteranceQueue.length - 1);
                     progressBar.disabled = false;
                 }
             }
@@ -618,7 +667,6 @@
             if(btn) btn.innerHTML = PAUSE_ICON;
 
             currentUtteranceIndex = Math.min(index, utteranceQueue.length - 1);
-            
             window.speechSynthesis.cancel();
             
             setTimeout(() => {
@@ -626,11 +674,20 @@
             }, 50);
         }
 
-        function updateSeekPreview(episodeId, indexStr) {
-            const index = parseInt(indexStr);
-            if(isNaN(index)) return;
+        function updateSeekPreview(episodeId, valStr) {
+            const val = parseFloat(valStr);
+            if(isNaN(val)) return;
             
+            if (currentEpisodeId === episodeId && isUsingAudioFile && activeAudioElement && activeAudioElement.duration) {
+                const targetSec = Math.floor((val / 100) * activeAudioElement.duration);
+                const mins = Math.floor(targetSec / 60);
+                const secs = String(targetSec % 60).padStart(2, '0');
+                updateStatus(episodeId, `Seek: ${mins}:${secs}`);
+                return;
+            }
+
             let queue = (currentEpisodeId === episodeId && isPlaying) ? utteranceQueue : extractEpisodeContent(episodeId);
+            const index = Math.floor(val);
             if(index >= 0 && index < queue.length) {
                 let text = queue[index].text;
                 let preview = text.substring(0, 30);
@@ -640,8 +697,15 @@
         }
 
         function stopReadAloud() {
+            if (isUsingAudioFile && activeAudioElement) {
+                activeAudioElement.pause();
+                activeAudioElement.currentTime = 0;
+                activeAudioElement = null;
+            }
+
             isPlaying = false;
             isPaused = false;
+            isUsingAudioFile = false;
             window.speechSynthesis.cancel();
             
             if (activeElement) {
@@ -666,3 +730,4 @@
     </script>
 </body>
 </html>
+
