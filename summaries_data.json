@@ -1084,5 +1084,47 @@
         "reason": "Listener is up 124%; host recommends trimming the position to preserve gains. While a 'gold standard' P&C insurer with strong recent earnings and AI tailwinds, exceptional results were driven by reserve releases and lower-than-normal catastrophe losses, which may not be repeatable."
       }
     ]
+  },
+  "2026-08-07": {
+    "title": "Workers Are Dropping Out: What Falling Labor Force Participation Signals for the Economy",
+    "summary": "The main market, economic, or educational topic discussed by the hosts is the **falling labor force participation rate in the United States and its implications for the broader economy and government finances.**\n\nThe host emphasizes that the US labor force participation rate has declined to its lowest level since 1976. This trend, which influences the reported unemployment rate even amidst low job creation, is primarily driven by demographic shifts. Specifically, the ongoing aging of the population, particularly the retirement of the baby boomer generation, means more individuals are exiting the workforce.\n\nThis demographic shift has significant economic ramifications beyond immediate job market performance. As older individuals transition out of employment, they move from contributing to social safety nets like Social Security and Medicare to becoming recipients. This fundamental change in their economic role contributes to the rising government deficit and the growth of \"on-balance sheet liabilities,\" posing a long-term structural challenge to fiscal stability. The discussion underscores that this is a deep-seated demographic phenomenon rather than a fluctuating indicator of short-term economic health.",
+    "recommendations": [
+      {
+        "ticker": "PLAY",
+        "exchange": "Not specified",
+        "recommendation": "Sell",
+        "reason": "The company is on the verge of bankruptcy due to overexpansion, $3.5 billion in debt, negative free cash flow, and negative return on equity. Investors should stay away."
+      },
+      {
+        "ticker": "GILD",
+        "exchange": "Not specified",
+        "recommendation": "Neutral",
+        "reason": "Gilead is fundamentally strong with a low-teens forward multiple. While preferred less than AstraZeneca long-term, it offers relative safety near-term compared to AZN's M&A risks."
+      },
+      {
+        "ticker": "AZN",
+        "exchange": "Not specified",
+        "recommendation": "Hold",
+        "reason": "The host owns AstraZeneca and likes it more than Gilead long-term due to better revenue growth (12-13%). However, there is near-term risk from a credible rumor of a potential acquisition of Bristol Myers."
+      },
+      {
+        "ticker": "HUBS",
+        "exchange": "Not specified",
+        "recommendation": "Watchlist",
+        "reason": "The host likes the company's difficult-to-replicate ecosystem and significant free cash flow ($2 billion). It is actively buying back shares, and the stock shows signs of finding a bottom after a recent drop, indicating buyer interest. It is on their top 10 list of software names for potential purchase."
+      },
+      {
+        "ticker": "PGR",
+        "exchange": "Not specified",
+        "recommendation": "Buy",
+        "reason": "Progressive is considered one of the better-run insurance companies with strong free cash flow and a good balance sheet. It is buying back shares and has experienced a valuation reset, finding a bottom despite projected near-term earnings decline."
+      },
+      {
+        "ticker": "APLE",
+        "exchange": "Not specified",
+        "recommendation": "Watchlist",
+        "reason": "Apple Hospitality is a good lodging REIT with a 6% dividend, but its current valuation is historically high (EV/EBITDA around 12). Technicals are weakening, and the host would only consider buying at a lower price point ($13-$14) than the current $16."
+      }
+    ]
   }
 }
