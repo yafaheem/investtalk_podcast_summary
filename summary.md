@@ -2,6 +2,28 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: The SaaSpocalypse Debate: Are AI Stocks Disrupting SaaS in 2026?
+**Date:** 2026-08-11
+
+### Topic Summary
+The main market, economic, or educational topic discussed in this podcast transcript is the **impact of Artificial Intelligence (AI) on the Software-as-a-Service (SaaS) industry, referred to as the "Saspocalypse" debate.**
+
+The host delves into a significant structural shift occurring in the software market, moving from traditional license-based SaaS models—where companies pay for user seats to access software dashboards—towards an "agent" model. This new paradigm suggests that AI agents will increasingly be able to perform many tasks previously handled by software and human workers, such as executing workflows, financial analysis, and legal document review. This transition raises concerns about AI potentially cannibalizing the recurring revenue streams of legacy software providers by reducing the need for human workers and, consequently, fewer software seat licenses.
+
+This perceived threat has led to a notable revaluation in the market, with enterprise value to revenue multiples for traditional software companies decreasing significantly, while those for AI infrastructure and AI-native companies have seen substantial increases. The discussion categorizes different types of software companies by their risk exposure to AI disruption: high-risk areas include general-purpose platforms like ad technology and basic business management tools, which are easier for AI to replicate. Conversely, niche industrial software and specialized financial or compliance systems are considered moderate-risk, as they often require unique data or expertise that general AI models find harder to fully master. Despite the disruption, the host emphasizes that not all software companies are equally vulnerable, and discerning investors may find investment opportunities among those well-positioned to adapt to the AI-driven evolution of the industry.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [DLR](https://www.google.com/finance/quote/DLR:NYSE) | Sell | For DLR preferred stock, it's effectively fixed income with credit and duration risk, lower protection than bondholders, and no upside of common stock. The data center industry also faces risks like potential overcapacity for AI and technology shifts, making preferreds unattractive despite their yield. |
+| [B](https://www.google.com/finance/quote/B:NYSE) | Watchlist | Barrick Gold's potential spin-off usually unlocks value and creates pure plays. However, details of the new entity and how debt will be allocated are unknown. It's a 'wait and see' situation, though the parent company's good balance sheet suggests it might not be saddled with debt. |
+| [AEM](https://www.google.com/finance/quote/AEM:NYSE) | Buy | Short-term overbought, but the host believes the stock is likely to consolidate before its next move higher. Sentiment for the precious metals space has been refreshed after a pullback, and the host's firm has been adding to client positions. |
+| [GM](https://www.google.com/finance/quote/GM:NYSE) | Sell | While showing short-term momentum, GM's auto industry is not a great long-term investment due to high capital intensity, competitive nature, and supply chain issues. It has a highly leveraged balance sheet, low return on equity, and has generally underperformed the overall market long-term. |
+| [VEEV](https://www.google.com/finance/quote/VEEV:NYSE) | Buy | Veeva Systems is a niche software company for the life sciences industry, which the host favors for its staying power against AI disruption. It has strong free cash flow, is rebounding, and is perceived to have more upside potential despite its valuation. |
+| [APPN](https://www.google.com/finance/quote/APPN:NASDAQ) | Sell | Appian's business process management software is considered at high risk of being competed away by AI. Despite becoming profitable, its free cash flow yield is not strong, and its valuation is expensive. The host prefers more specialized niche software. |
+
+---
+
 ## Episode: Data Centers, Housing, and the Hidden Real Estate Play in the AI Boom
 **Date:** 2026-08-10
 
