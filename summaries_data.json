@@ -1216,5 +1216,47 @@
         "reason": "Appian's business process management software is considered at high risk of being competed away by AI. Despite becoming profitable, its free cash flow yield is not strong, and its valuation is expensive. The host prefers more specialized niche software."
       }
     ]
+  },
+  "2026-08-12": {
+    "title": "S&P 500 Near Record Highs: Is the Stock Market Rally Sustainable in 2026?",
+    "summary": "The main market topic discussed by the host is the **sustainability of the current stock market rally, specifically the S&P 500 reaching near-record highs.**\n\nThe host examines whether the S&P 500's upward trajectory is durable, considering underlying market dynamics. He highlights that the rally is primarily driven by earnings growth across a broader range of companies, particularly small and mid-cap stocks, rather than mere multiple expansion. This is evidenced by the \"Magnificent Seven\" stocks having plateaued for several quarters while the overall market continues to advance. The host notes that Q1 earnings growth for the rest of the S&P 500 (excluding the largest tech names) was substantial, fueling this broader market performance.\n\nHowever, the host identifies several factors that could challenge the rally's sustainability. He points out that current earnings growth is largely due to companies raising prices and expanding margins, particularly in sectors like energy refining, rather than significant increases in productivity. Risks include potential margin compression if inflation cools and competition intensifies. Furthermore, consumer stress, marked by rising credit card delinquencies and declining real incomes, coupled with ongoing geopolitical volatility contributing to inflation, present headwinds. The host also suggests that political motivations, such as the administration's desire to keep markets elevated until the midterms, might play a role in sustaining the rally in the short term, but a \"sentiment reset\" is likely in the latter half of the year.",
+    "recommendations": [
+      {
+        "ticker": "GSK",
+        "exchange": "NYSE",
+        "recommendation": "Neutral",
+        "reason": "Good business with a solid balance sheet and decent, though slowing, growth. Fairly valued, not a bargain but nothing majorly wrong. Consolidating due to restructuring. Likes foreign exposure. Gives a 'mild thumbs up' but is 'none enthusiastic'."
+      },
+      {
+        "ticker": "SPGI",
+        "exchange": "NYSE",
+        "recommendation": "Hold",
+        "reason": "Currently owned for clients and still liked long-term, but reconsidering its position due to concerns about industry changes (e.g., AI disrupting centralized analysis). Still a good company, but not liked as much as before, making way for potentially better names."
+      },
+      {
+        "ticker": "RING",
+        "exchange": "NYSE Arca",
+        "recommendation": "Buy",
+        "reason": "Short-term overbought after a significant rally, but the medium to long-term technical setup remains constructively to the upside. Sentiment reset after a 40% pullback. Has a lower expense ratio and is more concentrated than GDX."
+      },
+      {
+        "ticker": "GBX",
+        "exchange": "NYSE",
+        "recommendation": "Sell",
+        "reason": "Technicals are poor, showing 'bearish consolidation' and recent rallies failing. Earnings expectations are declining (negative growth), balance sheet has too much debt, cash flow is negative, and the dividend is not sustainable. Believes there are 'far better names' in the industrial sector."
+      },
+      {
+        "ticker": "WTV",
+        "exchange": "NYSE Arca",
+        "recommendation": "Buy",
+        "reason": "A 'good fund' with a low expense ratio (12 basis points) and strong long-term performance (top 2% in category over 10 years). Provides good mid-cap value exposure, with a heavy leaning towards financials, which tend to perform well in inflationary environments. Likes it as 'a good chunk of mid-cap exposure'."
+      },
+      {
+        "ticker": "VDADX",
+        "exchange": "Not applicable (Mutual Fund)",
+        "recommendation": "Sell",
+        "reason": "Not suitable for income (low current yield) nor for long-term performance, as it consistently underperforms its category (e.g., in the bottom quartile over 1, 3, 5, and 10 years). Holdings have a higher debt-to-capital ratio than peers and struggle in a higher interest rate environment. Recommends searching for a better alternative."
+      }
+    ]
   }
 }
