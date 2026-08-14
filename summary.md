@@ -2,6 +2,29 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: U.S. Housing Market Cracks: Homes Selling Below Asking Price in 38 Major Cities
+**Date:** 2026-08-13
+
+### Topic Summary
+The main economic topic discussed by the host is the **current state and shifting dynamics of the U.S. housing market**.
+
+The host highlights that the long-dominant sellers' market is showing signs of turning, with homes now selling below asking price in 38 out of 50 major U.S. cities. He clarifies that this is not a repeat of the 2008 crash, as national median home prices remain near record highs and most markets still show year-over-year price gains. Instead, it signifies a loss of pricing power for sellers and the end of widespread bidding wars that characterized the pandemic housing boom.
+
+The observed shifts are geographically diverse, categorized as a "correction" in some markets and a "normalization" in others. Sunbelt markets, particularly in Florida and Texas, are experiencing a correction due to overbuilding and escalating costs like insurance premiums and property taxes, which significantly impact overall affordability. Conversely, high-demand coastal cities in the Northeast and Midwest are seeing more of a normalization, with supply still constrained and prices holding firm. These regional differences create a "K-shaped" housing market, with softening in affordable Sunbelt areas and resilience in high-end coastal regions. This environment has implications for homebuilders, leading to consolidation, potential headwinds for certain real estate investment trusts (REITs), and giving potential buyers in softening markets newfound leverage to negotiate.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [AVAV](https://www.google.com/finance/quote/AVAV:NASDAQ) | Buy (Partial Position) | Likes the company, sees reasonable valuation and strong bookings ($2.7B backlog) amidst changing warfare trends (drone focus). Despite past bottom-line misses, recent Q4 showed positive reversal. Recommends entering a partial position and waiting for another quarter of positive performance before a full position. |
+| [REGN](https://www.google.com/finance/quote/REGN:NASDAQ) | Buy | Likes and holds the stock for clients, considering it one of the most compelling large-cap biotech values. Highlights solid balance sheet ($5.6B net cash), strong margins, reasonable valuation, consistent double-digit growth, recent earnings beats (40% EPS beat), and a promising near-term pipeline with potential FDA approvals. |
+| [ONTO](https://www.google.com/finance/quote/ONTO:NYSE) | Watchlist | Recognizes strong recent performance (revenue up 35% YoY, EPS beat 15%) and its importance in the semiconductor industry. However, the stock's significant run-up (up 203% in 52 weeks) has made it 'really expensive' (33.7x forward P/E, 8.6x P/B), leading to concerns that future beats may not sustain the price. Recommends keeping on a watchlist and waiting for it to settle before considering a position. |
+| [PLSE](https://www.google.com/finance/quote/PLSE:NASDAQ) | Sell | Identifies Pulse Biosciences as a small-cap 'gamble play' due to its clinical stage, highly volatile and often negative revenue, consistent cash burn, and shareholder dilution. Current valuation is a 'crazy premium' on minimal revenue. Recommends trimming the position, suggesting 3% of a portfolio is too high for such a risky stock, and ultimately concludes it's 'good enough to pass'. |
+| [UBER](https://www.google.com/finance/quote/UBER:NYSE) | Hold | Views Uber as a 'real business' with 'real cash flow' and a 'real moat', citing strong earnings, $2.3B in quarterly free cash flow, and significant gross bookings growth. Considers it 'safer' than Robinhood, despite the risk associated with its autonomous vehicle strategy. |
+| [HOOD](https://www.google.com/finance/quote/HOOD:NASDAQ) | Neutral | Labels Robinhood as a 'dark horse pick' with potential for 'explosive upsides' due to its transformation into a full-service financial platform and involvement in speculative markets (e.g., prediction markets, sports gambling). However, expresses ethical concerns, notes its heavy tie to volatile trading volumes, warns it has never been through a real recession, and anticipates potential future regulation in its gambling-related revenue streams. Concludes it's 'not a safe pick'. |
+| [DDS](https://www.google.com/finance/quote/DDS:NYSE) | Neutral | Acknowledges Dillard's as a 'disciplined capital allocator' with solid margins, strong cash position, reasonable valuation, good buybacks, and a consistent dividend. Despite being 'not too exciting' and facing 'secular headwinds' as a department store, the host considers it 'one of the better ones' in its challenging sector. |
+
+---
+
 ## Episode: S&P 500 Near Record Highs: Is the Stock Market Rally Sustainable in 2026?
 **Date:** 2026-08-12
 
