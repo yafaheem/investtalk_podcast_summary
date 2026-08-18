@@ -1354,5 +1354,41 @@
         "reason": "While earnings growth is slowing, the stock has experienced significant multiple contraction, making it cheap. Technically at a good support level, and free cash flow remains strong despite potential headwinds like GLP-1 drugs."
       }
     ]
+  },
+  "2026-08-17": {
+    "title": "Global Shipping Under Siege: How Hormuz, the Black Sea, and Red Sea Threats Hit Your Investments",
+    "summary": "The main market, economic, or educational topic discussed by the hosts revolves around **navigating contemporary economic pressures, market dynamics, and essential investment strategies for making informed decisions in today's financial landscape.** The podcast covers a range of significant issues designed to help listeners understand prevailing economic headwinds, market trends, and critical due diligence required for sound financial planning.\n\nA central focus of the discussion is the impact of **global supply chain disruptions and inflationary pressures**. The hosts highlight how issues in key shipping lanes, such as the Black Sea, Red Sea, and Strait of Hormuz, contribute to rising costs for essential goods like fertilizer and food, and lead to increased transit times and expenses for consumer goods and industrial supplies. This persistent inflationary backdrop affects consumer purchasing power, tightens business margins, and reshapes the profitability of various economic sectors, identifying both \"losers\" (like consumers and packaged food producers) and \"beneficiaries\" (such as oil companies and shippers).\n\nBeyond supply chain issues, the podcast delves into the drivers behind **rising interest rates** and their broader economic implications. The discussion moves beyond government deficits to explore the \"crowding out theory,\" where massive borrowing by large tech and AI companies, even at higher rates, competes significantly for available capital. This intense demand from corporate borrowers contributes to elevated capital costs across the economy, influencing the bond market and raising questions about the efficiency of capital allocation, particularly in an environment where index funds are increasingly price-agnostic. From an investment strategy perspective, the show emphasizes crucial educational points such as **position sizing**\u2014limiting exposure to any single asset\u2014and diligently **vetting private or alternative investments**. Given the high fees and reduced liquidity often associated with these funds, investors are advised to ask critical questions regarding costs, risks, historical performance, tax efficiency, legal recourse, and the justification of fees to ensure transparency and suitability. Additionally, the hosts address the importance of understanding \"real\" earnings by scrutinizing financial statements to distinguish operating income and free cash flow from non-operating gains, providing a clearer picture of a company's fundamental financial health.",
+    "recommendations": [
+      {
+        "ticker": "IIPR",
+        "exchange": "NYSE",
+        "recommendation": "Buy",
+        "reason": "A high-risk cannabis REIT, but showing a rebound in funds from operation and offers a good risk/reward profile for investors comfortable with high risk."
+      },
+      {
+        "ticker": "VT",
+        "exchange": "NYSE Arca",
+        "recommendation": "Buy",
+        "reason": "A low-fee, solid portfolio and a good benchmark for a 60/40 domestic/foreign equity allocation. It's a good core holding for a global portfolio, though it won't dramatically increase foreign exposure on its own."
+      },
+      {
+        "ticker": "WSM",
+        "exchange": "NYSE",
+        "recommendation": "Watchlist",
+        "reason": "A good company with fantastic return on equity and no debt, but currently too expensive (24x forward earnings for a cyclical business) after a significant run-up. It should be kept on a watchlist and considered for purchase in the next down cycle."
+      },
+      {
+        "ticker": "OKE",
+        "exchange": "NYSE",
+        "recommendation": "Buy",
+        "reason": "A good business in the natural gas/oil midstream space with solid technicals. It's a type of company desirable to own in the current geopolitical environment due to the continued need for US energy production, despite having had a good run recently."
+      },
+      {
+        "ticker": "AVB",
+        "exchange": "NYSE",
+        "recommendation": "Hold",
+        "reason": "One of the best-run apartment REITs, owning properties in strong major city markets where rents are increasing post-pandemic. A recent pullback is seen as a potential buying opportunity rather than a reason to sell, and existing shares should continue to be held."
+      }
+    ]
   }
 }

@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Global Shipping Under Siege: How Hormuz, the Black Sea, and Red Sea Threats Hit Your Investments
+**Date:** 2026-08-17
+
+### Topic Summary
+The main market, economic, or educational topic discussed by the hosts revolves around **navigating contemporary economic pressures, market dynamics, and essential investment strategies for making informed decisions in today's financial landscape.** The podcast covers a range of significant issues designed to help listeners understand prevailing economic headwinds, market trends, and critical due diligence required for sound financial planning.
+
+A central focus of the discussion is the impact of **global supply chain disruptions and inflationary pressures**. The hosts highlight how issues in key shipping lanes, such as the Black Sea, Red Sea, and Strait of Hormuz, contribute to rising costs for essential goods like fertilizer and food, and lead to increased transit times and expenses for consumer goods and industrial supplies. This persistent inflationary backdrop affects consumer purchasing power, tightens business margins, and reshapes the profitability of various economic sectors, identifying both "losers" (like consumers and packaged food producers) and "beneficiaries" (such as oil companies and shippers).
+
+Beyond supply chain issues, the podcast delves into the drivers behind **rising interest rates** and their broader economic implications. The discussion moves beyond government deficits to explore the "crowding out theory," where massive borrowing by large tech and AI companies, even at higher rates, competes significantly for available capital. This intense demand from corporate borrowers contributes to elevated capital costs across the economy, influencing the bond market and raising questions about the efficiency of capital allocation, particularly in an environment where index funds are increasingly price-agnostic. From an investment strategy perspective, the show emphasizes crucial educational points such as **position sizing**—limiting exposure to any single asset—and diligently **vetting private or alternative investments**. Given the high fees and reduced liquidity often associated with these funds, investors are advised to ask critical questions regarding costs, risks, historical performance, tax efficiency, legal recourse, and the justification of fees to ensure transparency and suitability. Additionally, the hosts address the importance of understanding "real" earnings by scrutinizing financial statements to distinguish operating income and free cash flow from non-operating gains, providing a clearer picture of a company's fundamental financial health.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [IIPR](https://www.google.com/finance/quote/IIPR:NYSE) | Buy | A high-risk cannabis REIT, but showing a rebound in funds from operation and offers a good risk/reward profile for investors comfortable with high risk. |
+| [VT](https://www.google.com/finance/quote/VT:NYSE ARCA) | Buy | A low-fee, solid portfolio and a good benchmark for a 60/40 domestic/foreign equity allocation. It's a good core holding for a global portfolio, though it won't dramatically increase foreign exposure on its own. |
+| [WSM](https://www.google.com/finance/quote/WSM:NYSE) | Watchlist | A good company with fantastic return on equity and no debt, but currently too expensive (24x forward earnings for a cyclical business) after a significant run-up. It should be kept on a watchlist and considered for purchase in the next down cycle. |
+| [OKE](https://www.google.com/finance/quote/OKE:NYSE) | Buy | A good business in the natural gas/oil midstream space with solid technicals. It's a type of company desirable to own in the current geopolitical environment due to the continued need for US energy production, despite having had a good run recently. |
+| [AVB](https://www.google.com/finance/quote/AVB:NYSE) | Hold | One of the best-run apartment REITs, owning properties in strong major city markets where rents are increasing post-pandemic. A recent pullback is seen as a potential buying opportunity rather than a reason to sell, and existing shares should continue to be held. |
+
+---
+
 ## Episode: Soft Jobs Report and the Dollar's New Direction: What It Means for Investors
 **Date:** 2026-08-14
 
