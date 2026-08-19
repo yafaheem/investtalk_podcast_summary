@@ -1390,5 +1390,59 @@
         "reason": "One of the best-run apartment REITs, owning properties in strong major city markets where rents are increasing post-pandemic. A recent pullback is seen as a potential buying opportunity rather than a reason to sell, and existing shares should continue to be held."
       }
     ]
+  },
+  "2026-08-18": {
+    "title": "The Trillion-dollar Interest Bill Nobody Votes On",
+    "summary": "The main market, economic, or educational topic discussed by the hosts is the **macroeconomic impact of the escalating U.S. federal debt and its associated \"trillion-dollar interest bill.\"**\n\nThe podcast details how the growing U.S. federal debt and its substantial interest payments are becoming a primary driver of macroeconomic policy. The hosts explain that these interest costs, which are projected to reach a trillion dollars annually, are now effectively mandatory spending, influencing the broader economy and financial markets. This situation creates what they refer to as \"fiscal dominance,\" where government spending and borrowing exert a more significant influence on monetary policy than traditional central bank actions.\n\nThis rising debt burden, particularly when deficits outpace economic growth, puts upward pressure on long-term interest rates. This is exacerbated by a treasury market imbalance, as traditional foreign buyers of U.S. government bonds are reducing their purchases, forcing the government to issue more debt to finance its operations and refinance existing obligations. Higher bond yields consequently affect various aspects of the economy, from mortgage rates to corporate borrowing costs. Globally, this fiscal instability is prompting central banks to diversify their reserves by increasingly acquiring gold, a liability-free asset, as a hedge against sanctions and perceived economic uncertainty, leading to a notable decline in the U.S. dollar's share of global reserves.",
+    "recommendations": [
+      {
+        "ticker": "CRDO",
+        "exchange": "NASDAQ",
+        "recommendation": "Neutral",
+        "reason": "Believes the AI data infrastructure space has peaked and is due for a deeper correction; advises to hold off on buying as the stock and sector are showing weakness."
+      },
+      {
+        "ticker": "VLO",
+        "exchange": "NYSE",
+        "recommendation": "Neutral",
+        "reason": "No specific recommendation given in this segment, though the host generally likes refining companies long-term due to limited capacity."
+      },
+      {
+        "ticker": "MPC",
+        "exchange": "NYSE",
+        "recommendation": "Buy",
+        "reason": "Likes refineries long-term due to difficulty in increasing capacity; MPC is preferred among major refiners for its better long-term profitability metrics and repaired balance sheet."
+      },
+      {
+        "ticker": "PSX",
+        "exchange": "NYSE",
+        "recommendation": "Neutral",
+        "reason": "Part of a good sector (refining), but the host expresses a preference for MPC due to its better long-term profitability metrics."
+      },
+      {
+        "ticker": "AVDE",
+        "exchange": "NYSE",
+        "recommendation": "Buy",
+        "reason": "One of the best international ETFs for broad exposure, especially for non-stock pickers. Has diversified holdings, favorable sector weightings (materials, industrials, energy), and an acceptable expense ratio."
+      },
+      {
+        "ticker": "CVX",
+        "exchange": "NYSE",
+        "recommendation": "Hold",
+        "reason": "Cyclical stock but a good long-term diversified energy player (E&P and refining). Expects more near-term upside due to Middle East issues causing supply problems; suggests trimming at a higher price ($2.30-$2.35) in the medium term."
+      },
+      {
+        "ticker": "CRM",
+        "exchange": "NYSE",
+        "recommendation": "Neutral",
+        "reason": "Software business model (customer relationship management) is seen as somewhat susceptible to AI displacement over the medium to long term, posing a risk to the business model."
+      },
+      {
+        "ticker": "NOW",
+        "exchange": "NYSE",
+        "recommendation": "Buy",
+        "reason": "Considered a 'much better business' with a 'protected economic moat' due to deep integration into corporations. Shows relatively stable growth and consistent cash flow, making it less susceptible to AI displacement than other software names. Valuation is seen as 'not bad'."
+      }
+    ]
   }
 }

@@ -2,6 +2,30 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: The Trillion-dollar Interest Bill Nobody Votes On
+**Date:** 2026-08-18
+
+### Topic Summary
+The main market, economic, or educational topic discussed by the hosts is the **macroeconomic impact of the escalating U.S. federal debt and its associated "trillion-dollar interest bill."**
+
+The podcast details how the growing U.S. federal debt and its substantial interest payments are becoming a primary driver of macroeconomic policy. The hosts explain that these interest costs, which are projected to reach a trillion dollars annually, are now effectively mandatory spending, influencing the broader economy and financial markets. This situation creates what they refer to as "fiscal dominance," where government spending and borrowing exert a more significant influence on monetary policy than traditional central bank actions.
+
+This rising debt burden, particularly when deficits outpace economic growth, puts upward pressure on long-term interest rates. This is exacerbated by a treasury market imbalance, as traditional foreign buyers of U.S. government bonds are reducing their purchases, forcing the government to issue more debt to finance its operations and refinance existing obligations. Higher bond yields consequently affect various aspects of the economy, from mortgage rates to corporate borrowing costs. Globally, this fiscal instability is prompting central banks to diversify their reserves by increasingly acquiring gold, a liability-free asset, as a hedge against sanctions and perceived economic uncertainty, leading to a notable decline in the U.S. dollar's share of global reserves.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [CRDO](https://www.google.com/finance/quote/CRDO:NASDAQ) | Neutral | Believes the AI data infrastructure space has peaked and is due for a deeper correction; advises to hold off on buying as the stock and sector are showing weakness. |
+| [VLO](https://www.google.com/finance/quote/VLO:NYSE) | Neutral | No specific recommendation given in this segment, though the host generally likes refining companies long-term due to limited capacity. |
+| [MPC](https://www.google.com/finance/quote/MPC:NYSE) | Buy | Likes refineries long-term due to difficulty in increasing capacity; MPC is preferred among major refiners for its better long-term profitability metrics and repaired balance sheet. |
+| [PSX](https://www.google.com/finance/quote/PSX:NYSE) | Neutral | Part of a good sector (refining), but the host expresses a preference for MPC due to its better long-term profitability metrics. |
+| [AVDE](https://www.google.com/finance/quote/AVDE:NYSE) | Buy | One of the best international ETFs for broad exposure, especially for non-stock pickers. Has diversified holdings, favorable sector weightings (materials, industrials, energy), and an acceptable expense ratio. |
+| [CVX](https://www.google.com/finance/quote/CVX:NYSE) | Hold | Cyclical stock but a good long-term diversified energy player (E&P and refining). Expects more near-term upside due to Middle East issues causing supply problems; suggests trimming at a higher price ($2.30-$2.35) in the medium term. |
+| [CRM](https://www.google.com/finance/quote/CRM:NYSE) | Neutral | Software business model (customer relationship management) is seen as somewhat susceptible to AI displacement over the medium to long term, posing a risk to the business model. |
+| [NOW](https://www.google.com/finance/quote/NOW:NYSE) | Buy | Considered a 'much better business' with a 'protected economic moat' due to deep integration into corporations. Shows relatively stable growth and consistent cash flow, making it less susceptible to AI displacement than other software names. Valuation is seen as 'not bad'. |
+
+---
+
 ## Episode: Global Shipping Under Siege: How Hormuz, the Black Sea, and Red Sea Threats Hit Your Investments
 **Date:** 2026-08-17
 
