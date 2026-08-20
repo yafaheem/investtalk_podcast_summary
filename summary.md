@@ -2,6 +2,28 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Small caps woke up: is the rally finally broadening?
+**Date:** 2026-08-19
+
+### Topic Summary
+The main market topic discussed by the host is **The Broadening Market Rally and the Rise of Small-Cap and Value Stocks**.
+
+The host highlights the significant rally observed in small-cap stocks, particularly the Russell 2000, which has been outperforming large-cap indices in 2026. This performance signifies a crucial "leadership rotation" within the market, shifting away from a narrow concentration in a few mega-cap technology companies towards broader participation across industrials and smaller firms. This expansion of market breadth, where a wider array of stocks contribute to the rally, is presented as a healthy indicator for a bull market, contrasting with less sustainable narrow rallies driven by only a handful of large companies.
+
+Several key factors are identified as drivers for this shift. Firstly, a substantial valuation gap existed, with small-cap stocks trading at a significant discount to large-caps, which the market is now correcting. Secondly, the earnings growth advantage of mega-cap companies has converged with the rest of the market, rotating money from previously expensive, fast-growing stocks to more undervalued ones. Additionally, small-cap companies' higher sensitivity to interest rates (due to more floating-rate debt) means they disproportionately benefit from stable or falling rate expectations. Lastly, their predominantly domestic revenue exposure insulates them from global geopolitical headwinds and positions them to benefit from reshoring incentives.
+
+While acknowledging the positive signals, the host also cautions investors about inherent risks within the small-cap segment, such as companies facing debt refinancing challenges, unprofitability, or speculative business models. For investors looking to gain exposure, the recommendation is to employ strategies like profitability and quality screens to filter out weaker companies, appropriately size their portfolio allocation (e.g., 10-20%), and utilize dollar-cost averaging to avoid chasing returns, emphasizing a structural shift rather than a short-term trend.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [VMVAX](https://www.google.com/finance/quote/VMVAX:N/A) | Buy | Vanguard Midcap Value Index Fund (mutual fund) with a low expense ratio, broad diversification, and historically good performance. It's considered a good way to get midcap value exposure, tilting towards areas with higher expected returns over the long run and trading at a lower P/E than the S&P. |
+| [ROL](https://www.google.com/finance/quote/ROL:NYSE) | Neutral | Rollins Inc., a global pest control company with a solid growth history, is currently experiencing modest revenue growth, an EPS miss, contracting margins, and lowered guidance. Despite being a recession-resilient business, the host is 'unlikely to buy' given the poor downward move fundamentally and in price, awaiting a 'reset' or 'movement in momentum'. |
+| [AEP](https://www.google.com/finance/quote/AEP:NYSE) | Hold | American Electric Power (AEP) is an AI power infrastructure utility owned for clients. Despite a mixed recent quarter, the company raised full-year guidance and expanded data center load commitment. It is considered poised to benefit from AI data center growth and power demand, though utility risks in a rising rate environment are acknowledged. The host wants to 'hold for our clients'. |
+| [AAPL](https://www.google.com/finance/quote/AAPL:NASDAQ) | Hold | Apple is a core holding for the host's clients, liked for its strong consumer spending, significant revenue, cash flow, and healthy balance sheet. The host acknowledges its strong performance and advises existing long-term holders with large gains to consider taking some profits if the stock represents a highly concentrated portion of their portfolio, but fundamentally 'likes' the company. |
+
+---
+
 ## Episode: The Trillion-dollar Interest Bill Nobody Votes On
 **Date:** 2026-08-18
 
