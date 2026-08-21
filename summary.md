@@ -2,6 +2,31 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: The dollar's slide and what it does to your foreign holdings
+**Date:** 2026-08-20
+
+### Topic Summary
+The main educational topic discussed by the hosts is **the significant impact of currency movements on international investment returns**.
+
+The host explains that when investors purchase international equity funds, their domestic currency is converted into various foreign currencies to acquire assets. Any subsequent gains from these investments, such as dividends or capital appreciation, are initially realized in those foreign currencies. These foreign currency gains are then converted back into the investor's home currency when calculating returns.
+
+A critical insight shared is that a weakening domestic currency (like the US dollar, which was noted to be sliding) acts as a "tailwind" for unhedged international holdings. This means that foreign currency gains become worth more in domestic currency terms, effectively boosting returns. Conversely, a strengthening domestic currency would create a "headwind." The host emphasizes that these currency fluctuations can quietly drive a large share—sometimes 30% to 50%—of the total return variability in unhedged international funds, potentially even overshadowing the actual equity performance.
+
+Investors are presented with a choice between "hedged" and "unhedged" international exposure. Hedged funds utilize currency derivatives to neutralize exchange rate effects, offering a return purely based on local market performance. Unhedged funds, which are the default for most retail products, retain the currency risk and opportunity. The decision between these two approaches should be based on an investor's outlook for the home currency's future direction. For long-term, multi-decade core international allocations, an unhedged strategy is often suggested as currency effects tend to balance out over time, and hedging costs can erode returns. The core message is for investors to understand the often-overlooked role of currency in their international portfolio performance, recognizing that these market forces can shift and impact returns in different ways over time.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [BWXT](https://www.google.com/finance/quote/BWXT:NYSE) | Buy | It's a core holding for clients and a nuclear play. BWXT is the US government's sole source manufacturer for nuclear reactors with a huge and growing backlog (80% increase). Its valuation has become more reasonable after a pullback, and recent earnings showed strong revenue and EPS growth. The spin-off of its medical business is seen as a bullish portfolio simplification. |
+| [BLBD](https://www.google.com/finance/quote/BLBD:NASDAQ) | Watchlist | America's leading electric and alternative school bus manufacturer with record profitability and a substantial EV bus backlog. Shows impressive 5-year EPS growth (53.9%) and expanding margins at a reasonable valuation (13.2x forward earnings). Host is 'interested' and wants to 'look at a bit more' due to potential risks like small-cap volatility and dependence on federal grants. |
+| [AG](https://www.google.com/finance/quote/AG:NYSE) | Neutral | The host did not provide a specific opinion on AG. The discussion focused on the general risks of owning silver miners (higher volatility, company-specific risks like mine collapse) versus physical silver or silver ETFs (exposure to spot price without company risk). |
+| [NUE](https://www.google.com/finance/quote/NUE:NYSE) | Buy | America's largest and best-run steel producer, showing strong annual revenue growth, record Q2 steel shipments, and expectations for higher Q3 earnings. The company has low debt and strong free cash flow. A recent pullback offers a healthy entry point as the stock's valuation is near its 5-year average, and it continues to outperform its industry with strong momentum. |
+| [ZTS](https://www.google.com/finance/quote/ZTS:NYSE) | Neutral | The company has shown poor stock performance over the past three years with falling year-over-year revenue, particularly in its largest division. It recently missed on revenue and revised its guidance downward for the second consecutive time. Despite aggressive share buybacks, the host is 'not in favor of buying' and would 'pass' due to the lack of positive catalysts. |
+| [TRIGX](https://www.google.com/finance/quote/TRIGX:MUTUAL FUND) | Sell | This T-Row Price international value fund is expensive (0.63% expense ratio) and has consistently underperformed its benchmark over 1, 3, 5, and 10-year periods. It focuses only on large-cap value, making it less appealing compared to alternatives like IXUS that offer broader market exposure at a significantly lower cost. |
+| [IXUS](https://www.google.com/finance/quote/IXUS:NYSE ARCA) | Buy | Offers extremely broad international equity exposure, including large, mid, and small-cap companies, unlike its counterpart TRIGX. It is significantly cheaper with a 0.07% expense ratio and has consistently outperformed its benchmark across various timeframes. The host's 'vote goes for IXUS' for pure international exposure. |
+
+---
+
 ## Episode: Small caps woke up: is the rally finally broadening?
 **Date:** 2026-08-19
 
