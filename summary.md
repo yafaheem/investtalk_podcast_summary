@@ -2,6 +2,28 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Regulation catches up to digital assets
+**Date:** 2026-08-24
+
+### Topic Summary
+The main market, economic, or educational topic discussed by the hosts is **the regulation of digital assets, specifically the proposed Clarity Act, and its potential impact on the cryptocurrency market.**
+
+The discussion centers on the need for comprehensive regulation in the digital asset space, which has historically operated in a legal "gray area," often with the SEC regulating by enforcement. The host explains that the Clarity Act aims to establish a clear framework by defining what constitutes a digital asset and determining whether it falls under the purview of the Securities and Exchange Commission (SEC) as a security or the Commodity Futures Trading Commission (CFTC) as a commodity. This distinction is crucial, with decentralized assets like Bitcoin likely considered commodities, while those tied to a specific project or entity would be securities.
+
+The anticipated passage of such legislation, even in a modified form, is expected to bring significant changes to the industry. For companies, it could offer clearer guidelines for fundraising and operations. For investors, it would mean increased disclosures and safeguards, such as preventing the co-mingling of customer funds—a critical issue highlighted by past industry collapses. Ultimately, the host suggests that consistent and clear regulation would attract more "seasoned" and "permanent" institutional capital into the digital asset class, thereby reducing volatility and fostering broader acceptance beyond retail investors, similar to how traditional financial products are integrated into diversified portfolios.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [HOOD](https://www.google.com/finance/quote/HOOD:NASDAQ) | Sell | The company is very reliant on average retail investors and exposed to the struggling tech trade. It has negative and worsening free cash flow, burning capital, and the valuation is not cheap. The recent rally is a good exit point to take profits. |
+| [CBRL](https://www.google.com/finance/quote/CBRL:NYSE) | Hold | The listener bought it cheap and it has rallied significantly. While earnings are expected to go negative this year and are significantly down from 2022, the long-term thesis needs to be re-evaluated. If the thesis is still intact, trim the position based on valuation rather than selling the entire hold. |
+| [JOBY](https://www.google.com/finance/quote/JOBY:NYSE) | Sell | This company is 'selling the dream' with extremely low, albeit growing, revenue and is burning an extreme amount of capital. Free cash flow is negative and worsening each year, with continuous share issuance. It is considered the 'exact opposite of a good investment' and a 'fantastic short'. |
+| [RBRK](https://www.google.com/finance/quote/RBRK:NASDAQ) | Sell | While it's moving towards profitability, the stock trades at a high premium compared to other cybersecurity companies. Its growth is good but not 'amazing,' and the host questions if it has something special to justify its valuation over competitors with better profitability and cash flow. |
+| [ENS](https://www.google.com/finance/quote/ENS:NYSE) | Watchlist | The company has good earnings growth, decent valuation (EV/EBITDA around 10), solid return on equity, good cash flow, and a strong balance sheet. However, the sector is in a downtrend, and the chart shows a recent decline. It is recommended to buy on dips, ideally around $140, as demand for its products (industrial batteries for data centers) is expected to be consistent. |
+| [AAON](https://www.google.com/finance/quote/AAON:NASDAQ) | Watchlist | Despite good business performance and strong expected earnings growth for its HVAC products for data centers, the stock has declined rapidly by 50% from its late June high. The market is 'speaking,' and it's best to stay away until the stock finds stability, reverses its rapid deterioration, and shows signs of a floor. |
+
+---
+
 ## Episode: Financial innovation is now a Fed problem
 **Date:** 2026-08-21
 
