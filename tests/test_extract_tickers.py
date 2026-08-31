@@ -128,5 +128,40 @@ class TestInvestTalkNotes(unittest.TestCase):
         self.assertEqual(vtt_data, "WEBVTT\n\n00:00 -> 00:01\nHi")
         mock_urlopen.assert_called_once()
 
+    def test_filter_episodes_vtt_none(self):
+        """Test that items without a transcript tag result in vtt_url=None."""
+        xml_str = (
+            "<rss><channel>"
+            "<item>"
+            "  <title>No Transcript Episode</title>"
+            "  <pubDate>Fri, 17 Jul 2026 12:00:00 +0000</pubDate>"
+            "</item>"
+            "</channel></rss>"
+        )
+        root = ET.fromstring(xml_str)
+        episodes = filter_episodes(root)
+        self.assertIsNone(episodes[0]['vtt_url'])
+
+    @patch("extract_tickers.parse_rss_feed")
+    @patch("extract_tickers.get_feed_url")
+    def test_main_fails_on_missing_vtt(self, mock_get_feed_url, mock_parse_rss_feed):
+        """Confirm main() raises SystemExit(1) gracefully when transcript is missing."""
+        from extract_tickers import main
+        mock_get_feed_url.return_value = "http://example.com/feed"
+        mock_parse_rss_feed.return_value = [{
+            'title': 'Test Missing VTT Episode',
+            'description': 'Test description',
+            'pub_date': 'Fri, 17 Jul 2026 12:00:00 +0000',
+            'date_str': '2099-01-01',  # Uncached date
+            'vtt_url': None
+        }]
+
+        with patch("sys.argv", ["extract_tickers.py", "--dry-run"]):
+            with self.assertRaises(SystemExit) as cm:
+                main()
+            self.assertEqual(cm.exception.code, 1)
+
 if __name__ == "__main__":
     unittest.main()
+
+

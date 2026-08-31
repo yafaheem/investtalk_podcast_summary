@@ -407,10 +407,18 @@ def main():
         print(f"Tickers found in description: {tickers}")
         
         print("Fetching and cleaning transcript...")
-        transcript = fetch_transcript(episode['vtt_url'])
+        vtt_url = episode.get('vtt_url')
+        if not vtt_url:
+            print(f"ERROR: WebVTT transcript URL is missing (None) in RSS feed for episode '{episode['title']}' ({date_str}).")
+            print("Failing job to trigger GitHub Actions alert for missing transcript.")
+            sys.exit(1)
+            
+        transcript = fetch_transcript(vtt_url)
         if not transcript:
-            print("-> Warning: No transcript URL found or failed to fetch transcript. Skipping.")
-            continue
+            print(f"ERROR: Failed to fetch or parse WebVTT transcript from '{vtt_url}' for episode '{episode['title']}' ({date_str}).")
+            print("Failing job to trigger GitHub Actions alert for transcript fetch failure.")
+            sys.exit(1)
+
             
         print(f"Transcript length: {len(transcript)} characters.")
         
