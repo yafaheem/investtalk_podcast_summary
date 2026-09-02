@@ -1,8 +1,8 @@
 # InvestTalk Podcast Summaries & Stock Verdicts Tracker
 
-I'm an avid listener to the http://www.kppfinancial.com/investtalk show - a weekday hourlong show that recaps the days market and follows a value-oriented investment process. The show also has listeners who can call in and ask their questions including input on stocks. 
+I'm an avid listener to the [InvestTalk](http://www.kppfinancial.com/investtalk) show — a weekday hour-long podcast by KPP Financial that recaps the day's market, shares educational market insights, and answers listener call-in questions with value-oriented stock analysis.
 
-This repo helps when I miss the show and don't have an hour to spend. It fetches the transcript, summarizes it and lists out all the stock tickers discussed, verdict of the podcast hosts and the underlying reason.
+This repository automates extracting and summarizing each episode so you can quickly see the key educational topic, every stock ticker discussed, the hosts' verdict, and the underlying reasoning without having to spend an hour listening.
 
 ---
 
@@ -18,17 +18,54 @@ Here is a visual snapshot of the generated `summary.html` dashboard tracking the
 
 ---
 
+## Architecture & Ingestion Workflow
+
+```mermaid
+flowchart TD
+    RSS["RSS Feed (RedCircle / Apple Podcasts)"] --> Parse["rss_extractor.py<br/>(Extract metadata, dates, VTT & audio URLs)"]
+    Parse --> CheckVTT{"WebVTT transcript available?"}
+    
+    %% Fast Path
+    CheckVTT -->|Yes| FastPath["Fast Path: Download WebVTT<br/>(clean_vtt -> Plain Text)"]
+    
+    %% Audio Failover Path
+    CheckVTT -->|No / Missing| Failover["Audio Failover Path: Stream &lt;enclosure&gt; MP3<br/>(audio_transcriber.py)"]
+    Failover --> Upload["Upload Audio to Google GenAI File API<br/>(client.files.upload)"]
+    Upload --> AudioGemini["Gemini 2.5 Flash Audio Inference<br/>(Transcribe speech with speaker turns)"]
+    AudioGemini --> Cleanup["Clean up remote GenAI File API storage<br/>(client.files.delete)"]
+    
+    %% Downstream Processing
+    FastPath --> LLM["Google GenAI SDK Analysis<br/>(gemini-2.5-flash)"]
+    Cleanup --> LLM
+    
+    LLM --> Verdicts["Extract Stock Verdicts & Reasons (JSON)"]
+    LLM --> Summary["Generate Educational Topic Summary"]
+    
+    Verdicts --> Output["Generate Dashboards & TTS Audio<br/>(summary.html, summary.md, Edge-TTS MP3)"]
+    Summary --> Output
+```
+
+### 1. Dual-Path Transcript Ingestion & Failover
+- **Primary / Fast Path (WebVTT):** When podcast publishers include `<podcast:transcript>` WebVTT tags, the pipeline downloads and parses the subtitle stream instantaneously with zero token overhead.
+- **Failover Path (Google GenAI Multimodal Audio):** If WebVTT transcripts are delayed or missing from the RSS feed, the pipeline automatically fails over to `audio_transcriber.py`. It streams the episode's MP3 from the `<enclosure>` tag, uploads it via the **Google GenAI File API**, and transcribes the audio into structured speaker turns using **Gemini 2.5 Flash**. Remote GenAI files and local temporary downloads are automatically cleaned up in `finally` blocks.
+
+### 2. Powered by the Google GenAI SDK (`google-genai`)
+The system leverages the official **Google GenAI Python SDK** (`google-genai`):
+- **Multimodal Audio Processing:** Uses `client.files.upload()` and `client.models.generate_content()` to process full-length podcast audio streams without requiring local heavyweight dependencies (like PyTorch or local Whisper models).
+- **Structured LLM Extraction:** Uses `gemini-2.5-flash` with structured JSON output configuration (`response_mime_type="application/json"`) to reliably extract ticker symbols, primary listing exchanges, verdicts (**Buy**, **Sell**, **Hold**, **Neutral**, **Watchlist**), and host reasoning.
+- **Topic Distillation:** Employs prompt engineering to isolate the main educational topic while excluding individual caller Q&A.
+
+---
+
 ## Features
 
-- **Automated RSS Feed Processing:** Automatically looks up the latest feed URL from iTunes and RedCircle, parses episode metadata, and extracts dates.
-- **Air-Date Timezone Correction:** Converts the feed's UTC publication timestamps to local Pacific Time (the actual air date of the live show), avoiding date-shift collisions.
-- **Transcript Extraction & Sanitization:** Downloads and parses standard WebVTT subtitles, scrubbing timestamps and formatting markers to produce a clean text transcript.
-- **Gemini LLM Summary & Verdict Generation:** Analyzes transcripts using the Gemini API to identify:
-  - The main educational and market topics discussed.
-  - Ticker-by-ticker verdicts (**Buy**, **Sell**, **Hold**, **Neutral**, or **Watchlist**).
-  - The underlying justification provided by the hosts.
-- **Optimized Local Caching:** Saves historical runs inside `summaries_data.json` to prevent duplicate LLM queries, conserve API quota, and build a cumulative historical database.
-- **HTML & Markdown Dashboards:** Generates updated, unified summaries in `summary.md` and a styled, responsive `summary.html` dashboard using **Jinja2** templating.
+- **Automated RSS Feed Processing:** Dynamically discovers the latest feed URL via iTunes and RedCircle, parses episode metadata, and extracts air dates.
+- **Air-Date Timezone Correction:** Accurately converts UTC timestamps to local Pacific Time (`America/Los_Angeles`), matching the live broadcast date.
+- **Robust Audio Failover:** Guaranteed transcription even when the publisher delays WebVTT subtitle uploads.
+- **'Driving Mode' Audio Summaries:** Pre-renders natural neural narration (`.mp3`) using Microsoft `edge-tts` (`en-US-AriaNeural`) with an interactive player inside the HTML dashboard.
+- **Google Finance Hyperlinks:** Automatically maps stock tickers to their primary exchange (`NASDAQ`, `NYSE`, `OTCMKTS`) and creates clickable Google Finance quote links.
+- **Optimized Local Caching:** Persists historical runs inside `summaries_data.json` to prevent duplicate API queries and conserve quota.
+- **HTML & Markdown Dashboards:** Automatically updates `summary.md` and a styled, responsive `summary.html` dashboard using **Jinja2** templating.
 
 ---
 
@@ -36,26 +73,31 @@ Here is a visual snapshot of the generated `summary.html` dashboard tracking the
 
 ```text
 .
-├── extract_tickers.py       # Main entry point (orchestrates API, LLM, and rendering)
-├── rss_extractor.py         # Submodule for feed fetching, XML parsing, and date shifts
-├── blacklist.txt            # List of false-positive tickers to ignore (e.g. AM, PM, OR)
-├── latest_metadata.json     # Cache of the last processed feed state
-├── summaries_data.json      # Local JSON database of compiled episode verdicts
+├── extract_tickers.py          # Main orchestration pipeline (RSS -> Transcript -> Gemini -> Dashboards)
+├── audio_transcriber.py        # Modular Google GenAI File API audio transcription engine & CLI
+├── rss_extractor.py            # RSS feed fetching, enclosure/VTT parsing, and timezone normalization
+├── blacklist.txt               # False-positive macro ticker abbreviation blacklist (e.g. AI, US, GDP)
+├── summaries_data.json         # Local JSON database of compiled episode summaries and verdicts
 ├── templates/
-│   └── summary_template.html# Jinja2 layout for summary.html dashboard
+│   └── summary_template.html   # Jinja2 layout for summary.html dashboard with audio player
 ├── tests/
-│   └── test_extract_tickers.py # Test suite (XML, cleaner, regex, and date parsers)
-├── summary.md               # Unified Markdown summaries output
-├── summary.html             # Unified HTML summaries dashboard
-├── summary_snapshot.png     # Visual snapshot of the HTML dashboard
-└── requirements.txt         # Project dependencies
+│   ├── test_extract_tickers.py  # Unit tests for RSS parsing, date conversion, and extraction logic
+│   └── test_audio_transcriber.py# Unit tests for audio downloading, File API uploads, and cleanup
+├── summary.md                  # Unified cumulative Markdown summaries output
+├── summary.html                # Unified cumulative HTML summaries dashboard
+├── summary_snapshot.png        # Visual snapshot of the HTML dashboard
+└── requirements.txt            # Project dependencies (google-genai, Jinja2, edge-tts, etc.)
 ```
 
 ---
 
 ## Installation & Setup
 
-1. **Clone the repository** and navigate to the project directory.
+1. **Clone the repository** and navigate to the project directory:
+   ```bash
+   git clone https://github.com/yafaheem/investtalk_podcast_summary.git
+   cd investtalk_podcast_summary
+   ```
 
 2. **Set up a Python Virtual Environment:**
    ```bash
@@ -64,7 +106,6 @@ Here is a visual snapshot of the generated `summary.html` dashboard tracking the
    ```
 
 3. **Install Dependencies:**
-   Make sure to install using the virtual environment's pip:
    ```bash
    venv/bin/python3 -m pip install -r requirements.txt
    ```
@@ -79,30 +120,39 @@ Here is a visual snapshot of the generated `summary.html` dashboard tracking the
 
 ## Usage
 
-Run the main pipeline using the virtual environment Python interpreter:
-
-### 1. Process the Latest Episode
+### 1. Run the Main Pipeline
 ```bash
+# Process the latest episode from RSS
 venv/bin/python3 extract_tickers.py
+
+# Process a specific air date (YYYY-MM-DD)
+venv/bin/python3 extract_tickers.py --date 2026-08-31
+
+# Process a custom date range
+venv/bin/python3 extract_tickers.py --start-date 2026-08-20 --end-date 2026-08-31
+
+# Force re-extraction (ignore cache)
+venv/bin/python3 extract_tickers.py --date 2026-08-31 --force
+
+# Dry-run mode (skips LLM and remote audio downloads)
+venv/bin/python3 extract_tickers.py --dry-run
 ```
 
-### 2. Process a Specific Date Range
-Fetch and process all episodes within a custom range (dates formatted as `YYYY-MM-DD` local time):
+### 2. Standalone Audio Transcriber CLI
+You can also transcribe any podcast audio URL or local audio file directly using the standalone CLI:
 ```bash
-venv/bin/python3 extract_tickers.py --start-date 2026-07-13 --end-date 2026-07-17
-```
+# Transcribe from a remote audio URL
+venv/bin/python3 audio_transcriber.py --source "https://example.com/episode.mp3" --output transcript.txt
 
-### 3. Force Regeneration (Ignore Cache)
-To overwrite local cached entries and re-run Gemini analysis for a range of dates:
-```bash
-venv/bin/python3 extract_tickers.py --start-date 2026-07-15 --end-date 2026-07-17 --force
+# Transcribe a local audio file
+venv/bin/python3 audio_transcriber.py --source "path/to/podcast.mp3" --output transcript.txt
 ```
 
 ---
 
-## Running Unit Tests
+## Running Automated Tests
 
-The project includes a suite of mock tests. Run the test suite using the virtual environment's python interpreter to ensure Jinja2 is loaded correctly:
+Run the full unit test suite using the virtual environment interpreter:
 
 ```bash
 venv/bin/python3 -m unittest discover -s tests
