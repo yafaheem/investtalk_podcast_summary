@@ -1,20 +1,14 @@
 # InvestTalk Podcast Summaries & Stock Verdicts Tracker
 
-I'm an avid listener to the http://www.kppfinancial.com/investtalk show - a weekday hourlong show that recaps the days market and follows a value-oriented investment process. The show also has listeners who can call in and ask their questions including input on stocks. 
+I'm an avid listener to the http://www.kppfinancial.com/investtalk show - a weekday hourlong show that recaps the days market and follows a value-oriented investment process. The show also has listeners who can call in and ask their questions including input on stocks. I usually listen to this when I'm driving but I'm too lazy to take notes on the episodes and the stock tickers discussed. 
 
-This repo helps when I miss the show and don't have an hour to spend. It fetches the transcript, summarizes it and lists out all the stock tickers discussed, verdict of the podcast hosts and the underlying reason.
+This repo publishes to https://yafaheem.github.io/investtalk_podcast_summary/. It pulls in the rss feed, looks for he webVTT transcript url and generates summary and ticker discussions. If the transcript is missing, it downloads the audio and transcribes it using Gemini Transcribe. 
 
 ---
 
 ## Dashboard Preview
 
-Here is a visual snapshot of the generated `summary.html` dashboard tracking the episode summaries and stock ticker verdicts:
-
-<div align="center">
-  <div style="border: 1px solid #30363d; border-radius: 12px; overflow: hidden; max-width: 800px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); margin: 1.5rem 0;">
-    <img src="summary_snapshot.png" alt="InvestTalk Dashboard Summary HTML" width="100%" />
-  </div>
-</div>
+https://yafaheem.github.io/investtalk_podcast_summary/
 
 ---
 
