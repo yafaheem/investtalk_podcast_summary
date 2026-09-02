@@ -25,6 +25,29 @@ The overarching investment principle derived from this analysis is to "follow th
 
 ---
 
+## Episode: Alibaba's $10 Billion AI Bet: What China's Tech Giants Signal About the Global AI Race
+**Date:** 2026-08-31
+
+### Topic Summary
+The podcast primarily focuses on the evolving **global Artificial Intelligence (AI) investment landscape**, emphasizing the intense competition and strategic maneuvers by major tech players, particularly between China and the United States. The host highlights Alibaba's recent $10 billion share sale, explicitly earmarked for AI expansion, and its subsequent launch of an AI video model. This move by Alibaba signals Chinese tech giants' rapid pace and substantial investment to compete with their US rivals in the global AI "arms race."
+
+The discussion delves into the nuances of this global competition, examining the market's reaction to heavy AI spending—which is increasingly punishing dilution and demanding proof of returns—versus the actual, triple-digit AI revenue growth seen by companies like Alibaba. A critical aspect explored is the difference in cost structures, where Chinese companies can achieve significant AI performance at a fraction of Western costs, partly due to access to domestic chips and lower operational expenses. The effectiveness and implications of US export controls on chip technology are also debated, noting that while they may slow China, they don't halt innovation or the development of workarounds.
+
+For investors, the podcast outlines the complex risk/reward profile of engaging with Chinese AI, balancing potentially lower valuations and significant ecosystem growth against geopolitical risks, regulatory unpredictability, and concerns like delisting. The host advises a strategic approach of "indirect exposure" to the AI theme. This involves investing in companies that supply the global AI ecosystem, such as those providing commodities, materials, or infrastructure, rather than betting on any single national champion, thereby capturing the structural growth while mitigating specific geopolitical and structural risks associated with direct investments in individual Chinese firms.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [CCJ](https://www.google.com/finance/quote/CCJ:NYSE) | Hold | Favored uranium play with structural catalysts (resilient uranium pricing, Westinghouse IPO filing) and solid earnings growth estimates for 2026/2027, but valuation is high and profit-taking has occurred due to significant appreciation. |
+| [BOTT](https://www.google.com/finance/quote/BOTT:NYSE ARCA) | Neutral | Niche humanoid robotics ETF, very small (63M assets), new with no significant performance history, leading to hesitation. |
+| [BOTZ](https://www.google.com/finance/quote/BOTZ:NASDAQ) | Neutral | Highly concentrated ETF (63% in top 10 holdings), heavily oriented towards Japan (40%), and focuses on large-cap AI robotics, less preferred than ROBO for diversification. |
+| [ROBO](https://www.google.com/finance/quote/ROBO:NYSE ARCA) | Buy | Preferred robotics and automation ETF due to its equal-weight methodology, diversification, global focus on mid-cap automation, and historical lower volatility and max drawdown compared to peers. |
+| [MSM](https://www.google.com/finance/quote/MSM:NYSE) | Neutral | Recent strong EPS, but sales growth is primarily pricing-driven, overall growth is slow to negligible, and the stock is at the upper end of its valuation range, with concerns about cost inputs and unexciting margin expansion. |
+| [G](https://www.google.com/finance/quote/G:NYSE) | Watchlist | Professional services company running back-office operations, facing AI disruption risk (down 32% YTD). However, it's pivoting to AI-led solutions with real growth, has a low forward P/E (8.7x vs. 17x avg), solid buybacks, a 2.7% dividend yield, and potential for a contrarian value play with upside. |
+| [ADSK](https://www.google.com/finance/quote/ADSK:NASDAQ) | Watchlist | Design and engineering software company that delivered a clean beat and raise on earnings with double-digit revenue growth and margin expansion. Host is interested and 'close to giving the thumbs up' but wants to see if it can consistently break its downtrend. |
+
+---
+
 ## Episode: Why Is the Dollar Weakening? What Multi-Month Lows Mean for Your Purchasing Power
 **Date:** 2026-08-27
 
