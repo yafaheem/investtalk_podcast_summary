@@ -2,6 +2,29 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: How to Invest in AI Infrastructure: Who Really Wins When Big Tech Goes All-In
+**Date:** 2026-09-01
+
+### Topic Summary
+The main market, economic, and educational topic discussed by the host is **Investing in AI Infrastructure and the Distribution of Returns Across the AI Supply Chain**.
+
+The host analyzes how capital is being deployed into the AI sector and where investors can expect to find "real returns." Despite massive investments from big tech companies, the financial benefits are not uniformly distributed throughout the AI supply chain. The discussion breaks down this supply chain into distinct layers to highlight varying investment opportunities and risks.
+
+The semiconductor layer, encompassing chip manufacturers, memory producers, and equipment makers, is identified as a clear winner due to the scarcity of their products, strong pricing power, and consistent earnings—a classic "picks and shovels" trade. Conversely, the infrastructure layer, including data centers and related services, and the platform layer, dominated by hyperscalers like major cloud providers, are characterized by immense capital expenditures. These hyperscalers, despite leading AI development, are often experiencing negative free cash flow, squeezed margins, and increasing debt, indicating a long and uncertain path to monetization. The application layer, while expected to yield the largest returns eventually through AI software and services, currently suffers from poor visibility and inconsistent revenue generation.
+
+The overarching investment principle derived from this analysis is to "follow the cash flow," favoring companies that are actively generating revenue and profit from the AI build-out rather than those primarily consuming capital. This suggests a more compelling investment case for the scarce components and essential tools in the semiconductor and memory sectors, as they are currently capturing most of the value, compared to the hyperscalers burdened by heavy spending with less immediate or certain returns.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [SLB](https://www.google.com/finance/quote/SLB:NYSE) | Watchlist | Solid company and performer with recent earnings beats despite geopolitical headwinds, but currently considered expensive after a significant price run-up and trading at the upper end of its five-year range. |
+| [DINO](https://www.google.com/finance/quote/DINO:NYSE) | Hold | Refiner with strong recent performance (up 125% YTD), solid financials, and expanding ROE. While forward P/E is reasonable, the stock's significant run-up creates downside risk, making the host hesitant for large new positions. |
+| [STAG](https://www.google.com/finance/quote/STAG:NYSE) | Neutral | Industrial REIT with a boring performance history (1.18% annualized return over 5 years). Despite solid operating metrics and a credit upgrade, the stock sold off, and rising bond yields make it less attractive compared to alternatives. |
+| [AOS](https://www.google.com/finance/quote/AOS:NYSE) | Neutral | Water heater/treatment industrial company with poor recent performance, missed Q1 earnings, cut guidance, and experienced declines in its China segment, margins, and ROE. Valuation appears cheaper but is contingent on future earnings expectations which have been falling. |
+| [MCD](https://www.google.com/finance/quote/MCD:NYSE) | Buy | Largest fast-food enterprise, currently trading at the low end of its valuation range and potentially finding a bottom. Exhibits solid revenue growth, increasing free cash flow, and strong net margins as a franchise business, preferred for mid-to-long term over AOS. |
+
+---
+
 ## Episode: Why Is the Dollar Weakening? What Multi-Month Lows Mean for Your Purchasing Power
 **Date:** 2026-08-27
 
