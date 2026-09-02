@@ -45,6 +45,13 @@ def parse_item_date(item):
     except Exception:
         return None
 
+def extract_audio_url(item):
+    """Extract audio stream URL from an RSS item enclosure tag."""
+    enclosure = item.find('enclosure')
+    if enclosure is not None:
+        return enclosure.attrib.get('url')
+    return None
+
 def filter_episodes(xml_root, target_date=None, start_date=None, end_date=None):
     """Filter and parse RSS items from XML root into structured episode dicts."""
     items = xml_root.findall('.//item')
@@ -100,12 +107,15 @@ def filter_episodes(xml_root, target_date=None, start_date=None, end_date=None):
         if transcript_elem is not None:
             vtt_url = transcript_elem.attrib.get('url')
             
+        audio_url = extract_audio_url(item)
+
         episodes.append({
             'title': title,
             'description': description,
             'pub_date': pub_date,
             'date_str': p_date,
-            'vtt_url': vtt_url
+            'vtt_url': vtt_url,
+            'audio_url': audio_url
         })
         
     return episodes

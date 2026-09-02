@@ -14,6 +14,7 @@ except ImportError:
     pass
 
 from rss_extractor import get_feed_url, parse_rss_feed
+from audio_transcriber import transcribe_audio
 from jinja2 import Environment, FileSystemLoader
 from markupsafe import Markup
 
@@ -406,18 +407,32 @@ def main():
         tickers = extract_tickers_from_description(episode['description'])
         print(f"Tickers found in description: {tickers}")
         
-        print("Fetching and cleaning transcript...")
+        print("Resolving episode transcript...")
+        transcript = None
         vtt_url = episode.get('vtt_url')
-        if not vtt_url:
-            print(f"ERROR: WebVTT transcript URL is missing (None) in RSS feed for episode '{episode['title']}' ({date_str}).")
-            print("Failing job to trigger GitHub Actions alert for missing transcript.")
-            sys.exit(1)
+        if vtt_url:
+            print(f"Found WebVTT transcript URL: {vtt_url}")
+            transcript = fetch_transcript(vtt_url)
             
-        transcript = fetch_transcript(vtt_url)
+        # Fallback to audio stream via Google GenAI File API if WebVTT is missing or failed
         if not transcript:
-            print(f"ERROR: Failed to fetch or parse WebVTT transcript from '{vtt_url}' for episode '{episode['title']}' ({date_str}).")
-            print("Failing job to trigger GitHub Actions alert for transcript fetch failure.")
+            audio_url = episode.get('audio_url')
+            if audio_url:
+                print(f"WebVTT transcript not found or failed. Initiating Google GenAI audio transcription fallback from: {audio_url}")
+                if args.dry_run:
+                    print("[DRY RUN MODE] Skipping remote audio download and using dry-run placeholder transcript.")
+                    transcript = f"InvestTalk episode transcript for {episode['title']}. Discussing {', '.join(tickers)}."
+                else:
+                    try:
+                        transcript = transcribe_audio(audio_url, api_key=api_key)
+                    except Exception as e:
+                        print(f"ERROR: Audio transcription fallback failed: {e}")
+                        
+        if not transcript:
+            print(f"ERROR: Neither WebVTT transcript nor audio stream could be transcribed for episode '{episode['title']}' ({date_str}).")
+            print("Failing job to trigger GitHub Actions alert.")
             sys.exit(1)
+
 
             
         print(f"Transcript length: {len(transcript)} characters.")
