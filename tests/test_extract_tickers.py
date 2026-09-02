@@ -7,7 +7,8 @@ from rss_extractor import (
     fetch_rss_data,
     parse_rss_xml,
     parse_item_date,
-    filter_episodes
+    filter_episodes,
+    extract_audio_url
 )
 from extract_tickers import (
     extract_tickers_from_description,
@@ -63,6 +64,16 @@ class TestInvestTalkNotes(unittest.TestCase):
         item_3 = ET.fromstring(xml_str_3)
         self.assertIsNone(parse_item_date(item_3))
 
+    def test_extract_audio_url(self):
+        """Test extracting audio stream URL from enclosure tag."""
+        xml_with_enclosure = '<item><enclosure url="https://example.com/podcast.mp3" length="12345" type="audio/mpeg" /></item>'
+        item_1 = ET.fromstring(xml_with_enclosure)
+        self.assertEqual(extract_audio_url(item_1), "https://example.com/podcast.mp3")
+
+        xml_without_enclosure = '<item><title>No Enclosure</title></item>'
+        item_2 = ET.fromstring(xml_without_enclosure)
+        self.assertIsNone(extract_audio_url(item_2))
+
     def test_filter_episodes_latest(self):
         """Test filtering without parameters defaults to latest episode."""
         xml_str = (
@@ -71,6 +82,7 @@ class TestInvestTalkNotes(unittest.TestCase):
             "  <title>Latest Episode</title>"
             "  <description>Discussing (RDDT)</description>"
             "  <pubDate>Fri, 17 Jul 2026 12:00:00 +0000</pubDate>"
+            "  <enclosure url=\"https://example.com/latest.mp3\" />"
             "</item>"
             "<item>"
             "  <title>Older Episode</title>"
@@ -84,6 +96,7 @@ class TestInvestTalkNotes(unittest.TestCase):
         self.assertEqual(len(episodes), 1)
         self.assertEqual(episodes[0]['title'], "Latest Episode")
         self.assertEqual(episodes[0]['date_str'], "2026-07-17")
+        self.assertEqual(episodes[0]['audio_url'], "https://example.com/latest.mp3")
 
     def test_filter_episodes_target_date(self):
         """Test filtering by a specific target date."""
@@ -144,22 +157,48 @@ class TestInvestTalkNotes(unittest.TestCase):
 
     @patch("extract_tickers.parse_rss_feed")
     @patch("extract_tickers.get_feed_url")
-    def test_main_fails_on_missing_vtt(self, mock_get_feed_url, mock_parse_rss_feed):
-        """Confirm main() raises SystemExit(1) gracefully when transcript is missing."""
+    def test_main_fails_on_missing_vtt_and_audio(self, mock_get_feed_url, mock_parse_rss_feed):
+        """Confirm main() raises SystemExit(1) gracefully when both transcript and audio are missing."""
         from extract_tickers import main
         mock_get_feed_url.return_value = "http://example.com/feed"
         mock_parse_rss_feed.return_value = [{
-            'title': 'Test Missing VTT Episode',
+            'title': 'Test Missing All Episode',
             'description': 'Test description',
             'pub_date': 'Fri, 17 Jul 2026 12:00:00 +0000',
             'date_str': '2099-01-01',  # Uncached date
-            'vtt_url': None
+            'vtt_url': None,
+            'audio_url': None
         }]
 
         with patch("sys.argv", ["extract_tickers.py", "--dry-run"]):
             with self.assertRaises(SystemExit) as cm:
                 main()
             self.assertEqual(cm.exception.code, 1)
+
+    @patch("extract_tickers.generate_cumulative_html")
+    @patch("extract_tickers.generate_cumulative_markdown")
+    @patch("extract_tickers.generate_audio_for_episode")
+    @patch("extract_tickers.save_episode_data")
+    @patch("extract_tickers.parse_rss_feed")
+    @patch("extract_tickers.get_feed_url")
+    def test_main_fallback_to_audio_on_missing_vtt(self, mock_get_feed_url, mock_parse_rss_feed, mock_save, mock_gen_audio, mock_gen_md, mock_gen_html):
+        """Confirm main() uses audio fallback when vtt_url is None and audio_url is present."""
+        from extract_tickers import main
+        mock_get_feed_url.return_value = "http://example.com/feed"
+        mock_parse_rss_feed.return_value = [{
+            'title': 'Test Audio Fallback Episode',
+            'description': 'Discussing (AAPL)',
+            'pub_date': 'Fri, 17 Jul 2026 12:00:00 +0000',
+            'date_str': '2099-01-02',  # Uncached date
+            'vtt_url': None,
+            'audio_url': 'https://example.com/podcast.mp3'
+        }]
+        mock_save.return_value = {}
+
+        with patch("sys.argv", ["extract_tickers.py", "--dry-run"]):
+            # Should not raise SystemExit
+            main()
+            mock_save.assert_called_once()
 
 if __name__ == "__main__":
     unittest.main()
