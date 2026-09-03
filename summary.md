@@ -2,6 +2,29 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Is the India Stock Market a Smart Bet in 2026? Record Forex Reserves vs. the Growth Gap
+**Date:** 2026-09-02
+
+### Topic Summary
+The main market and educational topic discussed by the host is the **Equity Risk Premium (ERP)** and its implications for asset allocation and investor expectations.
+
+The host highlights that the equity risk premium, defined as the extra return earned from owning stocks compared to a government bond, has recently collapsed to roughly zero, or even turned negative. This means that, by some measures, the stock market is currently offering less return for more risk than a virtually risk-free Treasury bond. The host explains this by comparing the S&P 500's earnings yield to the 10-year Treasury yield, noting the widening negative gap.
+
+This fundamental shift suggests that investors are not adequately compensated for the inherent volatility, recession risk, and other uncertainties associated with equities. While acknowledging that negative ERPs have occurred historically without immediate market downturns, the host emphasizes that it is a crucial valuation signal. For investors, particularly those nearing retirement, this implies a need to adjust expectations for future stock returns, likely to mid-to-high single digits over the next decade, rather than the double-digit returns of the recent past. Conversely, bonds, now yielding nearly 5%, present a genuinely attractive and more competitive alternative for income and defined returns, a dynamic not seen in about 15 years. The core message is to internalize this changing risk-reward landscape and consider its impact on portfolio allocation, potentially favoring a more balanced approach between stocks and bonds.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [HOOD](https://www.google.com/finance/quote/HOOD:NASDAQ) | Neutral | Advised to 'pass' due to elevated valuations (39.9x forward P/E) and volatile revenue, especially in crypto, suggesting market concerns about sustainability despite strong quarterly earnings. |
+| [YPF](https://www.google.com/finance/quote/YPF:NYSE) | Watchlist | Advised to 'keep it on my watch list for now' and 'hesitate to enter a large position' at current levels. The stock has seen a significant run-up, likely pricing in good news, and has high revenue exposure to an economically unstable region (Argentina). |
+| [GEV](https://www.google.com/finance/quote/GEV:NYSE) | Sell | Recommended to 'trim at least half' or 'more' of the caller's 20% allocation, as it represents excessive single-name risk, despite the host's positive view on the company's fundamentals (massive cash balance, strong orders, large backlog). |
+| [GRID](https://www.google.com/finance/quote/GRID:NASDAQ) | Watchlist | Considered 'one of the better ones' for an ETF focusing on electrification and grid infrastructure. It offers international exposure and a long track record, but noted as highly concentrated and slightly expensive. |
+| [IAU](https://www.google.com/finance/quote/IAU:NYSE ARCA) | Hold | Caller's 8% allocation is considered 'good', with room to increase to 10-15%. Gold is an important portfolio holding, and paper gold ETFs like IAU are effective and liquid proxies for physical gold. |
+| [GLD](https://www.google.com/finance/quote/GLD:NYSE ARCA) | Hold | Mentioned as a reliable 'paper gold' proxy alongside IAU. Gold is an important portfolio holding, and ETFs effectively track physical gold with good liquidity. |
+| [PAYC](https://www.google.com/finance/quote/PAYC:NASDAQ) | Neutral | Advised to 'wait for it to come back down' as the stock has 'gone vertical' (up 63% in three months) and is likely overextended. Structural issues and headwinds related to AI were also noted as concerns. |
+
+---
+
 ## Episode: How to Invest in AI Infrastructure: Who Really Wins When Big Tech Goes All-In
 **Date:** 2026-09-01
 
@@ -45,6 +68,26 @@ For investors, the podcast outlines the complex risk/reward profile of engaging 
 | [MSM](https://www.google.com/finance/quote/MSM:NYSE) | Neutral | Recent strong EPS, but sales growth is primarily pricing-driven, overall growth is slow to negligible, and the stock is at the upper end of its valuation range, with concerns about cost inputs and unexciting margin expansion. |
 | [G](https://www.google.com/finance/quote/G:NYSE) | Watchlist | Professional services company running back-office operations, facing AI disruption risk (down 32% YTD). However, it's pivoting to AI-led solutions with real growth, has a low forward P/E (8.7x vs. 17x avg), solid buybacks, a 2.7% dividend yield, and potential for a contrarian value play with upside. |
 | [ADSK](https://www.google.com/finance/quote/ADSK:NASDAQ) | Watchlist | Design and engineering software company that delivered a clean beat and raise on earnings with double-digit revenue growth and margin expansion. Host is interested and 'close to giving the thumbs up' but wants to see if it can consistently break its downtrend. |
+
+---
+
+## Episode: Trade War 2.0: Canada Auto Tariffs Hit 50% and What It Means for Your Wallet
+**Date:** 2026-08-28
+
+### Topic Summary
+The podcast transcript focuses on two primary economic topics: **the inflationary impact of AI's high-bandwidth memory demand on consumer electronics** and **the economic consequences of escalating US-Canada trade tariffs, particularly in the automotive sector.**
+
+Firstly, the host details a "memory squeeze" driven by the Artificial Intelligence (AI) boom. He explains that major memory manufacturers are reallocating over 80% of their advanced production capacity to high-margin High-Bandwidth Memory (HBM) for AI servers, thereby deprioritizing general-purpose memory used in consumer devices like laptops, phones, and gaming consoles. This shift has resulted in severe shortages and dramatic price increases for conventional DRAM and NAND, with some component costs skyrocketing over 160% in just a few months. These elevated costs are directly passed on to consumers through higher retail prices for electronics, leading to projected decreases in PC and smartphone shipments as devices become less affordable. The discussion highlights this as a structural shift that could lead to permanently higher consumer electronics prices and contribute significantly to broader inflation, making the very devices that access AI technology more expensive.
+
+Secondly, the podcast explores the implications of "Trade War 2.0" between the US and Canada, specifically focusing on the imposition and threat of 50% tariffs on Canadian goods, including autos and auto parts. The host explains how these tariffs severely disrupt the highly integrated North American automotive supply chain, where components cross borders multiple times during manufacturing. This escalation is projected to add several thousand dollars to the price of new cars for American consumers and will likely pressure the margins of US automakers with established Canadian production facilities. Beyond the immediate impact on the auto industry, the segment discusses the risk of Canadian retaliatory tariffs on US exports and the broader fracturing of the long-standing bilateral trading relationship, signaling a long-term re-shaping of North American manufacturing and supply chains.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [HSY](https://www.google.com/finance/quote/HSY:NYSE) | Buy | Solid income stock with a growing dividend. Delivering an earnings recovery, four straight beats, meaningful margin expansion, and coco deflation working in its favor. Trading at 52-week lows, offering a 'value entry' for long-term investors despite short-term headwinds. |
+| [DKS](https://www.google.com/finance/quote/DKS:NYSE) | Neutral | Recent poor stock performance (down significantly YTD and over 3 months) due to missed earnings, negative EPS, and sharply lowered guidance (EPS cut by 15-17%). Facing a 'longer Footlocker integration problem' which will weigh on the stock. Host  |
+| [TGT](https://www.google.com/finance/quote/TGT:NYSE) | Buy | Considered a strong turnaround story with a new CEO. Achieved two consecutive earnings beats and guidance raises. Strategic consolidation, including internalizing beauty segments, is viewed positively. Held in client portfolios and recommended. |
+| [BLBD](https://www.google.com/finance/quote/BLBD:NASDAQ) | Watchlist | The company, a bus manufacturer, has strong demand for EPA-driven EV buses and delivered a very strong Q2 print. Despite significant past growth, the stock has recently seen a sharp drawdown (-15% over 3 months). Host likes the name but is  |
 
 ---
 
