@@ -1,20 +1,8 @@
 # InvestTalk Podcast Summaries & Stock Verdicts Tracker
 
-I'm an avid listener to the [InvestTalk](http://www.kppfinancial.com/investtalk) show — a weekday hour-long podcast by KPP Financial that recaps the day's market, shares educational market insights, and answers listener call-in questions with value-oriented stock analysis.
+I'm an avid listener to the [InvestTalk](http://www.kppfinancial.com/investtalk) show — a weekday hour-long podcast by KPP Financial that recaps the day's market, shares educational market insights, and answers listener call-in questions with value-oriented stock analysis. I usually listen to this while driving, but wanted an automated way to track episode takeaways and stock ticker discussions.
 
-This repository automates extracting and summarizing each episode so you can quickly see the key educational topic, every stock ticker discussed, the hosts' verdict, and the underlying reasoning without having to spend an hour listening.
-
----
-
-## Dashboard Preview
-
-Here is a visual snapshot of the generated `summary.html` dashboard tracking the episode summaries and stock ticker verdicts:
-
-<div align="center">
-  <div style="border: 1px solid #30363d; border-radius: 12px; overflow: hidden; max-width: 800px; box-shadow: 0 8px 24px rgba(0,0,0,0.5); margin: 1.5rem 0;">
-    <img src="summary_snapshot.png" alt="InvestTalk Dashboard Summary HTML" width="100%" />
-  </div>
-</div>
+This repository automates extracting and summarizing each episode and publishes to **[https://yafaheem.github.io/investtalk_podcast_summary/](https://yafaheem.github.io/investtalk_podcast_summary/)** so you can quickly see the key educational topic, every stock ticker discussed, the hosts' verdict, and the underlying reasoning without having to spend an hour listening.
 
 ---
 
@@ -59,6 +47,7 @@ The system leverages the official **Google GenAI Python SDK** (`google-genai`):
 
 ## Features
 
+- **Live Web Dashboard:** Published automatically to [GitHub Pages](https://yafaheem.github.io/investtalk_podcast_summary/).
 - **Automated RSS Feed Processing:** Dynamically discovers the latest feed URL via iTunes and RedCircle, parses episode metadata, and extracts air dates.
 - **Air-Date Timezone Correction:** Accurately converts UTC timestamps to local Pacific Time (`America/Los_Angeles`), matching the live broadcast date.
 - **Robust Audio Failover:** Guaranteed transcription even when the publisher delays WebVTT subtitle uploads.
@@ -85,7 +74,6 @@ The system leverages the official **Google GenAI Python SDK** (`google-genai`):
 │   └── test_audio_transcriber.py# Unit tests for audio downloading, File API uploads, and cleanup
 ├── summary.md                  # Unified cumulative Markdown summaries output
 ├── summary.html                # Unified cumulative HTML summaries dashboard
-├── summary_snapshot.png        # Visual snapshot of the HTML dashboard
 └── requirements.txt            # Project dependencies (google-genai, Jinja2, edge-tts, etc.)
 ```
 
