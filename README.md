@@ -2,7 +2,7 @@
 
 I'm an avid listener to the [InvestTalk](http://www.kppfinancial.com/investtalk) show — a weekday hour-long podcast by KPP Financial that recaps the day's market, shares educational market insights, and answers listener call-in questions with value-oriented stock analysis. I usually listen to this while driving, but wanted an automated way to track episode takeaways and stock ticker discussions.
 
-This repository automates extracting and summarizing each episode and publishes to **[https://yafaheem.github.io/investtalk_podcast_summary/](https://yafaheem.github.io/investtalk_podcast_summary/)** so you can quickly see the key educational topic, every stock ticker discussed, the hosts' verdict, and the underlying reasoning without having to spend an hour listening.
+This repository automates extracting and summarizing each episode and publishes to **[https://yafaheem.github.io/investtalk_podcast_summary/](https://yafaheem.github.io/investtalk_podcast_summary/)** so I can quickly see the key educational topics, every stock ticker discussed, the host verdict and underlying reasoning without having to spend an hour listening.
 
 ---
 
@@ -11,53 +11,6 @@ This repository automates extracting and summarizing each episode and publishes 
 <div align="center">
   <img src="architecture_flowchart.png" alt="InvestTalk Ingestion Workflow Architecture" width="100%" style="border-radius: 8px; margin: 1rem 0;" />
 </div>
-
-```text
-+--------------------------------------------------------+
-|             RSS Feed (RedCircle / iTunes)              |
-+--------------------------------------------------------+
-                           |
-                           v
-+--------------------------------------------------------+
-|                   rss_extractor.py                     |
-|  - Resolve air-date timezone (America/Los_Angeles)     |
-|  - Parse <podcast:transcript> & <enclosure> audio tags |
-+--------------------------------------------------------+
-                           |
-            +--------------+--------------+
-            |                             |
-      (WebVTT found)               (WebVTT missing)
-            |                             |
-            v                             v
-  +--------------------+     +-----------------------------------+
-  |  Fast Path (VTT)   |     |      Failover Path (Audio MP3)    |
-  |  clean_vtt()       |     |        audio_transcriber.py       |
-  |  - Strip headers   |     |  1. Download <enclosure> stream   |
-  |  - Format turns    |     |  2. Upload via GenAI File API     |
-  +--------------------+     |  3. Gemini 2.5 Flash Audio STT    |
-            |                |  4. Delete remote File API audio  |
-            |                +-----------------------------------+
-            |                                 |
-            +----------------+----------------+
-                             |
-                             v
-+--------------------------------------------------------+
-|                   extract_tickers.py                   |
-|  - Google GenAI SDK: Gemini 2.5 Flash                  |
-|  - Structured Ticker Extraction (Verdicts & Reasons)   |
-|  - Educational Topic Summary Generation                |
-+--------------------------------------------------------+
-                             |
-            +----------------+----------------+
-            |                                 |
-            v                                 v
-+------------------------+       +------------------------+
-|  Dashboards & Notes    |       |   Driving Mode Audio   |
-|  - summary.html (Jinja)|       |   - Edge-TTS Neural    |
-|  - summary.md          |       |     Narration (MP3)    |
-|  - summaries_data.json |       |                        |
-+------------------------+       +------------------------+
-```
 
 ### 1. Dual-Path Transcript Ingestion & Failover
 - **Primary / Fast Path (WebVTT):** When podcast publishers include `<podcast:transcript>` WebVTT tags, the pipeline downloads and parses the subtitle stream instantaneously with zero token overhead.
