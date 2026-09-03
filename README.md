@@ -8,29 +8,55 @@ This repository automates extracting and summarizing each episode and publishes 
 
 ## Architecture & Ingestion Workflow
 
-```mermaid
-flowchart TD
-    RSS["RSS Feed (RedCircle / Apple Podcasts)"] --> Parse["rss_extractor.py<br/>(Extract metadata, dates, VTT & audio URLs)"]
-    Parse --> CheckVTT{"WebVTT transcript available?"}
-    
-    %% Fast Path
-    CheckVTT -->|Yes| FastPath["Fast Path: Download WebVTT<br/>(clean_vtt -> Plain Text)"]
-    
-    %% Audio Failover Path
-    CheckVTT -->|No / Missing| Failover["Audio Failover Path: Stream &lt;enclosure&gt; MP3<br/>(audio_transcriber.py)"]
-    Failover --> Upload["Upload Audio to Google GenAI File API<br/>(client.files.upload)"]
-    Upload --> AudioGemini["Gemini 2.5 Flash Audio Inference<br/>(Transcribe speech with speaker turns)"]
-    AudioGemini --> Cleanup["Clean up remote GenAI File API storage<br/>(client.files.delete)"]
-    
-    %% Downstream Processing
-    FastPath --> LLM["Google GenAI SDK Analysis<br/>(gemini-2.5-flash)"]
-    Cleanup --> LLM
-    
-    LLM --> Verdicts["Extract Stock Verdicts & Reasons (JSON)"]
-    LLM --> Summary["Generate Educational Topic Summary"]
-    
-    Verdicts --> Output["Generate Dashboards & TTS Audio<br/>(summary.html, summary.md, Edge-TTS MP3)"]
-    Summary --> Output
+<div align="center">
+  <img src="architecture_flowchart.png" alt="InvestTalk Ingestion Workflow Architecture" width="100%" style="border-radius: 8px; margin: 1rem 0;" />
+</div>
+
+```text
++--------------------------------------------------------+
+|             RSS Feed (RedCircle / iTunes)              |
++--------------------------------------------------------+
+                           |
+                           v
++--------------------------------------------------------+
+|                   rss_extractor.py                     |
+|  - Resolve air-date timezone (America/Los_Angeles)     |
+|  - Parse <podcast:transcript> & <enclosure> audio tags |
++--------------------------------------------------------+
+                           |
+            +--------------+--------------+
+            |                             |
+      (WebVTT found)               (WebVTT missing)
+            |                             |
+            v                             v
+  +--------------------+     +-----------------------------------+
+  |  Fast Path (VTT)   |     |      Failover Path (Audio MP3)    |
+  |  clean_vtt()       |     |        audio_transcriber.py       |
+  |  - Strip headers   |     |  1. Download <enclosure> stream   |
+  |  - Format turns    |     |  2. Upload via GenAI File API     |
+  +--------------------+     |  3. Gemini 2.5 Flash Audio STT    |
+            |                |  4. Delete remote File API audio  |
+            |                +-----------------------------------+
+            |                                 |
+            +----------------+----------------+
+                             |
+                             v
++--------------------------------------------------------+
+|                   extract_tickers.py                   |
+|  - Google GenAI SDK: Gemini 2.5 Flash                  |
+|  - Structured Ticker Extraction (Verdicts & Reasons)   |
+|  - Educational Topic Summary Generation                |
++--------------------------------------------------------+
+                             |
+            +----------------+----------------+
+            |                                 |
+            v                                 v
++------------------------+       +------------------------+
+|  Dashboards & Notes    |       |   Driving Mode Audio   |
+|  - summary.html (Jinja)|       |   - Edge-TTS Neural    |
+|  - summary.md          |       |     Narration (MP3)    |
+|  - summaries_data.json |       |                        |
++------------------------+       +------------------------+
 ```
 
 ### 1. Dual-Path Transcript Ingestion & Failover
@@ -72,6 +98,7 @@ The system leverages the official **Google GenAI Python SDK** (`google-genai`):
 ├── tests/
 │   ├── test_extract_tickers.py  # Unit tests for RSS parsing, date conversion, and extraction logic
 │   └── test_audio_transcriber.py# Unit tests for audio downloading, File API uploads, and cleanup
+├── architecture_flowchart.png  # Workflow architecture flowchart diagram
 ├── summary.md                  # Unified cumulative Markdown summaries output
 ├── summary.html                # Unified cumulative HTML summaries dashboard
 └── requirements.txt            # Project dependencies (google-genai, Jinja2, edge-tts, etc.)
