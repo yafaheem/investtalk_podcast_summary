@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Diesel Prices Hit a Record: The Inflation Wildcard Wall Street Is Underestimating
+**Date:** 2026-09-08
+
+### Topic Summary
+The main economic topic discussed by the host is the significant impact of surging diesel prices on inflation and the broader economy.
+
+The host highlights that diesel prices have hit an all-time record, significantly increasing over the past year. Unlike gasoline, diesel is presented as the primary fuel driving inflation because it powers essential components of the supply chain, including trucks, trains, ships, farm equipment, and construction machinery. When diesel prices rise, every link in the supply chain becomes more expensive, with these costs ultimately flowing through to consumer prices for goods like food, building materials, and retail items, typically with a three to six-month lag.
+
+The current surge in diesel prices is attributed primarily to geopolitical conflicts in Ukraine and Iran, which have severely disrupted global refinery capacity. Ukrainian drone strikes have knocked Russian refining capacity offline, and Iranian actions in the Middle East have impacted tankers and infrastructure. This has created a "refining problem," resulting in historically high "crack spreads" (the difference between crude oil and refined product prices) rather than just high crude oil prices. The host emphasizes that refining capacity cannot be quickly restored, making this a persistent issue.
+
+Economically, this situation complicates the Federal Reserve's efforts to manage inflation. Rising transportation costs, fueled by diesel, directly contribute to core goods inflation, which the Fed closely monitors. This could compel the Fed to enact further rate hikes, not due to surging wages or overheating consumer demand, but as a response to the escalating cost of moving goods throughout the economy. For consumers and businesses, the host describes these elevated diesel prices as an unavoidable "tax" on consumption, investment, and virtually all economic activity, with no exemptions or easy solutions in sight.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [PDI](https://www.google.com/finance/quote/PDI:NYSE) | Sell | The fund's high yield is largely composed of return of capital and unrealized gains, leading to net asset value (NAV) erosion. It is a highly leveraged, high-yield fund with significant credit risk, making it very risky, especially for most investors who may not understand its complex dynamics and the ongoing principal shrinkage. |
+| [ACWI](https://www.google.com/finance/quote/ACWI:NYSE) | Buy | This ETF provides broad, market-cap-weighted exposure to the entire global stock market, including developed and emerging markets. It's considered a suitable and relatively cheap fund for investors looking to track global trends without making active bets on specific regions or market segments. |
+| [ISRG](https://www.google.com/finance/quote/ISRG:NASDAQ) | Watchlist | Despite a significant price drop and a recent strong quarter, the company's revenue growth has slowed substantially (from 18% to 10%), and future projections indicate slower growth. It is still considered expensive and not a value play, requiring sustained procedure growth and clear adoption of its newest surgical systems before investment. |
+
+---
+
 ## Episode: Best of Caller Questions - Labor Day Edition
 **Date:** 2026-09-07
 
