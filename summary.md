@@ -2,6 +2,22 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Best of Caller Questions
+**Date:** 2026-09-09
+
+### Topic Summary
+The main market, economic, or educational topic discussed by the hosts is **personal investment and retirement planning strategies**.
+
+The podcast transcript primarily features hosts Justin Klein and Luke Guerrero providing practical guidance on optimizing individual financial portfolios, tax situations, and investment decisions across various life stages. A significant portion of the discussion centers on retirement planning, with a detailed explanation of Roth conversion strategies. The hosts elaborate on the concept of "tax arbitrage," demonstrating how systematically converting traditional IRA assets to Roth accounts during periods of potentially lower tax rates—particularly in the "gap years" between retirement and mandatory distributions or Social Security—can effectively minimize future tax liabilities.
+
+Beyond tax optimization, the hosts address a range of critical portfolio management considerations. This includes advice on how to tailor investment allocation decisions based on individual factors such as age, time horizon, and risk tolerance, especially when anticipating economic cycles or potential recessions. They also cover practical aspects like implementing disciplined strategies for managing winning investment positions, understanding the mechanics of dividend reinvestment in today's commission-free trading environment, and distinguishing between complex investment vehicles like private credit and private equity based on their risk profiles, capital structure, and liquidity characteristics. The overarching educational goal is to equip listeners with actionable knowledge and strategies for making informed personal finance and investment decisions for a more secure financial future.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+
+---
+
 ## Episode: Diesel Prices Hit a Record: The Inflation Wildcard Wall Street Is Underestimating
 **Date:** 2026-09-08
 
