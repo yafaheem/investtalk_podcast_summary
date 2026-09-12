@@ -2030,5 +2030,35 @@
     "title": "Best of Caller Questions",
     "summary": "The podcast primarily serves as an educational resource for individual investors, covering a broad spectrum of personal finance and investment topics. A core theme is the critical importance of informed and disciplined long-term investment strategies, coupled with a deep understanding of associated risks and tax implications across various asset classes and account types.\n\nHosts delve into practical aspects of managing retirement savings, such as the intricacies of 403b/401k rollovers to IRAs, navigating income limits with \"backdoor Roth\" conversions, exploring options for self-directed brokerage accounts within employer plans, and understanding early withdrawal options like 72(t) SEPPs for early retirees. They also provide insights into specific investment vehicles, explaining preferred stocks' income benefits alongside their liquidity and rate sensitivity risks, and cautioning against the speculative nature and potential downside of cryptocurrencies.\n\nA significant educational component includes warnings about common investing pitfalls, particularly the dangers of illiquid private investments (e.g., private equity, private real estate platforms) which are often pitched with high returns but lack transparency and exit options. The hosts consistently advocate for using full-featured brokerage platforms over limited investing apps, emphasizing the need for comprehensive research and customer service to make sound investment decisions. Overall, the program underscores an evidence-based investment philosophy, encouraging listeners to build diversified portfolios, manage risk, and focus on long-term wealth compounding rather than short-term market noise or unvetted opportunities.",
     "recommendations": []
+  },
+  "2026-09-11": {
+    "title": "World Food Prices Hit Four-Year Highs: Is Food Inflation Already Baked into the Next CPI Report?",
+    "summary": "The main market, economic, and educational topic discussed in the podcast is the escalating global inflationary environment, primarily driven by rising food and energy prices, and its implications for interest rates and broader market conditions.\n\nThe hosts emphasize that world food prices have reached their highest level since late 2022, according to the UN's Food and Agricultural Organization. This surge is attributed to a confluence of factors including extreme weather events like El Ni\u00f1o impacting agricultural output in regions like Europe and Asia (affecting corn, sugar beets, palm oil), and geopolitical conflicts. Specifically, the war in Ukraine and Russia is curtailing grain shipments, while the US-Iran conflict affects fertilizer supplies. These issues are driving up prices for commodities like grains and sugar, and contributing to significant cuts in global cereal production forecasts.\n\nConcurrently, energy prices are also a major inflationary force, with diesel reaching record highs (exceeding $6 nationally and nearing $10 in California) and oil prices pushing higher due to Middle East tensions and supply disruptions. These persistent inflationary pressures are contributing to declining consumer sentiment and rising inflation expectations, which in turn reinforces the likelihood of further interest rate hikes by the Federal Reserve. The 10-year Treasury yield approaching 5% signals that higher rates are expected to persist, as geopolitical and climate-related issues continue to fuel inflation from multiple sides. The podcast also includes an important educational segment warning investors about the dangers of \"chasing yield\" in high-distribution ETFs, like covered call funds, stressing the importance of evaluating total returns over often misleading headline yields that may consist largely of return of capital.",
+    "recommendations": [
+      {
+        "ticker": "CSCO",
+        "exchange": "NASDAQ",
+        "recommendation": "Hold",
+        "reason": "Host owns it for clients and likes it; strong secular tailwinds from AI data center build-out as a 'picks and shovels' provider; bullish chart, reasonable valuation (20x forward earnings), and good earnings growth. No reason to trim or exit."
+      },
+      {
+        "ticker": "ULTY",
+        "exchange": "NYSE Arca",
+        "recommendation": "Sell",
+        "reason": "The quoted 41% yield is 'too good to be true'; actual total returns have underperformed cash due to payouts being largely return of capital, not true income. The strategy previously failed, leading to management changes and a shift to lower volatility stocks. Advises against chasing such high yield headlines due to high risk and poor actual performance."
+      },
+      {
+        "ticker": "STRL",
+        "exchange": "NASDAQ",
+        "recommendation": "Hold",
+        "reason": "Likes the company due to strong secular tailwinds in e-infrastructure and transportation (85% of revenue), which are critical areas needing investment. The stock has had a significant 50% pullback, resetting valuation to an attractive 20x forward earnings. Strong profitability (40% ROE), good free cash flow, and net cash on the balance sheet."
+      },
+      {
+        "ticker": "SGRT",
+        "exchange": "NASDAQ",
+        "recommendation": "Watchlist",
+        "reason": "Skeptical about the long-term effectiveness of the strategy (targeting 30 fastest earnings growers) as high growth can lead to overvaluation, and the market often anticipates changes before earnings reports. High portfolio turnover (175%) and current holdings include cyclical names (Micron, Western Digital) whose momentum is slowing. Too short a track record for a definitive recommendation, but expects it not to be a great long-term performer."
+      }
+    ]
   }
 }
