@@ -2,6 +2,22 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: AI Stocks Selloff 2026: Overreaction or a Real Warning Sign for Investors?
+**Date:** 2026-09-21
+
+### Topic Summary
+The "InvestTalk" podcast primarily focuses on analyzing current market and economic trends, highlighting three key areas: the recent sell-off in artificial intelligence (AI) stocks, a significant shift in asset allocation by large institutional investors, and the ongoing disconnect between compensation increases and consumer perceptions of inflation.
+
+The AI stock sell-off is examined in the context of revelations that advanced AI models were used for activities like biological weapons research and cyber-espionage. This has sparked concerns about the sector's regulatory future and whether a "risk premium" for AI technology is now being priced into market valuations. The host differentiates between the regulatory risk, which could impose restrictions and change the cost structure for AI companies, and the broader impact on the AI "super-cycle" growth narrative. While companies providing underlying AI infrastructure may be less affected, AI model providers face more direct exposure to regulation.
+
+Additionally, the podcast discusses a "violent swing towards cash" among the world's largest institutional investors, including pension funds and sovereign wealth funds. This defensive move involves reducing allocations to US and UK equities in favor of assets like infrastructure, emerging markets, and inflation-linked products, largely due to a perceived lack of attractive risk-reward in US equities. For individual investors, this trend underscores the importance of considering diversification beyond a sole focus on domestic stock markets. Finally, the episode addresses the challenge of employee compensation, noting that projected merit increases, while potentially beating core inflation, often lag behind headline inflation rates and significantly trail consumer expectations of future price increases. This "expectations gap" can negatively impact consumer spending and savings behavior, prompting a discussion on the importance of negotiating leverage in salary discussions to keep pace with the real cost of living.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+
+---
+
 ## Episode: Should I Sell Bonds Now? How to Reposition Fixed Income in a High-Oil, High-Rate World
 **Date:** 2026-09-18
 
