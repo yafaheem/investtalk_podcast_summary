@@ -29,6 +29,11 @@ class TestInvestTalkNotes(unittest.TestCase):
         tickers_duplicates = extract_tickers_from_description(desc_duplicates)
         self.assertEqual(tickers_duplicates, ["CINF"])
 
+        # Test hyphenated format from newer descriptions
+        desc_hyphen = "<p><strong>Also in this podcast:</strong> EME - Emcor group Inc., MDT - Medtronic PLC, GLW - Corning Inc., CROX - Crocs Inc., LULU - Lululemon Athletica Inc., BAH - Booz Allen Hamilton Holding Corp; also, a question about XRP</p>"
+        tickers_hyphen = extract_tickers_from_description(desc_hyphen)
+        self.assertEqual(tickers_hyphen, ["EME", "MDT", "GLW", "CROX", "LULU", "BAH"])
+
     def test_clean_vtt(self):
         """Test cleaning WebVTT transcript into speaker turns text."""
         raw_vtt = (
@@ -199,6 +204,38 @@ class TestInvestTalkNotes(unittest.TestCase):
             # Should not raise SystemExit
             main()
             mock_save.assert_called_once()
+
+    @patch("google.genai.Client")
+    def test_run_gemini_extraction_with_and_without_tickers(self, mock_client_cls):
+        """Test run_gemini_extraction handles both explicit tickers and dynamic transcript extraction."""
+        from extract_tickers import run_gemini_extraction
+        import json
+        
+        mock_client = MagicMock()
+        mock_client_cls.return_value = mock_client
+        mock_response = MagicMock()
+        mock_response.text = json.dumps([
+            {"ticker": "NVDA", "exchange": "NASDAQ", "recommendation": "Buy", "reason": "Strong GPU demand"}
+        ])
+        mock_client.models.generate_content.return_value = mock_response
+
+        # 1. With explicit tickers
+        res_with_tickers = run_gemini_extraction("Transcript mentioning NVDA", ["NVDA"], api_key="fake-key")
+        self.assertEqual(len(res_with_tickers), 1)
+        self.assertEqual(res_with_tickers[0]["ticker"], "NVDA")
+        
+        # Verify prompt contained explicit tickers
+        call_args = mock_client.models.generate_content.call_args[1]
+        self.assertIn("NVDA", call_args["contents"])
+
+        # 2. Without tickers (empty list)
+        res_no_tickers = run_gemini_extraction("Transcript mentioning NVDA", [], api_key="fake-key")
+        self.assertEqual(len(res_no_tickers), 1)
+        self.assertEqual(res_no_tickers[0]["ticker"], "NVDA")
+        
+        # Verify prompt instructed dynamic extraction
+        call_args_2 = mock_client.models.generate_content.call_args[1]
+        self.assertIn("Identify all individual stock or ETF tickers", call_args_2["contents"])
 
 if __name__ == "__main__":
     unittest.main()

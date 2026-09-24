@@ -42,14 +42,16 @@ def get_google_finance_url(ticker, exchange=None):
 
 
 def extract_tickers_from_description(description):
-    """Extract tickers inside parentheses from the show description."""
-    # Find patterns like (AVAV), (TTMI), (TS), (BTG)
-    tickers = re.findall(r'\(([A-Z]{1,5})\)', description)
+    """Extract tickers inside parentheses or hyphenated lists from the show description."""
+    # Pattern 1: (AVAV), (TTMI), (TS), (BTG)
+    tickers_paren = re.findall(r'\(([A-Z]{1,5})\)', description)
+    # Pattern 2: EME - Emcor group Inc., MDT - Medtronic PLC, CLS- Celestica
+    tickers_hyphen = re.findall(r'\b([A-Z]{1,5})\s*-\s*[A-Za-z]', description)
     # Remove common non-ticker capital abbreviations of length 1-5
-    blacklist = {"AI", "US", "USA", "ETF", "IPO", "GDP", "EPS", "FED", "SEC", "REIT", "IRA", "YOY", "QOQ", "CEO", "CFO"}
+    blacklist = {"AI", "US", "USA", "ETF", "IPO", "GDP", "EPS", "FED", "SEC", "REIT", "IRA", "YOY", "QOQ", "CEO", "CFO", "GLP"}
     # Remove duplicates but keep order
     seen = set()
-    unique_tickers = [x for x in tickers if x not in blacklist and not (x in seen or seen.add(x))]
+    unique_tickers = [x for x in tickers_paren + tickers_hyphen if x not in blacklist and not (x in seen or seen.add(x))]
     return unique_tickers
 
 def clean_vtt(vtt_text):
@@ -109,14 +111,9 @@ def fetch_transcript(vtt_url):
 
 def run_gemini_extraction(transcript, tickers, api_key):
     """Call Gemini to extract stock ticker recommendations and reasons from transcript."""
-    # Try importing google-genai
-    try:
-        from google import genai
-        from google.genai import types
-        
-        client = genai.Client(api_key=api_key)
+    if tickers:
         prompt = (
-            f"Analyze the following podcast transcript. Focus on discussions regarding these stock tickers: {', '.join(tickers)}.\n\n"
+            f"Analyze the following podcast transcript. Focus on discussions regarding these stock/ETF tickers: {', '.join(tickers)}.\n\n"
             "For each ticker, extract the host's opinion and recommendation:\n"
             "- Exchange: The primary listing exchange for the stock (e.g. NASDAQ, NYSE, AMEX, OTCMKTS).\n"
             "- Recommendation: Buy, Sell, Hold, Watchlist, or Neutral.\n"
@@ -127,8 +124,27 @@ def run_gemini_extraction(transcript, tickers, api_key):
             "]\n\n"
             f"Transcript:\n{transcript}"
         )
+    else:
+        prompt = (
+            "Analyze the following podcast transcript. Identify all individual stock or ETF tickers that the hosts or callers discussed and evaluated.\n\n"
+            "For each ticker discussed, extract the host's opinion and recommendation:\n"
+            "- Ticker: The standard stock/ETF ticker symbol (e.g. AAPL, NVDA, SPY).\n"
+            "- Exchange: The primary listing exchange for the stock (e.g. NASDAQ, NYSE, AMEX, OTCMKTS).\n"
+            "- Recommendation: Buy, Sell, Hold, Watchlist, or Neutral.\n"
+            "- Reason: A concise summary of their reasoning or key arguments mentioned.\n\n"
+            "Format the output strictly as a JSON list of objects, e.g.:\n"
+            "[\n"
+            "  {\"ticker\": \"TICKER\", \"exchange\": \"NASDAQ/NYSE\", \"recommendation\": \"Buy/Sell/Hold/Neutral\", \"reason\": \"Summary of arguments\"}\n"
+            "]\n\n"
+            f"Transcript:\n{transcript}"
+        )
 
+    # Try importing google-genai
+    try:
+        from google import genai
+        from google.genai import types
         
+        client = genai.Client(api_key=api_key)
         response = client.models.generate_content(
             model='gemini-2.5-flash',
             contents=prompt,
@@ -144,16 +160,6 @@ def run_gemini_extraction(transcript, tickers, api_key):
             import google.generativeai as legacy_genai
             legacy_genai.configure(api_key=api_key)
             model = legacy_genai.GenerativeModel('gemini-1.5-flash')
-            prompt = (
-                f"Analyze the following podcast transcript. Focus on discussions regarding these stock tickers: {', '.join(tickers)}.\n\n"
-                "For each ticker, extract the host's opinion and recommendation:\n"
-                "- Recommendation: Buy, Sell, Hold, or Neutral.\n"
-                "- Reason: A concise summary of their reasoning or key arguments mentioned.\n\n"
-                "Format the output strictly as a JSON list of objects, e.g.:\n"
-                "[\n"
-                "  {\"ticker\": \"TICKER\", \"recommendation\": \"Buy/Sell/Hold/Neutral\", \"reason\": \"Summary of arguments\"}\n"
-                "]"
-            )
             response = model.generate_content(prompt + f"\n\nTranscript:\n{transcript}")
             # Extract JSON from Markdown code blocks if any
             text = response.text.strip()
@@ -451,14 +457,18 @@ def main():
         # Live processing
         print("Running Gemini LLM extraction...")
         results = []
-        if tickers:
-            try:
-                results = run_gemini_extraction(transcript, tickers, api_key)
-            except Exception as e:
-                print(f"Error extracting ticker recommendations: {e}")
+        try:
+            results = run_gemini_extraction(transcript, tickers, api_key)
+            if not results:
+                print("No ticker recommendations identified by Gemini.")
+            else:
+                print(f"Successfully extracted {len(results)} ticker recommendation(s).")
+        except Exception as e:
+            print(f"Error extracting ticker recommendations: {e}")
+            if tickers:
                 results = [{"ticker": t, "recommendation": "Error", "reason": f"Failed to extract: {e}"} for t in tickers]
-        else:
-            print("No tickers to extract recommendations for.")
+            else:
+                results = []
             
         print("Generating Gemini Topic Summary...")
         try:
