@@ -2348,5 +2348,41 @@
         "reason": "Nucor is considered one of the top performers in the American steel industry with good profitability and balance sheets. However, the host views steel as a 'boom and bust' industry with 'not exactly spectacular businesses' and 'not a ton of economic moat'. Momentum has slowed, and earnings growth is expected to decelerate significantly next year. He likes it 'if you want steel exposure' but questions whether steel is the right industry."
       }
     ]
+  },
+  "2026-09-24": {
+    "title": "Is Quantum Computing a Real Investment or Just Hype?",
+    "summary": "The main topic discussed by the hosts is the **significant and far-reaching impact of aggressively rising interest rates (specifically U.S. Treasury yields) on various asset classes and the broader economy.**\n\nThe podcast emphasizes that Treasury yields act as the risk-free rate, influencing the pricing of all other financial assets. The host details how the market is reacting to a more aggressive Federal Reserve policy path and an \"untenable\" supply-demand dynamic for Treasuries, driven by large government deficits and foreign selling. This environment pushes mortgage rates significantly higher (e.g., into the 7.5% range), putting substantial pressure on the real estate market and potentially leading to a broader equity market pullback.\n\nFrom an investment perspective, higher rates directly impact valuations by reducing present values in discounted cash flow models, making equities less attractive. The discussion highlights that \"bond proxy\" investments, such as Real Estate Investment Trusts (REITs) or high-dividend-yielding stocks with considerable debt, face headwinds as the yield on risk-free Treasuries becomes increasingly competitive. This prompts a potential rotation of capital from riskier assets into bonds. The hosts also touch on the broader economic context, mentioning historical patterns of countries inflating away debt at high debt-to-GDP ratios, signifying a shift to an inflationary period and \"fiscal dominance.\" Investment implications extend to portfolio diversification, with a cautionary note against long-term bonds due to increased risk and a preference for intermediate or short-term bonds in the current rate environment.",
+    "recommendations": [
+      {
+        "ticker": "MCK",
+        "exchange": "NYSE",
+        "recommendation": "Buy",
+        "reason": "Fantastic business with strong fundamentals, high return on invested capital (59%), solid balance sheet, consistent dividend increases, and share buybacks. Good revenue and earnings growth with secular tailwinds; considered a strong conviction for medium to long-term despite potential near-term pullback."
+      },
+      {
+        "ticker": "SFD",
+        "exchange": "N/A",
+        "recommendation": "Watchlist",
+        "reason": "Currently at a 52-week low with falling earnings expectations for the year, but has a reasonable balance sheet and profitability. Host is wary of buying at 52-week lows and set a specific target buy point of $15.60."
+      },
+      {
+        "ticker": "STRA",
+        "exchange": "NASDAQ",
+        "recommendation": "Buy",
+        "reason": "Attractive valuation (low forward P/E, EV/EBITDA of 5.9), and potential tailwind from a rough economic environment driving people back to school. Technicals are starting to perk up, attempting to carve out a low, despite weak historical return on equity."
+      },
+      {
+        "ticker": "FICO",
+        "exchange": "NYSE",
+        "recommendation": "Sell/Avoid",
+        "reason": "Previously overvalued and now a 'falling knife,' down significantly from its highs. Rising interest rates will reduce demand for credit, impacting FICO's business. Long-term, AI poses a significant disruption risk, potentially making FICO scores obsolete as banks develop their own credit assessment models. Support not expected until around $600."
+      },
+      {
+        "ticker": "O",
+        "exchange": "NYSE",
+        "recommendation": "Sell",
+        "reason": "As a REIT, it is considered a bond proxy. With rising Treasury yields (5.22%-5.5%), its 5% dividend yield becomes less attractive, especially considering its inherent recessionary, balance sheet, and operational risks compared to risk-free bonds. Investors are rotating out of REITs into higher-yielding bonds."
+      }
+    ]
   }
 }

@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Is Quantum Computing a Real Investment or Just Hype?
+**Date:** 2026-09-24
+
+### Topic Summary
+The main topic discussed by the hosts is the **significant and far-reaching impact of aggressively rising interest rates (specifically U.S. Treasury yields) on various asset classes and the broader economy.**
+
+The podcast emphasizes that Treasury yields act as the risk-free rate, influencing the pricing of all other financial assets. The host details how the market is reacting to a more aggressive Federal Reserve policy path and an "untenable" supply-demand dynamic for Treasuries, driven by large government deficits and foreign selling. This environment pushes mortgage rates significantly higher (e.g., into the 7.5% range), putting substantial pressure on the real estate market and potentially leading to a broader equity market pullback.
+
+From an investment perspective, higher rates directly impact valuations by reducing present values in discounted cash flow models, making equities less attractive. The discussion highlights that "bond proxy" investments, such as Real Estate Investment Trusts (REITs) or high-dividend-yielding stocks with considerable debt, face headwinds as the yield on risk-free Treasuries becomes increasingly competitive. This prompts a potential rotation of capital from riskier assets into bonds. The hosts also touch on the broader economic context, mentioning historical patterns of countries inflating away debt at high debt-to-GDP ratios, signifying a shift to an inflationary period and "fiscal dominance." Investment implications extend to portfolio diversification, with a cautionary note against long-term bonds due to increased risk and a preference for intermediate or short-term bonds in the current rate environment.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [MCK](https://www.google.com/finance/quote/MCK:NYSE) | Buy | Fantastic business with strong fundamentals, high return on invested capital (59%), solid balance sheet, consistent dividend increases, and share buybacks. Good revenue and earnings growth with secular tailwinds; considered a strong conviction for medium to long-term despite potential near-term pullback. |
+| [SFD](https://www.google.com/finance/quote/SFD:N/A) | Watchlist | Currently at a 52-week low with falling earnings expectations for the year, but has a reasonable balance sheet and profitability. Host is wary of buying at 52-week lows and set a specific target buy point of $15.60. |
+| [STRA](https://www.google.com/finance/quote/STRA:NASDAQ) | Buy | Attractive valuation (low forward P/E, EV/EBITDA of 5.9), and potential tailwind from a rough economic environment driving people back to school. Technicals are starting to perk up, attempting to carve out a low, despite weak historical return on equity. |
+| [FICO](https://www.google.com/finance/quote/FICO:NYSE) | Sell/Avoid | Previously overvalued and now a 'falling knife,' down significantly from its highs. Rising interest rates will reduce demand for credit, impacting FICO's business. Long-term, AI poses a significant disruption risk, potentially making FICO scores obsolete as banks develop their own credit assessment models. Support not expected until around $600. |
+| [O](https://www.google.com/finance/quote/O:NYSE) | Sell | As a REIT, it is considered a bond proxy. With rising Treasury yields (5.22%-5.5%), its 5% dividend yield becomes less attractive, especially considering its inherent recessionary, balance sheet, and operational risks compared to risk-free bonds. Investors are rotating out of REITs into higher-yielding bonds. |
+
+---
+
 ## Episode: Investors Borrowed $1.45 Trillion to Buy Stocks: Is Record Margin Debt a Warning or Just Noise?
 **Date:** 2026-09-23
 
