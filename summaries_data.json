@@ -2498,5 +2498,47 @@
         "reason": "While the spin-off of the Aerospace segment may unlock value, the core business is not particularly cheap and has a good amount of debt; host suggests there are better, more clear-cut industrial plays available and does not recommend adding at current levels."
       }
     ]
+  },
+  "2026-09-30": {
+    "title": "Trump-Xi Summit: The Investment Playbook After the US-China D\u00e9tente",
+    "summary": "The main educational topic discussed by the host is the **history and fundamental importance of the bond market** in the global economy and for understanding financial markets.\n\nThe host, Justin Klein, dedicates a segment to exploring the origins and evolution of bonds, emphasizing that despite often being perceived as \"boring,\" they are the \"hidden wiring of the global economy\" and significantly larger than the stock market or banking system. He highlights that understanding the bond market's history\u2014marked by war, peace, and market manias\u2014is crucial for investors to comprehend current market dynamics, politics, and economic trends. Klein recounts how bonds were \"invented by accident\" in Venice as a war tax, eventually spreading across Europe and becoming instrumental in financing global trade through entities like the Dutch East India Company. He stresses that studying this history is a lost art but an essential aspect of becoming a good investor.",
+    "recommendations": [
+      {
+        "ticker": "XLU",
+        "exchange": "NYSE",
+        "recommendation": "Neutral",
+        "reason": "Not a good core income investment for retirement due to high capital intensity, rising cost of capital, limited growth, and long-term total return lagging other sectors. It's a bond proxy susceptible to rising rates. Only suitable as a small, diversified sliver of a portfolio."
+      },
+      {
+        "ticker": "OTIS",
+        "exchange": "NYSE",
+        "recommendation": "Watchlist",
+        "reason": "Historically a good business with high returns and cash flow, but currently in a stark downtrend due to reduced building of office spaces. It's considered a 'falling knife'; waiting for capitulation or a clear bottom before considering a buy."
+      },
+      {
+        "ticker": "IIPR",
+        "exchange": "NYSE",
+        "recommendation": "Buy",
+        "reason": "A cannabis REIT that has been outperforming the sector since its February bottom. Despite a high 14.4% yield indicating high risk (due to tenant defaults), funds from operation are expected to bounce back. The host sees it as a good risk-versus-reward play, especially with potential Democrat control in Congress, but emphasizes its very high risk."
+      },
+      {
+        "ticker": "KR",
+        "exchange": "NYSE",
+        "recommendation": "Sell",
+        "reason": "A fine business with solid return on equity, but low operating margins and flat free cash flow since 2020, with cash flow being used to pay down debt. The 2.5% dividend yield is not considered great for a bond proxy. Higher diesel prices and capital costs are expected to squeeze margins, suggesting better alternatives exist."
+      },
+      {
+        "ticker": "VST",
+        "exchange": "NYSE",
+        "recommendation": "Buy",
+        "reason": "An independent utility company (Vistra Energy) with high margins and profitability. It's outperforming the broader utility sector (XLU) and is considered the type of name the host would own for utility exposure, despite having a decent amount of debt."
+      },
+      {
+        "ticker": "AAON",
+        "exchange": "NASDAQ",
+        "recommendation": "Watchlist",
+        "reason": "Engaged in air conditioning and heating equipment, a sector that should benefit from AI data centers, but earnings have been volatile. Currently at strong support levels, with a good debt profile and reasonable forward multiple if earnings projections hold. However, the host needs to understand the reasons for past earnings declines despite industry tailwinds before a definitive buy."
+      }
+    ]
   }
 }
