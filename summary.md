@@ -2,6 +2,28 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Is the Data Center Backlash a Real Investment Risk for AI Infrastructure?
+**Date:** 2026-10-01
+
+### Topic Summary
+The main market and economic topic discussed by the hosts is the **growing community opposition and political backlash against data center construction, and its significant implications for artificial intelligence (AI) infrastructure investment.**
+
+The hosts highlight a substantial increase in local resistance, with billions of dollars worth of data center projects being blocked, delayed, or outright canceled. This opposition is widespread across many states, fueled by strong public sentiment against these facilities. Communities voice concerns about the low number of permanent jobs created post-construction, excessive noise, immense water and power consumption that strains local grids and raises electricity bills, and potential pollution.
+
+This rising backlash introduces critical investment risks for the AI infrastructure sector, which relies on rapid and continuous expansion. Key risks include timeline delays, as permitting battles push back project completion and impact projected revenue and valuations. There's also a concentration risk, as projects may be forced into fewer, already saturated locations, driving up land costs, further straining utilities, and creating single points of failure. Furthermore, the bipartisan nature of this opposition creates political risk, potentially leading to restrictive legislation that alters the economic landscape for data center development. These factors pose a significant challenge to the ambitious growth forecasts currently priced into many AI-related investments, particularly affecting data center REITs, developers, and construction firms.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [TJX](https://www.google.com/finance/quote/TJX:NYSE) | Hold | Consistently growing business with recent margin expansion. Stock pulled back due to inflated headline earnings (one-time funds) and elevated valuations, now trading at a solid value around its average. |
+| [CENX](https://www.google.com/finance/quote/CENX:NASDAQ) | Neutral | Company assets are at full capacity and balance sheet is solid, but recent earnings and guidance missed consensus, leading to a pullback after a significant run-up. Valuation is low, but a further pullback is anticipated. |
+| [LEU](https://www.google.com/finance/quote/LEU:NYSE) | Watchlist | Nuclear fuel company with significant growth potential from data center demand and large backlog. Stock is highly volatile and still expensive (50x forward P/E) despite a recent pullback. Careful entry and position sizing are crucial. |
+| [CVNA](https://www.google.com/finance/quote/CVNA:NYSE) | Sell | Despite a strong turnaround, the underlying used car business is fundamentally challenging with declining margins and expected lower growth normalization. Current valuation (30x P/E) presents too much downside risk. |
+| [OPRA](https://www.google.com/finance/quote/OPRA:NASDAQ) | Hold | Strong growth (revenue exploded, accelerating growth, raised guidance), consistent, and diversified business. Stock trades below its average valuation; recent pullback is seen as an overreaction. |
+| [SPCX](https://www.google.com/finance/quote/SPCX:N/A) | Avoid | Highly volatile (52-week beta of 5.1), burning a lot of cash, and trading at an enormous premium. Long-term profitability is unproven, and general advice is to avoid IPOs for the first year due to historical underperformance. |
+
+---
+
 ## Episode: Trump-Xi Summit: The Investment Playbook After the US-China Détente
 **Date:** 2026-09-30
 
