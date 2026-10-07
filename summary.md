@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Skilled Trades Labor Shortage 2026: A $1.7 Million Job Crisis and an Investment Angle
+**Date:** 2026-10-06
+
+### Topic Summary
+The main market, economic, or educational topic discussed by the hosts is the **critical shortage of skilled labor in the United States and its extensive economic ramifications.**
+
+The hosts highlight a recent report indicating a need for 1.7 million new skilled trade workers annually through 2035, while the current training pipeline is only producing about 55% of that demand. This issue is compounded by an aging workforce, with nearly a quarter of current skilled trades professionals aged 55 or older and insufficient younger generations entering these fields. This creates a significant "pickle" or bottleneck across numerous sectors vital to the economy.
+
+This skilled labor deficit is presented as a structural constraint impacting major capital spending themes such as the construction of AI data centers, power grid modernization, manufacturing reshoring efforts, and addressing the housing affordability crisis. The economic consequences are far-reaching, including inevitable wage inflation for skilled workers, rising construction and infrastructure project costs, extended timelines, and persistent inflation in services. The hosts emphasize that these are jobs resistant to AI displacement, making the shortage a unique challenge. Investment opportunities arise in companies dedicated to solving this training pipeline problem, including those in vocational education, apprenticeship platforms, credentialing, and placement services. Additionally, businesses that enhance worker productivity through advanced tools, mechanization, and technology stand to benefit. The core message is that without adequate labor, capital cannot effectively drive America's largest investment themes, leading to widespread economic challenges that will appear in corporate earnings, inflation data, and government policy for the foreseeable future.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [BCE](https://www.google.com/finance/quote/BCE:NYSE) | Sell | Highly leveraged telecom company in rough shape with significant debt in a rising rate environment. Despite a high dividend yield, total returns have been negative, indicating capital destruction. |
+| [REZ](https://www.google.com/finance/quote/REZ:NYSE) | Watchlist | The iShares Residential and Multi-Sector Real Estate ETF offers good exposure to real estate themes (aging demographics, housing shortage). However, the real estate sector is likely to underperform in a rising rate environment as investors prefer higher-yielding bonds. Recommend waiting until rates stabilize or fall. |
+| [OHI](https://www.google.com/finance/quote/OHI:NYSE) | Watchlist | Omega Healthcare Investors is a healthcare REIT with solid earnings and revenue growth, but faces macro headwinds from rising rates. High payout ratio leaves little cushion, and recent earnings were boosted by asset sales, which are unsustainable. Hesitant to enter now due to rate cycle. |
+| [AGX](https://www.google.com/finance/quote/AGX:NASDAQ) | Watchlist | Engineering and construction contractor with impressive revenue and EPS growth and low debt. However, recent slowing growth and shrinking project backlog (down from $2.9B to $2.5B) make the host hesitant to enter despite a recent price dip. Advised to wait for December to see if growth corrects. |
+| [EAT](https://www.google.com/finance/quote/EAT:NYSE) | Buy | Brinker International (Chili's parent) shows solid revenue growth despite inflation and rising rates, reporting positive traffic, record unit volumes, and expanding margins. Considered a strong value story and a robust name within the restaurant space. |
+
+---
+
 ## Episode: Emerging Markets Under Pressure: How Oil, the Dollar, and Iran Are Hammering Developing Economies
 **Date:** 2026-10-05
 
