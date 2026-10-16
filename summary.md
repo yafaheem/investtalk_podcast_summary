@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Are REITs a Buy or Sell When Interest Rates Rise? The Bond Selloff's Housing Victim
+**Date:** 2026-10-15
+
+### Topic Summary
+The main educational topic discussed by the host, Justin Klein, revolves around **the significant and underappreciated risks within the for-profit insurance and annuity industry.** Klein issues a stark warning about a looming "major crisis" in this sector within the next three to five years, potentially leading to widespread defaults and policyholder losses.
+
+He outlines two primary problems. First, many insurance products, particularly universal life policies and index annuities sold by for-profit companies, are fundamentally poor investments. These products are often marketed with promises of stock-market-like gains without downside risk, but in practice, they frequently underperform their supposed benchmarks due to complex structures, bait-and-switch mechanisms that alter exposure, and high commissions that incentivize agents to sell less advantageous products to consumers. Second, and more critically, these for-profit insurance companies are increasingly jeopardizing policyholders' principal by making risky, opaque investments in areas like private equity and private credit, often involving related-party transactions with questionable valuations.
+
+Klein emphasizes that this practice by unregulated insurance firms, especially those tied to private equity, represents "the riskiest thing that's happening... in our financial system" over the last decade, even more so than the banks. He warns that policyholders in these companies may find themselves merely creditors in the event of a company failure, with inadequate protection akin to FDIC insurance. Therefore, he urges extreme skepticism and caution for anyone holding such insurance products, advising them to consider if their policy is backed by a for-profit entity rather than a more secure mutual company.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [SI](https://www.google.com/finance/quote/SI:N/A) | Neutral | The host dismisses 'SI' (Super Intelligence) as an investment term. He clarifies it is a ruse by Trump to boost .SI domain name values and has no impact on the investment landscape or technology; advises to ignore it. |
+| [VO](https://www.google.com/finance/quote/VO:NYSE ARCA) | Buy | Considered a 'better long-term play' than large-cap indexes like VTI. Mid-cap companies are expected to benefit more from AI infrastructure spending and efficiency gains, while large-cap hyperscalers may face declining profitability from asset depreciation. Described as a midcap blend, slightly leaning value. |
+| [VTI](https://www.google.com/finance/quote/VTI:NYSE ARCA) | Neutral | While not an explicit 'sell,' the host strongly advises broadening exposure *outside* of VTI. It is heavily exposed to large-cap hyperscalers, whose future profitability is seen as vulnerable due to AI infrastructure investments and depreciation. Prefers mid-cap, small-cap, and foreign names instead. |
+| [TPL](https://www.google.com/finance/quote/TPL:NYSE) | Sell | The stock is in a 'solid downtrend' since March. Despite good cash flow, the host dislikes the overall trend, noting that oil prices haven't broken out and the value of its royalty income streams (from oil and gas) is expected to 'dwindle' over time as royalties expire. Not a recommended holding. |
+| [CCJ](https://www.google.com/finance/quote/CCJ:NYSE) | Buy | The host's firm recently bought the stock for new clients on a dip, seeing it as an opportunity when it hit support levels. They 'still like the name' and its exposure to the nuclear and uranium sectors. |
+
+---
+
 ## Episode: How Founders Are Building the Next Market Giants with Anthony Katz
 **Date:** 2026-10-09
 
