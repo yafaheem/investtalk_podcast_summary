@@ -2,6 +2,26 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Supreme Court Takes on Your 401(k): The Intel Private Funds Case Explained
+**Date:** 2026-10-16
+
+### Topic Summary
+The main market, economic, or educational topic discussed by the hosts revolves around **critical considerations for retirement savings and investment strategy in a shifting global landscape**.
+
+The podcast's primary focus point is the potential impact of a Supreme Court ruling concerning the inclusion of private equity, private credit, and hedge funds within 401(k) plans. This discussion highlights the complexities and debates surrounding fiduciary duty, the inherent illiquidity and challenging performance benchmarking of such alternative investments, and the significant potential for conflicts of interest among those advising on 401(k) fund selections. The host emphasizes that while these funds may benefit the industry by securing "sticky" capital, their suitability for the average 401(k) participant, who may require accessibility and clear performance metrics, is a major concern.
+
+Beyond retirement plan specifics, the hosts delve into global economic trends, specifically the surging central bank demand for gold. They attribute this trend to the "weaponization of the dollar" in geopolitical conflicts, the growing US fiscal deficit, and a broader erosion of faith in fiat currencies worldwide. Gold is presented as a neutral reserve asset that central banks, including the People's Bank of China, and consumers are increasingly turning to as protection against inflation and global instability, indicating a long-term shift in global reserve strategies. Additionally, the episode touches on fundamental financial planning elements such as understanding Roth conversion rules and their applicability based on age, and broader investment principles like assessing risk, adjusting portfolios for market shifts, and identifying value in industries with high barriers to entry despite perceived lack of excitement.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [GE](https://www.google.com/finance/quote/GE:NYSE) | Sell | The business is good with solid growth, but the stock is considered expensive at 36 times forward earnings and near the high end of its price/value range. Growth trajectory is also slowing, and momentum has decreased, making it overvalued at current levels. |
+| [LVS](https://www.google.com/finance/quote/LVS:NYSE) | Sell | The company is heavily tied to Macau and the US economy, facing cyclical headwinds and competition. It's not considered cheap, carries a significant amount of debt, and is exposed to geopolitical risks, making it unattractive to add to a portfolio. |
+| [PM](https://www.google.com/finance/quote/PM:NYSE) | Buy | Philip Morris International has consistently been a strong performer, leading in smokeless tobacco, which drives growth. It's a 'wonderful business' with high profit margins, high return on invested capital (27%), strong cash flow for buybacks and a growing dividend (around 3%). The industry has limited competition, allowing for consistent price increases. |
+| [THRM](https://www.google.com/finance/quote/THRM:NASDAQ) | Watchlist | The stock is a recent spin-off from Modine, and spin-offs typically underperform in their first year as shareholders sell shares they don't understand or want. The business performance has been on a downtrend, and the stock is weak with likely continued short-term underperformance. It's recommended to add to a watchlist for potential long-term opportunity once selling pressure subsides and the business fundamentals are solid. |
+
+---
+
 ## Episode: Are REITs a Buy or Sell When Interest Rates Rise? The Bond Selloff's Housing Victim
 **Date:** 2026-10-15
 
