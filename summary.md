@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Is the AI Trade Reversal Just Beginning? What the Picks-and-Shovels Selloff Really Means
+**Date:** 2026-10-21
+
+### Topic Summary
+The main market and educational topic discussed in the podcast is the **AI trade reversal and its implications for investors**.
+
+The host identifies the AI trade reversal, particularly affecting the "picks and shovels" companies supplying AI infrastructure, as the show's main focus point. He explains that this reversal is driven by two primary factors. First, the unsustainable rate of growth initially seen in the AI sector is slowing down significantly; projected hyperscaler spending growth rates are decelerating sharply from nearly 100% to under 20% in just a few years. This follows a historical pattern where initial booming growth in new technologies cannot be extrapolated indefinitely, leading to market corrections.
+
+Second, higher interest rates are tightening the funding environment and increasing the hurdle rate for returns on investment, making it harder for AI-linked ventures to justify their valuations. There's also a shift in industry dynamics, with demand moving from training AI models (which favored GPUs) to inference (utilizing models), potentially changing the hardware in demand. Concerns are growing that massive AI infrastructure spending could be impaired if software revenues don't keep pace with expectations, leading to a "shakeout of speculation" across the market, from semiconductor shares to related infrastructure providers. For investors, the current sell-off, while painful, is seen as an inevitable correction that will eventually lead to true opportunities when valuations reset for quality businesses within the space.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [PYPL](https://www.google.com/finance/quote/PYPL:NASDAQ) | Hold | Considered a good business with a great balance sheet, good value, and in an uptrend. Exhibits solid free cash flow ($6.5B), 24% return on equity, and minimal debt. While significantly below the caller's purchase price of $90, it's a $57 stock with potential to return to $90 in 2-3 years, contingent on business progress. |
+| [VST](https://www.google.com/finance/quote/VST:NYSE) | Neutral | A high-risk, unregulated Texas utility. While it boasts a high return on equity (42%) and current near-term chart and valuation are appealing, its profitability can fluctuate wildly and it has a history of severe downturns, including bankruptcy in 2008-2009. Not a 'set it and forget it' investment. |
+| [VHT](https://www.google.com/finance/quote/VHT:NYSE) | Neutral | An ETF that offers broad diversification across various healthcare sub-sectors (pharmaceuticals, medical devices, health insurance, R&D). Its suitability depends on the investor's existing portfolio and diversification needs, as it provides a broader exposure compared to a single stock like MCK. |
+| [MCK](https://www.google.com/finance/quote/MCK:NYSE) | Buy | A very strong, consistent business as a medical distributor, known for its high return on invested capital (58%). It is a long-term holding for clients. Currently a little overbought in the short term after a significant run, but highly favored for its business model and consistency. |
+| [SFM](https://www.google.com/finance/quote/SFM:NASDAQ) | Buy | Considered a very good business with strong return on equity (35%) and invested capital (15%), and high operating margins (7.5%). Despite recent slowing earnings growth and multiple contraction, it's seen as relatively cheap and a good long-term buy at current levels ($65), driven by secular demand for healthy eating and store count growth. Features a strong balance sheet and share buybacks instead of dividends. |
+
+---
+
 ## Episode: Tax Loss Harvesting Explained: How Wealthy Investors Cut Tax Bills (And How You Can Too)
 **Date:** 2026-10-20
 
