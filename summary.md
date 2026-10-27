@@ -2,6 +2,28 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Russia Sanctions Lifted? What the US-Russia Energy Deal Means for Commodity Prices
+**Date:** 2026-10-26
+
+### Topic Summary
+The main market and economic topic discussed by the hosts is the **impact of recent Russian sanctions relief on global commodity markets and various economies.**
+
+The podcast details a decision by the White House to issue a waiver on certain sanctions under the Lensio Gram sanctions on Russia and Iran Act, effective until April of the following year. This waiver allows for the import of approximately one million tons of Russian diesel per month into the United States, equivalent to about two days of demand. The hosts explore the consequences of this policy shift, noting that while its overall impact on global oil prices has been relatively muted, it has created specific beneficiaries within the global economy.
+
+Notably, India stands out as a significant winner from this development. As the world's third-largest oil importer and consumer, with Russia accounting for nearly half of its oil imports, India had been cautiously reducing its purchases to avoid diplomatic strain and potential U.S. tariff risks. The sanctions relief provides India with an opportunity to import Russian oil at potentially cheaper prices without incurring new U.S. tariffs. Additionally, global shipping and tanker companies are benefiting from expanded routes and higher utilization rates as Russian fuels are now permitted back into American and other ports, leading to increased profits for these maritime transport businesses. Conversely, Russian energy equities are also expected to gain from being able to sell their oil closer to market rates rather than at a discount. The hosts touch upon the geopolitical context, suggesting the move might be related to domestic political considerations rather than a precursor to broader peace negotiations.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [PBR](https://www.google.com/finance/quote/PBR:NYSE) | Buy | Opportunity after a significant sell-off due to Brazilian election results; good value at current levels; provides exposure to resource-rich foreign markets and harder assets. |
+| [EQT](https://www.google.com/finance/quote/EQT:NYSE) | Buy | Good long-term demand for natural gas; solid balance sheet with strong cash flow; actively paying down debt, suggesting future room for buybacks or increased dividends. |
+| [TTC](https://www.google.com/finance/quote/TTC:NYSE) | Hold | Still a good business but has seen stagnant earnings growth and some erosion in profitability since 2021; plowing free cash flow into share buybacks; expected to break out of its funk over time. |
+| [BWXT](https://www.google.com/finance/quote/BWXT:NYSE) | Buy | Pulled back considerably, bringing valuation to more reasonable levels; approaching strong technical support (200-week moving average); business continues to grow at a healthy clip with expected strong earnings and revenue. |
+| [PLTR](https://www.google.com/finance/quote/PLTR:NYSE) | Neutral | Fundamentally extremely overvalued; performance heavily dependent on the political environment and government contracts, which poses significant uncertainty with potential changes in administration. |
+| [MOD](https://www.google.com/finance/quote/MOD:NYSE) | Sell | Profitability has not materialized despite the AI-related narrative; currently too expensive with slowing revenue growth expected; expects a significant further price decline, advising not to buy until much lower levels ($60-$90 from current $130). |
+
+---
+
 ## Episode: India's Jio IPO Tests Emerging Market Investing — Is India a Better Bet Than China Right Now?
 **Date:** 2026-10-23
 
