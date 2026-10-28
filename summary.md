@@ -2,6 +2,26 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Should I Buy Bonds Now? The 10-Year Treasury at 5% Explained
+**Date:** 2026-10-27
+
+### Topic Summary
+The podcast transcript primarily discusses the evolving dynamics of financial markets, focusing on the sustainability of corporate earnings growth and the significant impact of a higher interest rate environment on investment valuations and asset allocation.
+
+The hosts highlight that while the S&P 500 has shown robust earnings growth, a disproportionate amount of this growth is concentrated in a small number of large technology and energy companies. They raise concerns about the sustainability of this trend, citing potential issues like "channel stuffing" in the tech sector and drawing parallels to past periods of concentrated market leadership and subsequent volatility. This raises questions about the underlying health and breadth of the broader market's profitability.
+
+A major economic point of discussion centers on the 10-year Treasury yield reaching 5%. This psychologically and mathematically significant benchmark forces investors to re-evaluate the equity risk premium, questioning the justification for taking on the volatility of stocks when a substantial risk-free return is available from government bonds. This shift in the cost of capital is fundamentally altering the valuation landscape for equities, particularly growth stocks whose future earnings are discounted at a higher rate. Consequently, it's driving a reallocation of capital from riskier assets like equities and real estate towards fixed-income investments, as institutional investors and retirees seek attractive yields with lower risk and reduced management responsibilities.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [COWZ](https://www.google.com/finance/quote/COWZ:NYSE ARCA) | Buy | The host likes the methodology of focusing on free cash flow over earnings, which he sees as a better metric for shareholder value. The ETF has outperformed its category and broader index over five years. He reiterates a 'thumbs up' from previous discussions, though he also notes that buying individual names within the ETF might be preferable. |
+| [QXO](https://www.google.com/finance/quote/QXO:NYSE/NASDAQ) | Speculative Buy | Considered a high-risk, high-reward play due to its significant downtrend. The company operates in building supplies, has new management with a track record of turnarounds, and maintains positive free cash flow despite struggling profitability. The host suggests dipping a toe in at current levels, especially during a panic sell-off. |
+| [KWEB](https://www.google.com/finance/quote/KWEB:NYSE ARCA) | Buy | Despite acknowledging geopolitical and domestic regulatory risks in the Chinese tech sector, the host finds the ETF's valuation (around 12 P/E) attractive. He gives it a 'surprising thumbs up' as a good option for broad-based exposure to Chinese internet companies, especially if one currently lacks such exposure. |
+| [SCHD](https://www.google.com/finance/quote/SCHD:NYSE ARCA) | Neutral | While an 'okay fund' with a low expense ratio, the host 'doesn't love it.' He points out its overweighting in consumer defensive and healthcare sectors, which tend to perform poorly in inflationary environments. He also critiques its dividend-focused approach, arguing that share buybacks constitute the majority of capital returned to shareholders in the current market, making a sole focus on dividends potentially flawed. Performance in the recent five-year inflationary period has been slightly below average. |
+
+---
+
 ## Episode: Russia Sanctions Lifted? What the US-Russia Energy Deal Means for Commodity Prices
 **Date:** 2026-10-26
 
