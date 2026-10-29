@@ -2,6 +2,32 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Is the Yen Carry Trade Unwind Risk Being Ignored by Markets?
+**Date:** 2026-10-28
+
+### Topic Summary
+The main market, economic, and educational topics discussed in the podcast transcript are the potential unwind of the Yen carry trade, the future direction of U.S. fiscal policy and economic growth strategies post-midterms, and the emerging real-world constraints impacting the AI industry's expansion.
+
+The host explicitly identifies the **potential unwind of the Yen carry trade** as a primary concern. This strategy involves borrowing low-interest Japanese Yen to invest in higher-yielding U.S. assets. As Japanese inflation rises and the Bank of Japan contemplates moving away from its ultra-loose monetary policy, borrowing costs in Japan could increase. A strengthening Yen, therefore, would compress profit margins for this trade and could prompt investors to unwind their positions, potentially leading to a sell-off in U.S. Treasuries and equities, particularly in the tech sector, making U.S. markets more vulnerable.
+
+Additionally, the podcast addresses **U.S. fiscal policy and economic growth strategies** anticipated after the midterms. Citing comments from Treasury Secretary Scott Bessent, the discussion highlights the administration's intent to unveil a fiscal consolidation plan aimed at controlling the national debt and borrowing without causing a recession. The host speculates that this delicate balance could be achieved through unconventional approaches, such as the creation of sovereign wealth funds or state-owned entities to stimulate economic growth, drawing comparisons to "Chinese-style capitalism."
+
+Finally, the transcript examines **real-world constraints impacting the AI industry's build-out**, using insights from recent corporate earnings. Major tech companies like Microsoft and Alphabet are reportedly facing limitations in data center construction due to "third-party capacity deliveries" and other logistical challenges. This suggests that the rapid expansion of the AI sector is not solely dependent on technological advancements but is increasingly challenged by practical infrastructure concerns, including power grid capacity, water availability for cooling facilities, and local community acceptance, which could influence future capital expenditure and the pace of AI development.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [GIB](https://www.google.com/finance/quote/GIB:NYSE) | Buy | Good value with cheap valuation metrics (P/E 13, lowest P/B and P/S in 10 years), healthy profitability (ROIC 18%, ROE 16%), positive earnings growth, strong free cash flow yield (10%), low debt, and improving technicals after a long downtrend. |
+| [VITL](https://www.google.com/finance/quote/VITL:NASDAQ) | Sell | Vital Farms operates in a commodity business (eggs) which lacks a durable competitive advantage. Profitability has dropped significantly (operating margins 0.5%), and the stock price has fallen considerably from its peak. |
+| [CLH](https://www.google.com/finance/quote/CLH:NYSE) | Sell | Clean Harbors is trading at expensive valuations (P/S, P/B, EV/EBITDA on the high end of its 10-year range). The stock's chart has lost momentum, showing deterioration and consolidating after a recent peak, indicating a good time to trim holdings. |
+| [CDE](https://www.google.com/finance/quote/CDE:NYSE) | Hold | Coeur Mining is considered one of the better silver producers, offering high quality cash flow returns. It has a good free cash flow yield, net cash on its balance sheet, and a decent return on equity (14%). Volatility is inherent to silver miners, but it's a strong performer in the space. |
+| [HRI](https://www.google.com/finance/quote/HRI:NYSE) | Neutral | Herc Holdings operates a capital-intensive, cyclical, and somewhat commodity-like equipment rental business. It has negative free cash flow and high net debt ($10B on a $5B market cap). In a slowing economy with rising capital costs, there are better investment opportunities. |
+| [NKE](https://www.google.com/finance/quote/NKE:NYSE) | Watchlist | Nike is in a long downtrend ('falling knife'), continues to weaken, and remains below major moving averages. Earnings expectations are declining, and its P/E of 18 is not considered cheap. The management team is perceived as not taking enough risks to excite consumers, suggesting a wait for capitulation and strategic change. |
+| [VLO](https://www.google.com/finance/quote/VLO:NYSE) | Sell | While Valero benefits from structural advantages due to reduced global refining capacity, the refining cycle is nearing an end with potential near-term setbacks in demand (e.g., diesel prices). Trimming profits after a long hold is a good risk mitigation strategy, though the long-term outlook for the company is still positive. |
+| [TIPS](https://www.google.com/finance/quote/TIPS:NYSE) | Buy | TIPS provide inflation protection and are a good component of a diversified portfolio, especially when implemented with a bond laddering strategy to manage risk and capitalize on yields. It's important to consider duration risk, with shorter-duration ETFs (like STIP) being preferred for minimal maturity risk. |
+
+---
+
 ## Episode: Should I Buy Bonds Now? The 10-Year Treasury at 5% Explained
 **Date:** 2026-10-27
 
