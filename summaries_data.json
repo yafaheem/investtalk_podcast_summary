@@ -3170,5 +3170,35 @@
         "reason": "TIPS provide inflation protection and are a good component of a diversified portfolio, especially when implemented with a bond laddering strategy to manage risk and capitalize on yields. It's important to consider duration risk, with shorter-duration ETFs (like STIP) being preferred for minimal maturity risk."
       }
     ]
+  },
+  "2026-10-29": {
+    "title": "US Consumer Sentiment Near Record Lows: What It Tells Us About the Economy Ahead",
+    "summary": "The podcast transcript primarily delves into the **economic implications and market re-evaluation of the burgeoning Artificial Intelligence (AI) industry, particularly concerning the financial health and investment viability of major technology companies, often referred to as \"hyperscalers.\"**\n\nThe host highlights an ongoing shift in market sentiment, moving away from an era of \"spend to infinitum\" to one where investors are increasingly demanding evidence of positive free cash flow and sustainable capital expenditures from these high-growth, high-spending companies. This re-evaluation is fueling a \"massive market rotation\" away from heavily weighted large-cap tech toward other sectors, as the market questions the long-term profitability and potential commoditization of some AI-related services, especially those with high capital expenditure burdens that reduce funds for shareholders. A key educational segment of the discussion focuses on how companies can build lasting \"economic moats\" within the AI space. The host explains that sustainable competitive advantages will likely come from proprietary data, integration into customer workflows, and achieving significant pricing power through scale, as opposed to becoming undifferentiated \"commodity businesses.\" This analysis serves to guide investors in identifying AI-related companies with strong underlying business models capable of generating consistent profitability.\n\nAdditionally, the podcast addresses the current low levels of U.S. consumer sentiment, as measured by the University of Michigan survey. The host posits that while near record lows, this sentiment is currently more reflective of \"political frustration\" and acts as a \"Vibe Session\" rather than indicating an imminent economic collapse. He argues that consumer spending remains resilient due to sustained job security, with any adjustments likely impacting \"big ticket items\" first, while essential goods and value-oriented services continue to see demand. This nuanced perspective on consumer sentiment underscores the importance of aligning such indicators with actual economic behavior and employment stability.",
+    "recommendations": [
+      {
+        "ticker": "VRT",
+        "exchange": "NYSE",
+        "recommendation": "Watchlist",
+        "reason": "AI name in a downtrend; sentiment not yet despondent enough for a bottom. Seeing deceleration in earnings and revenue growth. Expects more downside in the space as a whole, with major support around 125-140."
+      },
+      {
+        "ticker": "TRGP",
+        "exchange": "NYSE",
+        "recommendation": "Buy on Dips",
+        "reason": "Good long-term play as a 'toll keeper' in natural gas infrastructure, benefiting from strong demand for cheap and abundant natural gas in the US. Currently 'a bit overbought' after doubling in the past year, looking for a correction to enter."
+      },
+      {
+        "ticker": "CALF",
+        "exchange": "NASDAQ",
+        "recommendation": "Neutral",
+        "reason": "A 'fine ETF' for small-cap exposure that focuses on cash flow, which the host generally likes. However, it has a high expense ratio (59 bps) and volatile performance, being average over five years despite recent outperformance. Not considered the 'best fund out there'."
+      },
+      {
+        "ticker": "INTC",
+        "exchange": "NASDAQ",
+        "recommendation": "Buy on Dips",
+        "reason": "Positive long-term outlook due to government policy aiming for Intel to be a winner. Host plans to 'step in' around major support in the mid-60s, after recent earnings caused a significant drop. Advises caution for current investors given existing exposure."
+      }
+    ]
   }
 }
