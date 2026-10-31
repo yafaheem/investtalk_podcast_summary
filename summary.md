@@ -2,6 +2,26 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Midterm Elections and Your Money: Four Ways US Foreign Policy Could Shift
+**Date:** 2026-10-30
+
+### Topic Summary
+The main market and economic topic discussed by the hosts is the **potential impact of upcoming midterm elections on various sectors of the U.S. economy, market dynamics, and policy decisions.**
+
+The hosts highlight the significance of the midterm elections, particularly the increasing likelihood of a "blue wave" resulting in Democratic control of both the House and the Senate. This potential shift in political power is analyzed through its expected consequences across several key areas. For instance, a unified Democratic government could lead to more aggressive and unified fiscal and trade policies, potentially increasing foreign currency volatility. It is also anticipated to bring greater regulation to the burgeoning AI technology sector, including possible moratoriums on data centers, which the hosts suggest is already being priced into the market and contributing to recent tech sector sell-offs.
+
+Furthermore, the discussion delves into the potential changes in fiscal and defense spending. A Democrat-controlled Congress might restrict funds for certain initiatives, such as specific wars, and could alter the overall defense budget, impacting aerospace and defense contractors. Historically, midterm years are characterized by heightened volatility and often represent the weakest period for the S&P, with a rally typically occurring after the uncertainty clears. The hosts note that this election cycle presents a unique scenario where the market is already reacting to the clarity of a potential "blue wave" by rotating out of growth-oriented tech and into more inflation-sensitive or defensive sectors, underscoring the need for investors to adapt to these politically driven market shifts.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [CSCO](https://www.google.com/finance/quote/CSCO:NASDAQ) | Buy | Strong support around $103, robust earnings growth, considered a favored 'picks and shovels' play in the AI space due to essential connectivity and data security. Strong financials with low debt, rising free cash flow, and high return on equity. Recommended as a buyer on pullbacks. |
+| [SEZL](https://www.google.com/finance/quote/SEZL:NASDAQ) | Neutral | Highly volatile 'buy now pay later' company, with significant risk if the credit or labor market turns. Caters to struggling consumers, and long-term sustainability is questionable without government stimulus. While near-term momentum is positive and valuation seems cheap on current earnings, the host is 'not a long-term holder' due to its cyclical nature and high risk. |
+| [ADI](https://www.google.com/finance/quote/ADI:NASDAQ) | Watchlist | Very expensive based on historical P/E, Price to Book, and Price to Sales ratios. Faces increasing competitive threat from China in the simpler analog chip market. The host anticipates a potential down chip cycle, making it too costly to buy despite recent outperformance of the semiconductor sector. |
+| [SFM](https://www.google.com/finance/quote/SFM:NASDAQ) | Buy | Experienced a massive capitulation sell-off after earnings, creating a very attractive risk-versus-reward entry point. Benefits from strong secular tailwinds towards healthier and organic eating, has a growing footprint, good profitability, and actively buys back shares. It's a stable core business resistant to broader tech market volatility. |
+
+---
+
 ## Episode: US Consumer Sentiment Near Record Lows: What It Tells Us About the Economy Ahead
 **Date:** 2026-10-29
 
