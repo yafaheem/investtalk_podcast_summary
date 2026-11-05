@@ -14,9 +14,14 @@ except ImportError:
     pass
 
 from rss_extractor import get_feed_url, parse_rss_feed
-from audio_transcriber import transcribe_audio
-from jinja2 import Environment, FileSystemLoader
-from markupsafe import Markup
+from audio_transcriber import is_url, download_audio, transcribe_audio
+try:
+    from jinja2 import Environment, FileSystemLoader
+    from markupsafe import Markup
+except ImportError:
+    Environment = None
+    FileSystemLoader = None
+    Markup = str
 
 TICKER_EXCHANGE_MAP = {
     "AVGO": "NASDAQ", "NEM": "NYSE", "CINF": "NASDAQ", "POWR": "NASDAQ",
@@ -109,100 +114,224 @@ def fetch_transcript(vtt_url):
         return None
     return clean_vtt(vtt_text)
 
-def run_gemini_extraction(transcript, tickers, api_key):
-    """Call Gemini to extract stock ticker recommendations and reasons from transcript."""
+def build_unified_prompt(tickers, transcript=None):
+    """
+    Build a unified prompt that instructs Gemini to extract BOTH the main educational
+    topic summary and all stock ticker verdicts in a single structured JSON response.
+
+    Why this matters:
+    Previously, the pipeline made up to 3 separate Gemini requests per episode:
+      1. Audio -> Full verbatim text transcript (~12,000 output tokens)
+      2. Transcript -> Stock ticker recommendations JSON
+      3. Transcript -> Topic summary text
+    By combining these into a single structured prompt that works on either a text
+    transcript OR directly on an uploaded podcast audio file, we reduce API requests
+    by 66% (from 3 calls to 1 call) and eliminate ~35,000+ redundant input/output tokens.
+    """
+    # Dynamically label the input modality so the prompt reads naturally whether
+    # Gemini is reading a WebVTT text transcript or listening to a raw MP3 file.
+    source_label = "podcast transcript" if transcript else "podcast episode audio"
+
+    # If regex pre-extracted candidate tickers from the RSS show description, guide
+    # Gemini to evaluate those specifically while still allowing discovery of any
+    # additional tickers discussed during caller Q&A.
     if tickers:
-        prompt = (
-            f"Analyze the following podcast transcript. Focus on discussions regarding these stock/ETF tickers: {', '.join(tickers)}.\n\n"
-            "For each ticker, extract the host's opinion and recommendation:\n"
-            "- Exchange: The primary listing exchange for the stock (e.g. NASDAQ, NYSE, AMEX, OTCMKTS).\n"
-            "- Recommendation: Buy, Sell, Hold, Watchlist, or Neutral.\n"
-            "- Reason: A concise summary of their reasoning or key arguments mentioned.\n\n"
-            "Format the output strictly as a JSON list of objects, e.g.:\n"
-            "[\n"
-            "  {\"ticker\": \"TICKER\", \"exchange\": \"NASDAQ/NYSE\", \"recommendation\": \"Buy/Sell/Hold/Neutral\", \"reason\": \"Summary of arguments\"}\n"
-            "]\n\n"
-            f"Transcript:\n{transcript}"
+        ticker_instructions = (
+            f"Focus on discussions regarding these stock/ETF tickers: {', '.join(tickers)}.\n"
+            "If additional stock/ETF tickers are also substantively evaluated by the hosts, include them as well."
         )
     else:
-        prompt = (
-            "Analyze the following podcast transcript. Identify all individual stock or ETF tickers that the hosts or callers discussed and evaluated.\n\n"
-            "For each ticker discussed, extract the host's opinion and recommendation:\n"
-            "- Ticker: The standard stock/ETF ticker symbol (e.g. AAPL, NVDA, SPY).\n"
-            "- Exchange: The primary listing exchange for the stock (e.g. NASDAQ, NYSE, AMEX, OTCMKTS).\n"
-            "- Recommendation: Buy, Sell, Hold, Watchlist, or Neutral.\n"
-            "- Reason: A concise summary of their reasoning or key arguments mentioned.\n\n"
-            "Format the output strictly as a JSON list of objects, e.g.:\n"
-            "[\n"
-            "  {\"ticker\": \"TICKER\", \"exchange\": \"NASDAQ/NYSE\", \"recommendation\": \"Buy/Sell/Hold/Neutral\", \"reason\": \"Summary of arguments\"}\n"
-            "]\n\n"
-            f"Transcript:\n{transcript}"
+        # When the RSS description doesn't list tickers in parentheses/hyphens,
+        # instruct Gemini to discover every stock/ETF ticker evaluated in the episode.
+        ticker_instructions = (
+            "Identify all individual stock or ETF tickers that the hosts or callers discussed and evaluated."
         )
 
-    # Try importing google-genai
-    try:
-        from google import genai
-        from google.genai import types
-        
-        client = genai.Client(api_key=api_key)
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json"
-            )
-        )
-        return json.loads(response.text)
-    except Exception as e:
-        print(f"Error calling google-genai: {e}")
-        # Try fallback to google-generativeai
-        try:
-            import google.generativeai as legacy_genai
-            legacy_genai.configure(api_key=api_key)
-            model = legacy_genai.GenerativeModel('gemini-1.5-flash')
-            response = model.generate_content(prompt + f"\n\nTranscript:\n{transcript}")
-            # Extract JSON from Markdown code blocks if any
-            text = response.text.strip()
-            if text.startswith("```json"):
-                text = text.split("```json", 1)[1].rsplit("```", 1)[0].strip()
-            elif text.startswith("```"):
-                text = text.split("```", 1)[1].rsplit("```", 1)[0].strip()
-            return json.loads(text)
-        except Exception as e_legacy:
-            print(f"Legacy google-generativeai call failed: {e_legacy}")
-            raise e
-
-def generate_topic_summary(transcript, api_key):
-    """Call Gemini to generate a summary of the main podcast topic, excluding stock Q&A."""
     prompt = (
-        "Analyze the following podcast transcript. Identify the main market, economic, or educational topic "
-        "discussed by the hosts. Write a concise summary (around 1-3 paragraphs) of this topic.\n\n"
+        f"Analyze the following {source_label} and perform two tasks in a single JSON response:\n\n"
+        "Task 1 - Topic Summary (`topic_summary`):\n"
+        "Identify the main market, economic, or educational topic discussed by the hosts. "
+        "Write a concise summary (around 1-3 paragraphs) of this topic.\n"
         "CRITICAL: Do NOT include discussions, opinions, or recommendations about specific stock tickers "
-        "that callers asked about. Focus only on the main, general educational or market topic discussed.\n\n"
-        f"Transcript:\n{transcript}"
+        "that callers asked about in `topic_summary`. Focus only on the main, general educational or market topic discussed.\n\n"
+        "Task 2 - Stock Discussions & Verdicts (`recommendations`):\n"
+        f"{ticker_instructions}\n"
+        "For each ticker discussed, extract the host's opinion and recommendation:\n"
+        "- `ticker`: The standard stock/ETF ticker symbol (e.g. AAPL, NVDA, SPY).\n"
+        "- `exchange`: The primary listing exchange for the stock (e.g. NASDAQ, NYSE, NYSEARCA, AMEX, OTCMKTS).\n"
+        "- `recommendation`: Buy, Sell, Hold, Watchlist, or Neutral.\n"
+        "- `reason`: A concise summary of their reasoning or key arguments mentioned.\n\n"
+        "Format the output strictly as a single JSON object matching this exact schema:\n"
+        "{\n"
+        "  \"topic_summary\": \"1-3 paragraph summary of the main educational/market topic...\",\n"
+        "  \"recommendations\": [\n"
+        "    {\"ticker\": \"TICKER\", \"exchange\": \"NASDAQ/NYSE\", \"recommendation\": \"Buy/Sell/Hold/Watchlist/Neutral\", \"reason\": \"Summary of arguments\"}\n"
+        "  ]\n"
+        "}"
     )
 
+    # If we are on the fast WebVTT path, append the plain-text transcript directly to the prompt.
+    # (If we are on the audio path, the audio file reference is passed alongside the prompt in `contents`.)
+    if transcript:
+        prompt += f"\n\nTranscript:\n{transcript}"
+    return prompt
+
+
+def _parse_unified_json_response(raw_text):
+    """
+    Parse and normalize the unified JSON output returned by Gemini.
+
+    Handles:
+    1. Stripping optional Markdown code fences (```json ... ```) if returned by legacy models.
+    2. Normalizing the standard dict schema: `{"topic_summary": "...", "recommendations": [...]}`.
+    3. Gracefully handling edge cases where a model or mock returns a bare JSON list `[...]`.
+    """
+    text = raw_text.strip()
+    if text.startswith("```json"):
+        text = text.split("```json", 1)[1].rsplit("```", 1)[0].strip()
+    elif text.startswith("```"):
+        text = text.split("```", 1)[1].rsplit("```", 1)[0].strip()
+
+    parsed = json.loads(text)
+    if isinstance(parsed, dict):
+        return {
+            "topic_summary": (parsed.get("topic_summary") or parsed.get("summary") or "").strip(),
+            "recommendations": parsed.get("recommendations") if isinstance(parsed.get("recommendations"), list) else []
+        }
+    elif isinstance(parsed, list):
+        # Fallback if a legacy caller/mock returned a raw list of ticker objects
+        return {
+            "topic_summary": "",
+            "recommendations": parsed
+        }
+    return {"topic_summary": "", "recommendations": []}
+
+
+def analyze_episode_with_gemini(transcript=None, audio_source=None, tickers=None, api_key=None, model_name="gemini-2.5-flash", temp_dir=None):
+    """
+    Single unified Gemini entry point that processes EITHER a text transcript OR raw episode audio,
+    returning both `topic_summary` and `recommendations` in ONE API request.
+
+    Execution paths:
+    - Path A (`transcript` provided):
+        Sends `prompt + transcript` directly to `client.models.generate_content()` with
+        `response_mime_type="application/json"`. No file upload needed.
+    - Path B (`transcript` is None, `audio_source` provided):
+        1. If `audio_source` is an HTTP/HTTPS URL, streams the MP3 to a temporary local file.
+        2. Uploads the MP3 to Google's GenAI File API (`client.files.upload`).
+        3. Calls `client.models.generate_content(contents=[uploaded_file, prompt])` ONCE to
+           extract both the topic summary and stock verdicts directly from the audio without
+           generating a full verbatim transcript first.
+        4. Guarantees cleanup of both the remote File API object (`client.files.delete`)
+           and the local temporary MP3 file via nested `finally` blocks.
+    """
+    if not transcript and not audio_source:
+        raise ValueError("Either `transcript` or `audio_source` must be provided.")
+
+    key = api_key or os.environ.get("GEMINI_API_KEY")
+    if not key:
+        raise ValueError("GEMINI_API_KEY not found in environment or arguments.")
+
+    # Construct the unified prompt (appends transcript text only if `transcript` is present)
+    prompt = build_unified_prompt(tickers or [], transcript=transcript)
+
+    # Step 1: Resolve local audio file if we are on the audio fallback path (no WebVTT transcript)
+    temp_audio_path = None
+    local_audio_path = None
+    if not transcript and audio_source:
+        if is_url(audio_source):
+            # Stream remote podcast MP3 into a temporary local file
+            temp_audio_path = download_audio(audio_source, temp_dir=temp_dir)
+            local_audio_path = temp_audio_path
+        else:
+            # Use existing local file path directly without deleting it afterwards
+            if not os.path.isfile(audio_source):
+                raise FileNotFoundError(f"Audio file not found: {audio_source}")
+            local_audio_path = audio_source
+
+    # Outer try/finally ensures any temporary downloaded MP3 on disk is ALWAYS removed
     try:
-        from google import genai
-        from google.genai import types
-        
-        client = genai.Client(api_key=api_key)
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt
-        )
-        return response.text.strip()
-    except Exception as e:
-        print(f"Error calling google-genai for topic summary: {e}")
+        # Primary path: Modern `google-genai` SDK
         try:
-            import google.generativeai as legacy_genai
-            legacy_genai.configure(api_key=api_key)
-            model = legacy_genai.GenerativeModel('gemini-1.5-flash')
-            response = model.generate_content(prompt)
-            return response.text.strip()
-        except Exception as e_legacy:
-            print(f"Legacy google-generativeai call for topic summary failed: {e_legacy}")
-            raise e
+            from google import genai
+            try:
+                from google.genai import types
+                gen_config = types.GenerateContentConfig(response_mime_type="application/json")
+            except ImportError:
+                gen_config = {"response_mime_type": "application/json"}
+
+            client = genai.Client(api_key=key)
+            uploaded_file = None
+
+            # Inner try/finally ensures any file uploaded to Google's servers is ALWAYS deleted
+            try:
+                if local_audio_path:
+                    print(f"Uploading audio file '{local_audio_path}' to Google GenAI File API...")
+                    uploaded_file = client.files.upload(file=local_audio_path)
+                    print(f"Uploaded audio (Name: {uploaded_file.name}). Running unified single-call analysis with {model_name}...")
+                    # Multimodal input: pass both the uploaded audio handle and the unified text instructions
+                    contents = [uploaded_file, prompt]
+                else:
+                    # Text-only input: pass the prompt (which already includes the WebVTT transcript)
+                    contents = prompt
+
+                # THE SINGLE GEMINI CALL: produces {"topic_summary": ..., "recommendations": [...]}
+                response = client.models.generate_content(
+                    model=model_name,
+                    contents=contents,
+                    config=gen_config
+                )
+                return _parse_unified_json_response(response.text)
+            finally:
+                # Always delete the remote audio file from Google's File API storage
+                if uploaded_file is not None:
+                    try:
+                        print(f"Cleaning up GenAI File API remote file: {uploaded_file.name}")
+                        client.files.delete(name=uploaded_file.name)
+                    except Exception as del_err:
+                        print(f"Warning: Failed to delete remote file from GenAI File API: {del_err}")
+
+        except Exception as e:
+            print(f"Error calling google-genai: {e}")
+            # Secondary fallback: Legacy `google-generativeai` SDK
+            try:
+                import google.generativeai as legacy_genai
+                legacy_genai.configure(api_key=key)
+                model = legacy_genai.GenerativeModel('gemini-1.5-flash')
+                uploaded_file = None
+                try:
+                    if local_audio_path:
+                        uploaded_file = legacy_genai.upload_file(local_audio_path)
+                        contents = [uploaded_file, prompt]
+                    else:
+                        contents = prompt
+                    response = model.generate_content(contents)
+                    return _parse_unified_json_response(response.text)
+                finally:
+                    if uploaded_file is not None:
+                        try:
+                            uploaded_file.delete()
+                        except Exception as del_err:
+                            print(f"Warning: Failed to delete remote file: {del_err}")
+            except Exception as e_legacy:
+                print(f"Legacy google-generativeai call failed: {e_legacy}")
+                raise e
+    finally:
+        # Clean up temporary local MP3 download if we created one
+        if temp_audio_path and os.path.exists(temp_audio_path):
+            os.remove(temp_audio_path)
+
+
+def run_gemini_extraction(transcript, tickers, api_key):
+    """Backward-compatible wrapper returning ticker recommendations via the unified Gemini call."""
+    res = analyze_episode_with_gemini(transcript=transcript, tickers=tickers, api_key=api_key)
+    return res.get("recommendations", [])
+
+
+def generate_topic_summary(transcript, api_key):
+    """Backward-compatible wrapper returning topic summary via the unified Gemini call."""
+    res = analyze_episode_with_gemini(transcript=transcript, tickers=[], api_key=api_key)
+    return res.get("topic_summary", "")
 
 
 def generate_audio_for_episode(date_str, title, summary, recommendations, audio_dir="audio", force=False):
@@ -413,38 +542,32 @@ def main():
         tickers = extract_tickers_from_description(episode['description'])
         print(f"Tickers found in description: {tickers}")
         
-        print("Resolving episode transcript...")
+        print("Resolving episode source...")
         transcript = None
         vtt_url = episode.get('vtt_url')
+        audio_url = episode.get('audio_url')
         if vtt_url:
             print(f"Found WebVTT transcript URL: {vtt_url}")
-            transcript = fetch_transcript(vtt_url)
-            
-        # Fallback to audio stream via Google GenAI File API if WebVTT is missing or failed
-        if not transcript:
-            audio_url = episode.get('audio_url')
-            if audio_url:
-                print(f"WebVTT transcript not found or failed. Initiating Google GenAI audio transcription fallback from: {audio_url}")
-                if args.dry_run:
-                    print("[DRY RUN MODE] Skipping remote audio download and using dry-run placeholder transcript.")
-                    transcript = f"InvestTalk episode transcript for {episode['title']}. Discussing {', '.join(tickers)}."
-                else:
-                    try:
-                        transcript = transcribe_audio(audio_url, api_key=api_key)
-                    except Exception as e:
-                        print(f"ERROR: Audio transcription fallback failed: {e}")
-                        
-        if not transcript:
-            print(f"ERROR: Neither WebVTT transcript nor audio stream could be transcribed for episode '{episode['title']}' ({date_str}).")
+            try:
+                transcript = fetch_transcript(vtt_url)
+            except Exception as e:
+                print(f"Warning: Failed to fetch WebVTT transcript ({e}).")
+                transcript = None
+
+        if transcript:
+            print(f"Transcript length: {len(transcript)} characters.")
+        elif audio_url:
+            print(f"WebVTT transcript not found or failed. Will use single-call Google GenAI audio analysis from: {audio_url}")
+        else:
+            print(f"ERROR: Neither WebVTT transcript nor audio stream is available for episode '{episode['title']}' ({date_str}).")
             print("Failing job to trigger GitHub Actions alert.")
             sys.exit(1)
 
-
-            
-        print(f"Transcript length: {len(transcript)} characters.")
-        
         if args.dry_run:
-            print("[DRY RUN MODE] Generating placeholder data...")
+            if not transcript and audio_url:
+                print("[DRY RUN MODE] Skipping remote audio download and using dry-run placeholder data.")
+            else:
+                print("[DRY RUN MODE] Generating placeholder data...")
             placeholder_recs = [{"ticker": t, "recommendation": "Buy (Dry Run Placeholder)", "reason": "Reason (Dry Run Placeholder)"} for t in tickers]
             episodes_db = save_episode_data(
                 date_str, 
@@ -453,30 +576,34 @@ def main():
                 placeholder_recs
             )
             continue
-            
-        # Live processing
-        print("Running Gemini LLM extraction...")
-        results = []
+
+        # Live processing: single unified Gemini call for both topic summary and ticker verdicts
+        print("Running unified Gemini LLM analysis (single API call)...")
         try:
-            results = run_gemini_extraction(transcript, tickers, api_key)
+            analysis = analyze_episode_with_gemini(
+                transcript=transcript,
+                audio_source=None if transcript else audio_url,
+                tickers=tickers,
+                api_key=api_key
+            )
+            topic_summary = analysis.get("topic_summary", "")
+            results = analysis.get("recommendations", [])
             if not results:
                 print("No ticker recommendations identified by Gemini.")
             else:
-                print(f"Successfully extracted {len(results)} ticker recommendation(s).")
+                print(f"Successfully extracted {len(results)} ticker recommendation(s) and topic summary in 1 call.")
         except Exception as e:
-            print(f"Error extracting ticker recommendations: {e}")
+            print(f"Error during unified Gemini analysis: {e}")
+            if not transcript:
+                print(f"ERROR: Single-call audio analysis failed for episode '{episode['title']}' ({date_str}).")
+                print("Failing job to trigger GitHub Actions alert.")
+                sys.exit(1)
+            topic_summary = f"Error generating summary: {e}"
             if tickers:
                 results = [{"ticker": t, "recommendation": "Error", "reason": f"Failed to extract: {e}"} for t in tickers]
             else:
                 results = []
-            
-        print("Generating Gemini Topic Summary...")
-        try:
-            topic_summary = generate_topic_summary(transcript, api_key)
-        except Exception as e:
-            print(f"Error generating topic summary: {e}")
-            topic_summary = f"Error generating summary: {e}"
-            
+
         print("\nTopic Summary:")
         print(topic_summary)
         

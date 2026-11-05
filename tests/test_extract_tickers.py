@@ -1,6 +1,20 @@
+import sys
+import types
 import unittest
 from unittest.mock import patch, MagicMock
 import xml.etree.ElementTree as ET
+
+# Ensure google.genai is patchable even if google-genai package is not installed in bare test env
+try:
+    import google.genai
+except ImportError:
+    google_mod = sys.modules.setdefault("google", types.ModuleType("google"))
+    genai_mod = sys.modules.setdefault("google.genai", types.ModuleType("google.genai"))
+    genai_types_mod = sys.modules.setdefault("google.genai.types", types.ModuleType("google.genai.types"))
+    genai_mod.Client = MagicMock()
+    genai_types_mod.GenerateContentConfig = MagicMock()
+    genai_mod.types = genai_types_mod
+    google_mod.genai = genai_mod
 
 # Import the functions we want to test
 from rss_extractor import (
@@ -236,6 +250,78 @@ class TestInvestTalkNotes(unittest.TestCase):
         # Verify prompt instructed dynamic extraction
         call_args_2 = mock_client.models.generate_content.call_args[1]
         self.assertIn("Identify all individual stock or ETF tickers", call_args_2["contents"])
+
+    @patch("google.genai.Client")
+    def test_analyze_episode_with_gemini_single_call_transcript(self, mock_client_cls):
+        """Test unified single-call analysis on a text transcript returns both summary and recommendations."""
+        from extract_tickers import analyze_episode_with_gemini
+        import json
+
+        mock_client = MagicMock()
+        mock_client_cls.return_value = mock_client
+        mock_response = MagicMock()
+        mock_response.text = json.dumps({
+            "topic_summary": "Main topic is market rotation.",
+            "recommendations": [
+                {"ticker": "AAPL", "exchange": "NASDAQ", "recommendation": "Buy", "reason": "Strong cash flow"}
+            ]
+        })
+        mock_client.models.generate_content.return_value = mock_response
+
+        res = analyze_episode_with_gemini(
+            transcript="Justin Klein: Market rotation today. Caller asks about AAPL.",
+            tickers=["AAPL"],
+            api_key="fake-key"
+        )
+        self.assertEqual(res["topic_summary"], "Main topic is market rotation.")
+        self.assertEqual(len(res["recommendations"]), 1)
+        self.assertEqual(res["recommendations"][0]["ticker"], "AAPL")
+        mock_client.models.generate_content.assert_called_once()
+        mock_client.files.upload.assert_not_called()
+
+    @patch("extract_tickers.download_audio")
+    @patch("google.genai.Client")
+    def test_analyze_episode_with_gemini_single_call_audio(self, mock_client_cls, mock_download_audio):
+        """Test unified single-call analysis directly from audio URL performs 1 generate_content call and cleans up."""
+        import os
+        import json
+        from extract_tickers import analyze_episode_with_gemini
+
+        temp_mp3 = "/tmp/test_unified_audio.mp3"
+        with open(temp_mp3, "wb") as f:
+            f.write(b"fake_audio_bytes")
+        mock_download_audio.return_value = temp_mp3
+
+        mock_client = MagicMock()
+        mock_client_cls.return_value = mock_client
+        mock_uploaded = MagicMock()
+        mock_uploaded.name = "files/unified-audio-123"
+        mock_client.files.upload.return_value = mock_uploaded
+
+        mock_response = MagicMock()
+        mock_response.text = json.dumps({
+            "topic_summary": "Audio topic summary.",
+            "recommendations": [
+                {"ticker": "MSFT", "exchange": "NASDAQ", "recommendation": "Hold", "reason": "Fairly valued"}
+            ]
+        })
+        mock_client.models.generate_content.return_value = mock_response
+
+        res = analyze_episode_with_gemini(
+            transcript=None,
+            audio_source="https://example.com/episode.mp3",
+            tickers=["MSFT"],
+            api_key="fake-key"
+        )
+        self.assertEqual(res["topic_summary"], "Audio topic summary.")
+        self.assertEqual(len(res["recommendations"]), 1)
+        self.assertEqual(res["recommendations"][0]["ticker"], "MSFT")
+
+        # Verify only ONE Gemini generate_content call was made and remote + local files were cleaned up
+        mock_client.files.upload.assert_called_once_with(file=temp_mp3)
+        mock_client.models.generate_content.assert_called_once()
+        mock_client.files.delete.assert_called_once_with(name="files/unified-audio-123")
+        self.assertFalse(os.path.exists(temp_mp3))
 
 if __name__ == "__main__":
     unittest.main()
