@@ -23,6 +23,30 @@ The host also addresses market volatility, explaining that the initial drop in t
 
 ---
 
+## Episode: The $6 Billion Binance Hack: How to Keep Your Crypto Safe from State-Sponsored Thieves
+**Date:** 2026-11-03
+
+### Topic Summary
+The main educational topic discussed by the host is **the vulnerability of centralized cryptocurrency exchanges and the importance of secure crypto asset custody**.
+
+The podcast highlights the recent $6 billion Binance hack, attributed to a state-sponsored entity, as a critical event exposing the inherent risks of storing digital assets on centralized platforms. While Bitcoin's price reaction was less severe than during past major hacks (like Mt. Gox or FTX), suggesting some maturation in the crypto industry, the incident underscored that the vulnerability lies not in the underlying blockchain technology, but in the "plumbing" of the crypto industry—specifically, centralized exchanges that function akin to banks without FDIC-like protections. These exchanges hold the private keys to users' wallets, making them single points of failure susceptible to internal security breaches.
+
+To mitigate these risks, the host strongly advises against holding long-term crypto assets on exchanges. Instead, investors should self-custody their holdings in wallets. Two primary methods are discussed: hot wallets, which are connected to the internet and carry moderate digital theft risks, and cold storage. Cold storage, involving a physical device not connected to the internet, is presented as the safest option. However, it demands significant personal responsibility for safeguarding the private keys—ideally written down on paper, stored in multiple secure, physical locations, and never digitally copied. Additionally, cold storage devices should always be purchased directly from the manufacturer to avoid tampering. This educational segment emphasizes the critical need for investors to understand and implement robust security practices to protect their crypto assets from theft.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [CEG](https://www.google.com/finance/quote/CEG:NYSE) | Buy | Solid utility company with relatively low debt, outperforming its sector in both the near and long term, and demonstrating solid profitability and earnings growth (Q3 expected up 28%). Recommended for investors seeking a utility, not a traditional energy stock. |
+| [KMB](https://www.google.com/finance/quote/KMB:NYSE) | Neutral | A classic consumer staple with good historical profitability, but profitability has tempered, debt is decent, and stock momentum is neutral with a lack of growth. Dividend growth has slowed despite a 5% yield. Better opportunities likely exist elsewhere. |
+| [AZN](https://www.google.com/finance/quote/AZN:NYSE) | Buy | A quality company with solid, consistent earnings growth (Q3 EPS up 17%, revenue up 7.6%), strong profitability metrics (ROE 21%, ROIC 16%), and minimal debt. The stock has carved out an uptrend, and merger rumors are not currently a concern. |
+| [GOOG](https://www.google.com/finance/quote/GOOG:NASDAQ) | Buy | Considered a good place to start a starter position, trading at strong support levels (March lows, 100-day moving average). Google has good business diversity (Waymo, YouTube, search) that aids in AI, a very strong balance sheet, strong profitability, and good capital discipline, making it the host's favorite hyperscaler. |
+| [WMB](https://www.google.com/finance/quote/WMB:NYSE) | Hold | A quality energy infrastructure business that moves oil and gas through pipelines, charging a consistent toll. It has strong profitability (21% ROE) and earnings growth (Q3 EPS and revenue up 10%). While capital-intensive, it benefits from advances in shale production. Recommended to hold and trim to maintain risk profile. |
+| [PVH](https://www.google.com/finance/quote/PVH:NYSE) | Sell | Despite a recent rally and good technicals, the business has meager and negative profitability (negative ROE), significant debt, and operates in an environment where the consumer is relatively weak. The host dislikes the business and advises passing on the rally. |
+| [RBLX](https://www.google.com/finance/quote/RBLX:NYSE) | Sell | Not considered a great business due to low and negative expected profitability, and a good amount of debt. Advised to focus on companies that make money, making Disney the clear winner in comparison. |
+| [DIS](https://www.google.com/finance/quote/DIS:NYSE) | Buy | A diversified business beyond movies and characters, including theme parks and ESPN. It demonstrates good profitability and has better stock momentum compared to Roblox, making it the clear winner between the two for its ability to make money. |
+
+---
+
 ## Episode: Is Europe's Debt Crisis Quietly Reigniting? What Moody's Hold on France Really Signals
 **Date:** 2026-11-02
 
