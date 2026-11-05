@@ -6,21 +6,25 @@ This document tracks active open issues, proposed future enhancements, and compl
 
 ## 🚀 Open Issues & Proposed Enhancements
 
-### 1. Workaround for WebVTT Transcript Dependency in RSS Feed
+### 1. Fix Checkout/Clone so Media is Not Downloaded from GitHub to Local Machine
+- **Goal:** Prevent large media files (such as pre-rendered `audio/*.mp3` files) from being downloaded during local `git clone` / `git checkout` operations (e.g., via `git sparse-checkout`, `--filter=blob:none`, Git LFS, or separate artifact/pages branch hosting).
+- **Benefit:** Keeps local clones fast and lightweight instead of downloading 170+ MB of historical `.mp3` audio files.
+
+### 2. Workaround for WebVTT Transcript Dependency in RSS Feed
 - **Goal:** Implement a fallback mechanism (e.g., Speech-to-Text audio transcription via Whisper or Gemini Multimodal audio input) when the `<podcast:transcript>` WebVTT URL is not published in the RSS feed.
 - **Benefit:** Removes dependency on external WebVTT publication delays, guaranteeing timely daily summaries as soon as episode audio is available.
 
-### 2. Client-Side Search & Filter Bar for HTML Dashboard
+### 3. Client-Side Search & Filter Bar for HTML Dashboard
 - **Goal:** Add a lightweight search input and filter buttons directly into the dashboard (`templates/summary_template.html`).
 - **Benefit:** Allows listeners to instantly filter historical discussions by ticker symbol (e.g., `AVGO`), verdict (`Buy`, `Sell`, `Hold`), or keyword without page reloads.
 
-### 3. Rolling 30-Day Market & Sector Sentiment Analytics
+### 4. Rolling 30-Day Market & Sector Sentiment Analytics
 - **Goal:** Introduce an analytical visual card or CLI flag (`--analytics`) aggregating host sentiment trends and sector weightings (e.g., Technology vs. Energy vs. Utilities) across rolling 30-day timeframes.
 
-### 4. Automated Webhook Notifications (Discord / Telegram / Slack)
+### 5. Automated Webhook Notifications (Discord / Telegram / Slack)
 - **Goal:** Add optional webhook notification dispatchers in `extract_tickers.py` to instantly post daily episode takeaways and stock verdicts to automated communication channels upon processing.
 
-### 5. Structured Static JSON API Export (`api/episodes.json`)
+### 6. Structured Static JSON API Export (`api/episodes.json`)
 - **Goal:** Output an agnostic, structured `api/episodes.json` file during each extraction run.
 - **Benefit:** Simplifies integration with third-party mobile widgets, personal finance tools, and custom dashboard clients.
 
