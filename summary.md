@@ -2,6 +2,28 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Is the Fed Bringing Monetary Tightening Back? What Investors Need to Know
+**Date:** 2026-11-05
+
+### Topic Summary
+The main topic discussed in the podcast is the ongoing **market rotation and the evolving investment landscape**. The hosts frequently highlight a significant shift in market dynamics, moving away from previously high-growth, high-valuation sectors, particularly big technology and AI-related companies, towards a broader set of businesses.
+
+This rotation is driven by several interconnected factors. Firstly, while the overall earnings season has been solid, there's a noticeable deceleration in growth and declining margins among the "Magnificent Seven" tech giants, with the broader S&P 500 showing stronger earnings. This points to the cyclical nature of many industries, including semiconductors and infrastructure providers tied to AI build-outs, which are susceptible to demand fluctuations and oversupply. Secondly, changing expectations around Federal Reserve monetary policy play a role; a broad market sell-off and anticipated winding down of international conflicts are tempering expectations for aggressive rate hikes, potentially stabilizing interest rates and benefiting non-tech businesses.
+
+Furthermore, the new political landscape, with a Democrat-controlled Congress, is seen as potentially less favorable to big tech, possibly leading to investigations or shifts in contract allocations. In this "new world" environment, the hosts emphasize the importance of investing through the "windshield" (focusing on future earnings potential) rather than the "rearview mirror" (past performance). They advocate for allocating funds to companies characterized by sound balance sheets, robust cash flows, and non-cyclical business models, often with sustainable competitive advantages like recurring service revenues, as these are expected to perform better in the current climate.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [WELL](https://www.google.com/finance/quote/WELL:NYSE) | Hold | Welltower is a senior hospitality REIT. While demand is supported by demographics, there's also a lot of supply. Earnings and revenue growth are expected to slow, and the stock is considered a bit expensive. |
+| [SMH](https://www.google.com/finance/quote/SMH:NASDAQ) | Sell | The semiconductor sector, represented by SMH, is expected to see more downside, with major support levels significantly lower. The overall path of least resistance for the sector is lower, and investors are advised against owning significant semiconductor exposure. |
+| [NUE](https://www.google.com/finance/quote/NUE:NYSE) | Neutral | Nucor is considered a 'good business' and one of the best operators in the steel industry. However, it's a cyclical industry with wildly fluctuating earnings. The analyst would not buy it 'here' due to a recent price break lower and potential slowdown in steel demand from data center build-outs. |
+| [CRMD](https://www.google.com/finance/quote/CRMD:NASDAQ) | Sell | CorMedix is a biopharma company with plummeting future earnings expectations, projected to lose money in Q3 and earn only a penny next year. Despite a significant price decline, the stock is considered expensive based on forward earnings, and investors are cautioned against 'rearview mirror' investing. |
+| [MYRG](https://www.google.com/finance/quote/MYRG:NASDAQ) | Sell | MYR Group provides electrical construction services, with growth slowing dramatically (Q1 next year earnings up only 6% YoY). It's in a significant downtrend, free cash flow is not great, long-term profitability is muted, and it's considered too tied to the potentially overvalued AI infrastructure trade. |
+| [ECG](https://www.google.com/finance/quote/ECG:NASDAQ) | Buy | Everest Construction Group has seen its growth slowing but appears cheap on a forward P/E after a significant sell-off. It has a good balance sheet with minimal debt and good cash flow. However, it's a very high-risk, cyclical business, and the analyst prefers companies with a recurring service component. |
+
+---
+
 ## Episode: AI Stock Bubble or Real Value? What Anthropic's IPO Valuation Tells Investors
 **Date:** 2026-11-04
 
