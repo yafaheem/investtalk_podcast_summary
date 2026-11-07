@@ -2,6 +2,29 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Global Central Bank Divergence Is Growing — Here's What US Investors Should Do
+**Date:** 2026-11-06
+
+### Topic Summary
+The main market and economic topic discussed in the podcast transcript is **global central bank divergence and its implications for investors**.
+
+The hosts highlight that central banks worldwide are engaged in a delicate balancing act: aggressively raising interest rates to combat inflation while simultaneously trying to avoid tipping their local economies into a recession or causing a major credit crisis. This divergence in monetary policy, exemplified by actions like the Bank of England raising rates, creates significant ramifications across global markets. The discussion emphasizes the varying importance of central banks, from the dominant Federal Reserve and the Chinese central bank (crucial for commodity markets) to the European Central Bank and the Bank of Japan, all navigating similar inflationary pressures and supply chain disruptions.
+
+For investors, the primary impact of this divergence is felt in currency markets, where major volatility can emerge. Although central banks often coordinate to stabilize currencies, differing policies can create both headwinds and tailwinds for foreign investments. The long-term effects of interest rate changes, taking 12 to 18 months to fully materialize, further complicate central banks' decisions on when to cease tightening. Therefore, the podcast encourages investors to look beyond the domestic Federal Reserve and consider the broader global landscape of central bank actions when making investment decisions.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [AXP](https://www.google.com/finance/quote/AXP:NASDAQ) | Error | Failed to extract: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'JSON mode is not enabled for api version v1. Use api version v1beta instead.', 'status': 'INVALID_ARGUMENT'}} |
+| [VEU](https://www.google.com/finance/quote/VEU:NASDAQ) | Error | Failed to extract: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'JSON mode is not enabled for api version v1. Use api version v1beta instead.', 'status': 'INVALID_ARGUMENT'}} |
+| [SCHE](https://www.google.com/finance/quote/SCHE:NASDAQ) | Error | Failed to extract: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'JSON mode is not enabled for api version v1. Use api version v1beta instead.', 'status': 'INVALID_ARGUMENT'}} |
+| [SCHF](https://www.google.com/finance/quote/SCHF:NASDAQ) | Error | Failed to extract: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'JSON mode is not enabled for api version v1. Use api version v1beta instead.', 'status': 'INVALID_ARGUMENT'}} |
+| [CCJ](https://www.google.com/finance/quote/CCJ:NASDAQ) | Error | Failed to extract: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'JSON mode is not enabled for api version v1. Use api version v1beta instead.', 'status': 'INVALID_ARGUMENT'}} |
+| [BE](https://www.google.com/finance/quote/BE:NASDAQ) | Error | Failed to extract: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'JSON mode is not enabled for api version v1. Use api version v1beta instead.', 'status': 'INVALID_ARGUMENT'}} |
+| [RF](https://www.google.com/finance/quote/RF:NASDAQ) | Error | Failed to extract: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'JSON mode is not enabled for api version v1. Use api version v1beta instead.', 'status': 'INVALID_ARGUMENT'}} |
+
+---
+
 ## Episode: Is the Fed Bringing Monetary Tightening Back? What Investors Need to Know
 **Date:** 2026-11-05
 
