@@ -15,8 +15,13 @@ except ImportError:
 
 from rss_extractor import get_feed_url, parse_rss_feed
 from audio_transcriber import transcribe_audio
-from jinja2 import Environment, FileSystemLoader
-from markupsafe import Markup
+try:
+    from jinja2 import Environment, FileSystemLoader
+    from markupsafe import Markup
+except ImportError:
+    Environment = None
+    FileSystemLoader = None
+    Markup = str
 
 TICKER_EXCHANGE_MAP = {
     "AVGO": "NASDAQ", "NEM": "NYSE", "CINF": "NASDAQ", "POWR": "NASDAQ",
@@ -109,6 +114,24 @@ def fetch_transcript(vtt_url):
         return None
     return clean_vtt(vtt_text)
 
+def _parse_json_response(raw_text):
+    """Strip optional Markdown code fences and parse JSON response from Gemini."""
+    text = (raw_text or "").strip()
+    if text.startswith("```json"):
+        text = text.split("```json", 1)[1].rsplit("```", 1)[0].strip()
+    elif text.startswith("```"):
+        text = text.split("```", 1)[1].rsplit("```", 1)[0].strip()
+    return json.loads(text)
+
+
+def _create_genai_client(genai_module, api_key):
+    """Initialize google.genai Client using v1beta API version (required for JSON mode)."""
+    try:
+        return genai_module.Client(api_key=api_key, http_options={'api_version': 'v1beta'})
+    except TypeError:
+        return genai_module.Client(api_key=api_key)
+
+
 def run_gemini_extraction(transcript, tickers, api_key):
     """Call Gemini to extract stock ticker recommendations and reasons from transcript."""
     if tickers:
@@ -142,17 +165,26 @@ def run_gemini_extraction(transcript, tickers, api_key):
     # Try importing google-genai
     try:
         from google import genai
-        from google.genai import types
-        
-        client = genai.Client(api_key=api_key)
-        response = client.models.generate_content(
-            model='gemini-2.5-flash',
-            contents=prompt,
-            config=types.GenerateContentConfig(
-                response_mime_type="application/json"
+        try:
+            from google.genai import types
+            gen_config = types.GenerateContentConfig(response_mime_type="application/json")
+        except ImportError:
+            gen_config = {"response_mime_type": "application/json"}
+
+        client = _create_genai_client(genai, api_key)
+        try:
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=prompt,
+                config=gen_config
             )
-        )
-        return json.loads(response.text)
+        except Exception as json_mode_err:
+            print(f"Warning: JSON mode config rejected ({json_mode_err}). Retrying without response_mime_type...")
+            response = client.models.generate_content(
+                model='gemini-2.5-flash',
+                contents=prompt
+            )
+        return _parse_json_response(response.text)
     except Exception as e:
         print(f"Error calling google-genai: {e}")
         # Try fallback to google-generativeai
@@ -160,14 +192,8 @@ def run_gemini_extraction(transcript, tickers, api_key):
             import google.generativeai as legacy_genai
             legacy_genai.configure(api_key=api_key)
             model = legacy_genai.GenerativeModel('gemini-1.5-flash')
-            response = model.generate_content(prompt + f"\n\nTranscript:\n{transcript}")
-            # Extract JSON from Markdown code blocks if any
-            text = response.text.strip()
-            if text.startswith("```json"):
-                text = text.split("```json", 1)[1].rsplit("```", 1)[0].strip()
-            elif text.startswith("```"):
-                text = text.split("```", 1)[1].rsplit("```", 1)[0].strip()
-            return json.loads(text)
+            response = model.generate_content(prompt)
+            return _parse_json_response(response.text)
         except Exception as e_legacy:
             print(f"Legacy google-generativeai call failed: {e_legacy}")
             raise e
@@ -399,16 +425,23 @@ def main():
             sys.exit(1)
 
     print(f"Found {len(episodes)} matching episode(s) to process.")
+    updated_dates = set()
     
     for idx, episode in enumerate(episodes):
         date_str = episode['date_str']
         print(f"\n[{idx+1}/{len(episodes)}] Processing Episode: {episode['title']}")
         print(f"Date: {date_str} (parsed from: {episode['pub_date']})")
         
-        # Check cache
-        if date_str in episodes_db and not args.force:
+        # Check cache (re-process automatically if cached entry contains failed "Error" verdicts)
+        cached_ep = episodes_db.get(date_str)
+        has_cached_error = bool(
+            cached_ep and any(r.get("recommendation") == "Error" for r in cached_ep.get("recommendations", []))
+        )
+        if date_str in episodes_db and not args.force and not has_cached_error:
             print(f"-> Episode for {date_str} already processed and cached in summaries_data.json. Skipping.")
             continue
+        if has_cached_error and not args.force:
+            print(f"-> Cached episode for {date_str} contains extraction errors. Re-processing automatically...")
             
         tickers = extract_tickers_from_description(episode['description'])
         print(f"Tickers found in description: {tickers}")
@@ -482,6 +515,7 @@ def main():
         
         # Save to database
         episodes_db = save_episode_data(date_str, episode['title'], topic_summary, results)
+        updated_dates.add(date_str)
         
     # Post loop updates
     print("\nGenerating Neural Edge-TTS audio files for episodes...")
@@ -491,7 +525,7 @@ def main():
             ep.get('title', ''),
             ep.get('summary', ''),
             ep.get('recommendations', []),
-            force=args.force
+            force=args.force or (date_str in updated_dates)
         )
 
     print("\nRegenerating cumulative summary files...")

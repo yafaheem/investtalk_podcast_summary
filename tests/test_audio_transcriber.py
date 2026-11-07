@@ -1,7 +1,20 @@
 import os
+import sys
+import types
 import unittest
 from unittest.mock import patch, MagicMock
 from audio_transcriber import is_url, download_audio, transcribe_audio_file, transcribe_audio
+
+try:
+    import google.genai
+except ImportError:
+    google_mod = sys.modules.setdefault("google", types.ModuleType("google"))
+    genai_mod = sys.modules.setdefault("google.genai", types.ModuleType("google.genai"))
+    genai_types_mod = sys.modules.setdefault("google.genai.types", types.ModuleType("google.genai.types"))
+    genai_mod.Client = MagicMock()
+    genai_types_mod.GenerateContentConfig = MagicMock()
+    genai_mod.types = genai_types_mod
+    google_mod.genai = genai_mod
 
 class TestAudioTranscriber(unittest.TestCase):
 

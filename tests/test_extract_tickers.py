@@ -1,6 +1,19 @@
+import sys
+import types
 import unittest
 from unittest.mock import patch, MagicMock
 import xml.etree.ElementTree as ET
+
+try:
+    import google.genai
+except ImportError:
+    google_mod = sys.modules.setdefault("google", types.ModuleType("google"))
+    genai_mod = sys.modules.setdefault("google.genai", types.ModuleType("google.genai"))
+    genai_types_mod = sys.modules.setdefault("google.genai.types", types.ModuleType("google.genai.types"))
+    genai_mod.Client = MagicMock()
+    genai_types_mod.GenerateContentConfig = MagicMock()
+    genai_mod.types = genai_types_mod
+    google_mod.genai = genai_mod
 
 # Import the functions we want to test
 from rss_extractor import (
@@ -236,6 +249,30 @@ class TestInvestTalkNotes(unittest.TestCase):
         # Verify prompt instructed dynamic extraction
         call_args_2 = mock_client.models.generate_content.call_args[1]
         self.assertIn("Identify all individual stock or ETF tickers", call_args_2["contents"])
+
+    @patch("google.genai.Client")
+    def test_run_gemini_extraction_json_mode_fallback_and_markdown_fences(self, mock_client_cls):
+        """Test run_gemini_extraction retries without config on v1 JSON mode 400 error and strips ```json fences."""
+        from extract_tickers import run_gemini_extraction
+
+        mock_client = MagicMock()
+        mock_client_cls.return_value = mock_client
+
+        mock_fallback_response = MagicMock()
+        mock_fallback_response.text = '```json\n[{"ticker": "AXP", "exchange": "NYSE", "recommendation": "Buy", "reason": "Strong affluent spend"}]\n```'
+
+        # First call raises 400 INVALID_ARGUMENT (JSON mode not enabled on v1), second call succeeds
+        mock_client.models.generate_content.side_effect = [
+            Exception("400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'JSON mode is not enabled for api version v1.'}}"),
+            mock_fallback_response
+        ]
+
+        res = run_gemini_extraction("Transcript mentioning AXP", ["AXP"], api_key="fake-key")
+        self.assertEqual(len(res), 1)
+        self.assertEqual(res[0]["ticker"], "AXP")
+        self.assertEqual(res[0]["recommendation"], "Buy")
+        self.assertEqual(mock_client.models.generate_content.call_count, 2)
+        mock_client_cls.assert_called_once_with(api_key="fake-key", http_options={'api_version': 'v1beta'})
 
 if __name__ == "__main__":
     unittest.main()
