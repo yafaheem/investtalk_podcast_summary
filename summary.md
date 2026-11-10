@@ -2,6 +2,29 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Big Oil's Spending Caution: When Record Profits Don't Lead to Record Investment
+**Date:** 2026-11-09
+
+### Topic Summary
+The main market and economic topic discussed by the hosts is the cautious spending strategy of major oil companies despite experiencing record-high profits. The host highlights that energy majors, after achieving significant earnings in recent quarters due to elevated oil prices, are not reinvesting aggressively in new supply as one might expect.
+
+Instead of expanding production, these companies are prioritizing strengthening their balance sheets by paying down substantial debt and returning capital to shareholders through increased share buybacks. For instance, the combined net debt of the five largest oil majors was nearly halved in less than a year. Companies like Shell have reduced their capital expenditure guidance, and Chevron has operated at the low end of its spending range, illustrating this trend.
+
+This reluctance to increase spending stems from several factors, including prior expectations of an oil glut, ongoing cost-cutting initiatives, the anticipation of new global supply coming online, and a broader skepticism that the current high oil price environment will lead to a prolonged "super cycle," partly due to the growth of renewables and lessons learned from past overspending. The host views this disciplined capital allocation as a positive development, making him modestly more bullish on the oil industry's long-term prospects.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [AMRC](https://www.google.com/finance/quote/AMRC:NYSE) | Sell | Poor past performance (near and long-term), high P/E, significant debt, negative free cash flow for 10 years, low profitability, no dividend, issuing more shares, and no economic moat. |
+| [WMT](https://www.google.com/finance/quote/WMT:NYSE) | Neutral | Very high valuations (P/E 45, P/FCF 74, EV/EBITDA 22) despite mid-single-digit earnings growth, low free cash flow yield (1.3%), and potential risks from minimum wage increases impacting cost structure. Not excited about buying at current levels. |
+| [ROAD](https://www.google.com/finance/quote/ROAD:NASDAQ) | Watchlist | Favorable industry theme (infrastructure spending likely under new Congress), strong earnings momentum, pulled back to support levels, attractive valuation (P/S below average), though long-term profitability is good but not great. |
+| [NU](https://www.google.com/finance/quote/NU:NYSE) | Buy | Strong free cash flow ($8.9B) and improving profitability (ROE now 25%), attractive foreign exposure in resource-rich economies, actively buying back shares (22% retired in past year), and showing signs of a rally. |
+| [PG](https://www.google.com/finance/quote/PG:NYSE) | Neutral | Strong blue-chip company with good financials (high ROE, strong FCF, low debt) and a good dividend, but valuation (EV/FCF 28) is a bit more expensive compared to its peer CL, and earnings growth is modest. |
+| [CL](https://www.google.com/finance/quote/CL:NYSE) | Buy | Better valuation (EV/FCF 19) compared to PG, slightly better revenue growth, similar earnings momentum, and represents a good safety play as money rotates into value-oriented consumer staples. |
+| [TSLA](https://www.google.com/finance/quote/TSLA:NASDAQ) | Sell | Not considered a good long-term investment due to Elon Musk's 'showman' tactics and lack of clear business synergy with SpaceX, significant political risks (potential loss of government subsidies), and recent poor stock performance (down 15% in last 6-12 months) with expected continuation of negative momentum. Advises limiting exposure to 5%. |
+
+---
+
 ## Episode: Global Central Bank Divergence Is Growing — Here's What US Investors Should Do
 **Date:** 2026-11-06
 
