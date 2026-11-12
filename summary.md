@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Retail Panic: What It Means When Small Investors Dump Stocks en Masse
+**Date:** 2026-11-11
+
+### Topic Summary
+The main market and educational topic discussed by the host is **investor behavior during periods of market volatility and sentiment shifts, particularly "retail panic," and the importance of strategic portfolio management in response to these dynamics and broader economic trends like inflation.**
+
+The host highlights a recent significant event where retail investors sold stocks at the highest single-day rate since March 2020, primarily divesting from technology stocks into cash or other sectors. This phenomenon, dubbed "retail panic," prompts a discussion on whether it signifies market capitulation (a potential bottom) or a precursor to further market decline due to a drying up of retail liquidity. The host leans towards the latter, suggesting that many retail investors remain "offsides" with concentrated portfolios in "big names" and haven't yet reached a true panic level, indicating potential future air pockets in the market.
+
+In light of these market signals, the podcast provides educational insights on disciplined investing. Key advice includes making unemotional decisions, avoiding selling on major down days, and instead selling into strength as part of a pre-planned strategy. Investors are encouraged to create a target allocation for their portfolios that reflects current economic realities, such as an inflationary environment, which might favor sectors like materials, industrials, and financials over highly speculative growth stocks. Emphasizing risk management, maintaining a short-term cash bucket, and focusing on quality companies with durable advantages rather than solely on recent performance are central tenets for navigating such market conditions effectively.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [NVDA](https://www.google.com/finance/quote/NVDA:NASDAQ) | Neutral | Host believes the stock is not immune to economic gravity and industry cycles. It's historically volatile, easily dropping 50% from highs. Current valuation is not cheap, momentum is down, and there's significant downside risk, especially after CEO news. Recommends avoiding purchase until approximately $125 per share. |
+| [PLTR](https://www.google.com/finance/quote/PLTR:NYSE) | Sell | The stock is considered 'egregiously overvalued' with high P/E, P/S, and P/B ratios. There is significant political risk from a Democrat-controlled Congress potentially neutering its ability to secure large government contracts. The host sees no reason to own it and advises selling. |
+| [RELY](https://www.google.com/finance/quote/RELY:NASDAQ) | Neutral | While recent earnings were strong and the balance sheet is solid, the host questions the durability of its high profitability, given its historical performance and reliance on the immigrant community amid potential deportation risks. It's viewed as high risk, and the host would prefer to look elsewhere for broad financial exposure. |
+| [LLY](https://www.google.com/finance/quote/LLY:NYSE) | Sell | The stock is extremely expensive (45x P/E, 14.5x P/S) and trading at the high end of its 10-year range. While benefiting from GLP-1s, the host doubts its ability to maintain high profitability and pricing power long-term due to competition, new drug classes like peptides, and potential government pressure from 'Medicare for all' policies. Advises against investing in it, calling it one of the riskiest in the healthcare space. |
+| [CRWV](https://www.google.com/finance/quote/CRWV:NASDAQ) | Neutral | CoreWeave reported strong earnings and demand, addressing funding concerns with customer prepayments. However, the host views the resulting rally as a 'short covering' event rather than a durable, long-term trend, and is waiting to see if it holds. |
+
+---
+
 ## Episode: Stock Market After Midterms: How Political Shifts Historically Move Markets
 **Date:** 2026-11-10
 
