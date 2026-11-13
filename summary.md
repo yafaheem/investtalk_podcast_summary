@@ -2,6 +2,28 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Why Are Home Prices Still High When Listings Are Piling Up?
+**Date:** 2026-11-12
+
+### Topic Summary
+The podcast primarily focuses on several key market and economic dynamics impacting investors, with a particular emphasis on the current state of the U.S. housing market. Other significant educational discussions revolve around understanding the true exposure of dividend funds to volatile sectors like artificial intelligence (AI), and a historical perspective on AI's potential impact on the labor market.
+
+The host dedicated a significant portion of the discussion to the U.S. housing market, analyzing why home prices have remained stubbornly high despite a substantial increase in mortgage rates. The current market is described as a slow, multi-year correction marked by low activity rather than a rapid price collapse. This is primarily due to low inventory; most homeowners are locked into historically low mortgage rates, reducing their incentive to sell and preventing a surge of distressed properties. Homeowners typically possess significant equity and can leverage options like home equity lines of credit (HELOCs), removing any urgency to discount prices. The discussion highlighted that a substantial influx of new supply, possibly from distressed sellers of vacation rentals (like Airbnb/VRBO) due to economic shifts or local regulations, would be necessary to significantly drive down prices in a widespread manner.
+
+Beyond housing, the podcast provided educational insights into two other critical areas. It addressed the common misconception that dividend funds are immune to market volatility, explaining that many such funds may carry unacknowledged exposure to volatile AI companies. Depending on whether a dividend fund's methodology prioritizes high yield or the growth of that yield, it could hold tech giants heavily invested in AI. Additionally, the podcast challenged the widespread concern about AI leading to mass layoffs. Drawing on historical examples of technological advancements, the host argued that technology typically causes a decline in *inflows* of new workers into threatened occupations, rather than widespread firings of existing employees. Instead, younger generations adapt by pursuing different fields, and the primary challenge lies in the education system's ability to evolve and prepare students for these changing job markets.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [BOH](https://www.google.com/finance/quote/BOH:NYSE) | Sell | In a downtrend, below major moving averages, declining revenue and profitability, exposed to cyclical Hawaiian economy (tourism, high import prices), not cheap by most metrics. Host is 'passing on Bank of Boy'. |
+| [NVST](https://www.google.com/finance/quote/NVST:NYSE) | Sell | Weak momentum with a recent downtrend, inconsistent profitability, earnings trend is unfavorable despite operating in the consistent dental business. Host is 'passing on Invista Holdings'. |
+| [UNH](https://www.google.com/finance/quote/UNH:NYSE) | Sell | Concerns over unsustainable healthcare inflation and potential for 'Medicare for all' or a single-payer system in the medium-term (5-10 years), which would reduce health insurance companies to supplemental coverage. Prefers healthcare providers over insurance companies. |
+| [FLEX](https://www.google.com/finance/quote/FLEX:NASDAQ) | Buy | Stock has corrected considerably and is at good support. Offers supply chain/manufacturing solutions for data centers and communications, has diverse business, strong expected annual earnings growth, good and improving profitability, significant share buybacks, and a good balance sheet. Host gives a 'thumbs up'. |
+| [TTC](https://www.google.com/finance/quote/TTC:NYSE) | Buy | Manufacturer of high-quality turf maintenance products, stock has corrected considerably. Expects continued earnings growth, has a good balance sheet and significant share buybacks. Trading at relatively low multiples and is a quality company despite slight weakening in profitability from a high level. Host gives a 'thumbs up'. |
+| [ELF](https://www.google.com/finance/quote/ELF:NYSE) | Sell | Highly volatile stock in a fast-growing but fickle and competitive industry. Inconsistent earnings (expected to drop significantly before bouncing back), inconsistent profitability metrics, issuing more shares (dilution), and in a longer-term downtrend despite recent rallies. Host wants something more consistent and is 'passing on ELF'. |
+
+---
+
 ## Episode: Retail Panic: What It Means When Small Investors Dump Stocks en Masse
 **Date:** 2026-11-11
 
