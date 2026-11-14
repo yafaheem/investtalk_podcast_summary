@@ -2,6 +2,26 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Is AI a Bubble? The Trillion-Dollar Spending Problem Investors Can't Ignore
+**Date:** 2026-11-13
+
+### Topic Summary
+The main market topic discussed by the host is the question of whether the massive investments in Artificial Intelligence (AI) infrastructure and development are creating a market bubble, and if the eventual returns will justify the unprecedented levels of spending.
+
+The host highlights the record-breaking capital expenditures by major technology companies, particularly in building data centers and acquiring AI accelerators like GPUs. McKinsey's projections for trillions in cumulative data center investment, largely AI-specific, underscore the scale of this build-out, which is described as the largest infrastructure expansion in technology history. A key concern raised is the substantial gap, potentially hundreds of billions of dollars, between what the industry is spending on AI and the revenue currently being generated from AI services.
+
+Comparisons are drawn to the dot-com bubble of the late 1990s, where telecom companies overbuilt fiber optic networks that largely went unused. However, crucial differences are also noted: current leading AI companies are generating significant profits, overall market valuations (like the Nasdaq 100 P/E) are considerably lower than the dot-com peak, and a higher percentage of large-cap tech companies today are profitable. The host advises investors to differentiate between companies that are actively earning money from AI through providing "picks and shovels" (e.g., chips, cloud infrastructure) and those further down the supply chain whose valuations are based on the promise of future AI application profitability. While core AI technology is considered real and profitable, the vast spending outpacing current revenue presents a measurable risk, especially for investments in the application layer of AI where failure rates are higher.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [SIEGY](https://www.google.com/finance/quote/SIEGY:OTCMKTS) | Watchlist | Stock is up significantly year-to-date and 52-weeks with record orders and cash flow, driven by demand for data centers, electrification, and industrial AI. However, orders were lumpy, the spinning off of its healthcare business adds complexity, and it's trading at 21x forward earnings, making it pricey. Valuation and durability of data center orders are key concerns. |
+| [BOXX](https://www.google.com/finance/quote/BOXX:NYSE ARCA) | Buy (for specific tax strategy) | It's a smart strategy for retirees to avoid IRMA problems by generating T-bill-like returns as price appreciation rather than monthly interest distributions, thereby keeping Modified Adjusted Gross Income (MAGI) lower. This allows control of income recognition upon selling shares. Caveats include potential IRS reclassification of gains as ordinary income, state tax exemption differences compared to SGOV, and a higher expense ratio. It is not considered a wash sale if transitioning from SGOV. |
+| [BBY](https://www.google.com/finance/quote/BBY:NYSE) | Neutral | The stock has had a massive year, up over 55% YTD, outperforming peers, and has guided higher on income and margins. It has transformed from a no-growth retailer to one beating its own guidance, supported by computer/TV refresh cycles and cost control. However, the stock is currently at or near its consensus price target, suggesting it may have 'overrun an entry point' for new positions. |
+| [KWEB](https://www.google.com/finance/quote/KWEB:NYSE ARCA) | Neutral | The ETF offers exposure to Chinese internet companies with depressed valuations, improving earnings, and AI-driven cloud growth. However, it is very expensive with a 0.69% expense ratio. Concerns include heavy AI CAPEX squeezing profits, intense domestic competition, and soft Chinese consumer demand. It is a highly volatile, concentrated, and high-risk bet, only suitable as a small, high-risk satellite position, not a core holding. |
+
+---
+
 ## Episode: Why Are Home Prices Still High When Listings Are Piling Up?
 **Date:** 2026-11-12
 
