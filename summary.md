@@ -2,6 +2,26 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Trump's APEC Summit Play: Could a US-China Trade Deal Be Back on the Table?
+**Date:** 2026-11-16
+
+### Topic Summary
+The podcast transcript focuses on several significant, forward-looking developments poised to impact global financial markets, regulatory oversight, and fundamental market infrastructure. These topics collectively highlight the evolving landscape investors need to monitor for strategic planning.
+
+One primary discussion centers on the shifting U.S.-China trade relationship and its implications for global commerce. The host analyzes President Trump's upcoming meeting with Xi Jinping at the APEC Summit, exploring how these high-stakes diplomatic discussions could influence trade flows, tariff outlooks, and overall investor sentiment. The segment delves into the historical context of trade disputes, past agreements, and the quantifiable impact on bilateral trade, concluding that while de-escalation signals can cause immediate market reactions, long-lasting changes are contingent on concrete policy implementation rather than mere announcements.
+
+Additionally, the podcast addresses critical changes within financial industry regulation and market infrastructure. It details FINRA's proposed rule change to the SEC, seeking to transition its governing board from a public majority to one controlled by the industry it regulates. This potential shift raises questions about investor protection and the integrity of self-regulatory organizations. Concurrently, the host explains the impending modernization of the U.S. Treasury market's "plumbing," mandating central clearing for U.S. government bond trades. This significant structural reform, including new guarantee fund mechanisms, is set to impact market liquidity, margin costs, and operational readiness for various financial institutions, underscoring the broad systemic changes underway.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [CSCO](https://www.google.com/finance/quote/CSCO:NASDAQ) | Hold | Owned for clients, demonstrating strong growth (24% YoY revenue, 43% networking revenue), EPS beat expectations, stock has performed well despite recent drawdown. Valuation is not expensive (17x forward P/E vs 15x average), shares are cheaper than in summer, and it pays a solid dividend. Downside risk is not considered meaningful despite some AI pressure and shrinking margins. |
+| [MSTR](https://www.google.com/finance/quote/MSTR:NASDAQ) | Sell | Described as a leveraged bet on Bitcoin, using equity dilution and convertible debt to buy more, creating 'circular logic' and 'reflexivity risk' that works violently on the downside. Considered a 'worst business model' due to its 'buy high and sell low' nature, implying a strong negative outlook. |
+| [HOOD](https://www.google.com/finance/quote/HOOD:NASDAQ) | Neutral | Not recommended as a direct proxy for crypto exposure because crypto accounts for only 15-20% of its revenue. Robinhood profits from diverse sources including equities, options, and cash management, meaning a Bitcoin surge might not significantly impact its stock performance. |
+| [EWZ](https://www.google.com/finance/quote/EWZ:NYSE) | Buy | Brazil is considered an exciting yet volatile emerging market. Attractive due to cheap valuations, strong hard asset leverage (oil, iron ore, soybeans), high interest rates attracting capital, a growing middle class, and solid demographic dynamics. While acknowledging risks like political volatility, fiscal concerns, currency risk, Chinese dependency, and corruption, the host still considers it a 'pretty solid place to invest capital'. |
+
+---
+
 ## Episode: Is AI a Bubble? The Trillion-Dollar Spending Problem Investors Can't Ignore
 **Date:** 2026-11-13
 
