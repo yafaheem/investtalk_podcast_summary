@@ -2,6 +2,28 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Should I Buy Oil Stocks Now? Why the War Premium Complicates Energy Investing
+**Date:** 2026-11-17
+
+### Topic Summary
+The main market, economic, or educational topic discussed by the host is the complex interplay between **geopolitics and fundamental supply/demand dynamics in the global oil market**, and its implications for energy investing.
+
+The podcast highlights a significant divergence between the underlying market fundamentals and current crude oil prices. The International Energy Agency (IEA) projects a global oil surplus for the end of 2026 and into 2027, driven by factors such as recovering Gulf exports, OPEC+ rolling back production cuts, and record U.S. oil production. From a purely fundamental perspective, these conditions would typically suggest a downward pressure on oil prices.
+
+However, a substantial "war premium" of approximately $25 per barrel is currently embedded in Brent crude prices. This premium is attributed to ongoing geopolitical tensions and instability, particularly in the Middle East, with threats to shipping lanes in Hormuz and Houthi strikes in the Red Sea. Historically, such war premiums can be significant but tend to be temporary, fading as geopolitical fears subside or supply chains adapt. The host advises investors to differentiate between owning oil as a commodity (a direct bet on political events) and investing in energy companies as equities, noting that well-managed energy firms often hedge their production and generate substantial free cash flow, remaining profitable even if crude prices were to fall below current levels.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [TER](https://www.google.com/finance/quote/TER:NASDAQ) | Hold | Host holds the stock for clients and believes the medium to long-term growth thesis is intact due to phenomenal earnings, strong revenue growth, and high operating margins. They trimmed some due to recent AI hardware sell-off and current volatility but intend to pick up more shares at a certain point. |
+| [SCHW](https://www.google.com/finance/quote/SCHW:NYSE) | Hold | Host holds the stock for clients, citing its nearly $10 trillion in client assets, growing earnings, successful integration of TD Ameritrade, and new retail tools. Rising rates are a net positive for net interest revenue, making the long-term thesis strong despite bond portfolio concerns. |
+| [IDXX](https://www.google.com/finance/quote/IDXX:NASDAQ) | Watchlist | The company has strong revenue growth, expanding margins, and robust free cash flow, driven by an aging pet population and pricing. However, it's considered 'a bit expensive for now' at 42 times forward earnings, especially with declining overall vet visit volume. |
+| [BEEM](https://www.google.com/finance/quote/BEEM:NASDAQ) | Sell | Considered 'incredibly high risk' and 'gambling,' not investing. It's a micro-cap with a struggling business (off-grid solar EV charging), very low volume, poor reporting, and significant cash dilution and de-listing risk, trading well below $1 after a substantial decline. |
+| [SKHY](https://www.google.com/finance/quote/SKHY:NASDAQ) | Hold | The company shows phenomenal revenue growth, high operating margins, and strong demand (sold out through 2029). It's reasonable to hold but the host advises trimming if the position is 'outside' (overweight) due to cyclicality and industry volatility, as they have done for their own positions. |
+| [SPG](https://www.google.com/finance/quote/SPG:NYSE) | Sell | A very well-run company with a solid balance sheet, high occupancy, rising rents, and a growing dividend, outperforming its industry. However, after a significant run-up and strong performance, the host suggests 'taking profits' and rebalancing the portfolio, adhering to the principle that 'no one ever went broke taking profits'. |
+
+---
+
 ## Episode: Trump's APEC Summit Play: Could a US-China Trade Deal Be Back on the Table?
 **Date:** 2026-11-16
 
