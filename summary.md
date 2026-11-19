@@ -2,6 +2,27 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Anthropic IPO Valuation 2026: What the AI Offering Tells Us About Tech Bubble Risk
+**Date:** 2026-11-18
+
+### Topic Summary
+The primary market and educational topic discussed in the podcast is the comprehensive analysis of high-growth initial public offerings (IPOs), specifically using the highly anticipated Anthropic IPO as a case study, and by extension, the broader artificial intelligence (AI) industry. The host emphasizes the importance for investors, especially retail investors, to look beyond hype and understand the underlying economic realities and significant risks associated with such ventures.
+
+The discussion delves into various red flags that accompany high-valuation IPOs. For Anthropic, a proposed $1.5 trillion valuation at 20 times sales signals that substantial future growth is already priced into the stock, making it vulnerable to even slight decelerations in revenue or profitability. A peculiar aspect highlighted is the unusually high allocation (20%) of the IPO offering to retail investors, which could imply a lack of institutional demand or confidence. Furthermore, a significant portion of the funds raised are earmarked to flow back to major tech companies like Google, Amazon, and Nvidia, suggesting a form of "circular financing" that raises questions about the true independence of the capital raised.
+
+The host thoroughly examines the inherent business risks of high-growth AI companies. Despite strong gross margins when only considering customer servicing, these margins shrink drastically when factoring in the immense costs of training AI models, ongoing research and development (R&D), and providing free user compute. A worrying trend identified is declining revenue per dollar of compute, indicating that companies may be overpaying for computing capacity. Significant long-term compute obligations (akin to off-balance sheet leases) far outweigh current customer commitments, posing a substantial risk if demand softens or competitive models emerge. The constant need to develop and release "frontier models" to maintain revenue growth necessitates continuous, heavy R&D investment. Collectively, these factors contribute to a wide range of potential outcomes, marking the AI industry and its IPOs as inherently risky and subject to considerable volatility, where investors must carefully scrutinize cash flow, margins, and operational commitments.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [LDOS](https://www.google.com/finance/quote/LDOS:NYSE) | Buy | Consistent business in national security, digital infrastructure, and software. Growth slowdown is priced in (forward PE ~10). Strong balance sheet, high return on equity (28%), $2 billion in free cash flow on a $15 billion market cap, and actively buying back shares (14% over last five years), indicating good capital allocation. |
+| [QS](https://www.google.com/finance/quote/QS:NYSE) | Sell | The company has failed to produce solid-state batteries at an economical scale. It bleeds cash, issues shares, diluting shareholders, and has never made a profit. The probability of success is very low, and the host suggests it's a poor gamble, even stating he would short it. |
+| [INTC](https://www.google.com/finance/quote/INTC:NASDAQ) | Hold | The company is owned for clients, but considered 'high risk' and volatile. Longer term, the host believes they will fix their issues, and their relationship with the U.S. government is a positive. It was ranked second out of three considered options. |
+| [AMZN](https://www.google.com/finance/quote/AMZN:NASDAQ) | Neutral | Concerns about business costs (transportation for Prime, AI infrastructure spend) and their economical viability. Return on invested capital has been in decline, and the company is issuing more shares, which is dilutive, unlike many other large tech names. It was ranked last out of three considered options. |
+| [GEV](https://www.google.com/finance/quote/GEV:NYSE) | Sell | Earnings are expected to drop (forward P/E of 29 compared to current P/E of 20), suggesting it's a 'flash in the pan.' The host anticipates real-world bottlenecks in the AI infrastructure space (energy, local politics) and believes margins are unsustainable. Significant downside is expected, marking the start of a broader downturn for the stock. |
+
+---
+
 ## Episode: Should I Buy Oil Stocks Now? Why the War Premium Complicates Energy Investing
 **Date:** 2026-11-17
 
