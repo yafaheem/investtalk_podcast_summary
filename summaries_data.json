@@ -3752,5 +3752,41 @@
         "reason": "Earnings are expected to drop (forward P/E of 29 compared to current P/E of 20), suggesting it's a 'flash in the pan.' The host anticipates real-world bottlenecks in the AI infrastructure space (energy, local politics) and believes margins are unsustainable. Significant downside is expected, marking the start of a broader downturn for the stock."
       }
     ]
+  },
+  "2026-11-19": {
+    "title": "How to Invest in Industrial Real Estate: The Boring Trend Attracting Wall Street Billions",
+    "summary": "The main educational topic discussed by the host is **investment in industrial real estate**.\n\nThe host highlights industrial real estate as a \"boring trend attracting Wall Street billions\" and a \"main focus point.\" He emphasizes its unique advantages over other property types, such as residential or traditional office spaces. A specific niche, \"industrial outdoor storage\" (IOS) for items like semi-trailers, shipping containers, and heavy equipment, is presented as particularly appealing due to minimal structures, low maintenance, and high cap rates (typically 6-7%).\n\nKey benefits of industrial real estate investment include the prevalent use of \"triple net leases,\" where tenants bear the costs of property taxes, insurance, and maintenance, thereby reducing the landlord's burden and making cash flow more predictable. Leases are typically longer, often five to ten years, with built-in annual rent adjustments that are frequently CPI-linked. Restrictive zoning laws further benefit this sector by limiting new supply, often creating local monopolies and supporting rental growth.\n\nMoreover, businesses in industrial properties demonstrate significant \"tenant stickiness\" because relocating heavy equipment and complex operations is costly and disruptive, making them more likely to renew leases and accept rent increases. This combination of stable income, reduced management complexity, limited competition from new supply, and strong tenant retention positions industrial real estate as a generally safer and more profitable investment with higher yields compared to other real estate sectors.",
+    "recommendations": [
+      {
+        "ticker": "CRM",
+        "exchange": "NYSE",
+        "recommendation": "Hold",
+        "reason": "Generally liked for its relatively strong business, recent earnings growth, aggressive share buybacks, and short-term momentum. However, long-term concerns exist regarding potential AI disruption to the CRM business and projected negative earnings growth in 2028."
+      },
+      {
+        "ticker": "SCCO",
+        "exchange": "NYSE",
+        "recommendation": "Buy",
+        "reason": "Copper is considered a favorite long-term commodity for AI trends, and Southern Copper is a top operator in the space. Current weakness due to slower AI build-out expectations provides a buying opportunity, with strong support levels identified."
+      },
+      {
+        "ticker": "ANT",
+        "exchange": null,
+        "recommendation": "Sell",
+        "reason": "Highly bearish on new IPOs and Anthropic specifically. Historically, most IPOs underperform significantly in the year following their debut. The host believes the stock is unlikely to sustain current prices due to hype and valuation concerns, recommending bearish option strategies rather than buying."
+      },
+      {
+        "ticker": "SSNC",
+        "exchange": "NASDAQ",
+        "recommendation": "Buy",
+        "reason": "Viewed as a good business with a low forward P/E (10-11), consistent profitability, strong free cash flow yield (10%), and a defensible business model in the AI era due to data security and existing financial service integrations. Recommended for continued ownership or adding to positions."
+      },
+      {
+        "ticker": "STRL",
+        "exchange": "NASDAQ",
+        "recommendation": "Sell",
+        "reason": "Stock has fallen significantly (70% from highs) due to market resetting earnings expectations. Sterling's business (AI data center construction solutions) is subject to ebb and flow, making it less diversified and inferior to peers like Cisco. Anticipated future slowdown and potential negative earnings growth."
+      }
+    ]
   }
 }
