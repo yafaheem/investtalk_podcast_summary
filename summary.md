@@ -2,6 +2,25 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Inflation's Fault Lines: When Energy Shocks and Fed Policy Disagree
+**Date:** 2026-11-20
+
+### Topic Summary
+The main economic topic discussed by the hosts is the **"inflation fault lines,"** specifically the ongoing debate regarding the root causes of current persistent inflation and the appropriate monetary policy response.
+
+The podcast highlights a divergence of opinion between Scott Bessent, a Treasury Secretary, and Austin Goolsbee of the Chicago Fed. Bessent argues that higher inflation is primarily a result of geopolitical disruptions, such as restrictions on oil and diesel supply, which are short-term, supply-side shocks. He warns against the Federal Reserve overreacting with aggressive interest rate hikes, suggesting that such hikes cannot resolve supply issues and risk damaging the broader economy.
+
+Conversely, Goolsbee contends that inflation has broadened beyond energy into services, driven by overheating demand indicators like strong GDP growth, tight labor markets, and massive capital expenditure (CAPEX), particularly in the AI sector. He believes that higher interest rates are necessary to cool demand and bring it back in line with supply to achieve the Fed's 2% inflation target. The host synthesizes both viewpoints, suggesting that both arguments hold some truth, acknowledging the impact of both geopolitical risks on supply chains and the dampening effect of higher interest rates on specific economic sectors like AI. This leads to a discussion on whether further rate hikes are truly needed or if the current cycle is nearing its end.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [EL](https://www.google.com/finance/quote/EL:NYSE) | Sell | Too expensive at 30 times forward earnings in a competitive space, with declining profitability over time and no strong economic moat. Despite recent rally, longer-term momentum is poor and recent momentum has rolled over. |
+| [SPYD](https://www.google.com/finance/quote/SPYD:NYSE ARCA) | Hold | Safer than the broader S&P due to sector weighting (heavy REITs, financials, low tech) and diversification (77 names, no major concentration). Offers a good 4.25% yield and strong year-to-date performance, but cautions against chasing high dividends as they can indicate struggling businesses, and it's not considered the best long-term dividend hold. |
+| [JEPI](https://www.google.com/finance/quote/JEPI:NYSE ARCA) | Buy | Actively managed covered call ETF offering capital preservation and downside hedging (outperformed S&P on a down day). Diversified across sectors with 117 holdings and decent fees (35 basis points), considered one of the better covered call ETFs available. |
+
+---
+
 ## Episode: How to Invest in Industrial Real Estate: The Boring Trend Attracting Wall Street Billions
 **Date:** 2026-11-19
 
