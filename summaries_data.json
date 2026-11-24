@@ -3812,5 +3812,47 @@
         "reason": "Actively managed covered call ETF offering capital preservation and downside hedging (outperformed S&P on a down day). Diversified across sectors with 117 holdings and decent fees (35 basis points), considered one of the better covered call ETFs available."
       }
     ]
+  },
+  "2026-11-23": {
+    "title": "I Bonds vs. TIPS: How to Choose Between These Inflation Hedges",
+    "summary": "The main educational topic discussed by the host is **Inflation Hedges**. The segment explicitly marked as the \"main focus point\" delves into various strategies and financial instruments designed to protect investments against rising inflation.\n\nThe host primarily compares the characteristics, benefits, and drawbacks of I bonds (Series I Savings Bonds) and TIPS (Treasury Inflation-Protected Securities) as conservative inflation hedges. I bonds adjust their interest rate every six months based on CPI, are capped at $10,000 per Social Security number annually, require a 12-month lockup, and forfeit three months of interest if redeemed before five years. Their interest compounds and is paid out and federally taxed only upon redemption, with state and local tax exemption. TIPS, on the other hand, adjust their principal value daily or monthly with CPI, allow for virtually unlimited purchase amounts, and offer daily liquidity in the secondary market (though their value can fluctuate with interest rates). They pay a semi-annual coupon, which, along with the principal inflation adjustment, is subject to federal taxation (including \"phantom income\" on the principal adjustment) but exempt from state and local taxes. Notably, I bonds cannot be held in an IRA, while TIPS can.\n\nBeyond these conservative options, the host also briefly touches on other, more volatile, asset classes that can serve as inflation hedges. These include commodities, which track headline inflation but come with significant volatility; gold and silver, often seen as a debasement trade but also highly volatile; real estate, which can pass along rising rents but is sensitive to interest rates; high-quality equities with economic moats that can use pricing power (though they can be poor short-term hedges due to contracting multiples); and short-term T-bills, which benefit from rising rates but carry reinvestment risk if rates fall. The overarching advice is to employ a \"multitude of vehicles\" for inflation hedging, aligning with individual risk tolerance.",
+    "recommendations": [
+      {
+        "ticker": "MCK",
+        "exchange": "NYSE",
+        "recommendation": "Buy",
+        "reason": "A resilient and fantastic business with secular tailwinds (aging population) that continues to outperform. It has strong earnings growth prospects (17-13% annually), a clean balance sheet with no debt, and high return on invested capital, justifying its slightly above-market valuation. The firm owns it for clients and expects continued outperformance."
+      },
+      {
+        "ticker": "AMD",
+        "exchange": "NASDAQ",
+        "recommendation": "Sell",
+        "reason": "Part of the overvalued 'AI trade' with earnings expectations that are aggressively high ($17 next year) and unlikely to materialize. If earnings normalize to pre-AI levels ($2-3), significant downside is expected. From a technical standpoint, the host would not consider buying until much lower levels (around $200 from current $453) as it's in a downtrend and 31% off its 52-week high."
+      },
+      {
+        "ticker": "GOOG",
+        "exchange": "NASDAQ",
+        "recommendation": "Watchlist",
+        "reason": "Considered a favorite among hyperscalers due to business diversity (YouTube, ad sales, Waymo) and strong data advantages for AI. However, there are risks regarding AI's potential to shift or usurp high-margin search revenue, and recent Google search numbers were soft. The host likes the company but would wait for a significantly lower entry point (around $210 from current $280) due to broader AI sector volatility."
+      },
+      {
+        "ticker": "JEPI",
+        "exchange": "NYSE Arca",
+        "recommendation": "Neutral",
+        "reason": "An actively managed covered call ETF designed to lower portfolio volatility by selling call options. While it's considered 'one of the better ones' among covered call ETFs due to better diversification (20% tech exposure vs. 35% category average), the high advertised 'yield' from option premiums is misleading. Investors should focus on total return and the underlying holdings rather than just the dividend."
+      },
+      {
+        "ticker": "JEPIX",
+        "exchange": "N/A - Mutual Fund",
+        "recommendation": "Sell",
+        "reason": "This is the mutual fund version of JEPI, which is 'very similar' in strategy but carries a significantly higher expense ratio (0.59% vs. 0.35% for JEPI). There is 'no reason to buy the mutual fund' due to the drag from these higher fees, making the ETF (JEPI) the preferred option."
+      },
+      {
+        "ticker": "ANT",
+        "exchange": "NASDAQ",
+        "recommendation": "Sell",
+        "reason": "Part of the 'AI bubble bursting,' the stock is struggling to hold its IPO price ($83) despite initial support from banks. The host believes the AI trade is 'fading in a big, big way' and does not expect it to maintain current levels over the medium term."
+      }
+    ]
   }
 }
