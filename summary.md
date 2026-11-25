@@ -2,6 +2,23 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Best of Caller Questions - Thanksgiving Day Edition
+**Date:** 2026-11-24
+
+### Topic Summary
+The podcast transcript features a compilation of listener questions, primarily focusing on practical aspects of personal investing, portfolio management, and understanding broader market and economic dynamics. The hosts provide educational insights across various topics aimed at helping individual investors make informed decisions.
+
+Key themes revolve around different investment strategies and tools, including the implications of dividend reinvestment plans (DRIPs) versus managing cash dividends, the benefits and nuances of investing in ETFs versus individual stocks, and the importance of diversification, especially for new investors utilizing fractional shares. The discussion also delves into tax-efficient investing strategies, such as Roth conversions and strategic account placement for volatile assets, considering an individual's tax bracket and long-term goals.
+
+Beyond personal portfolio choices, the hosts address market mechanics and economic analysis. This includes identifying reliable data sources for company financials like share buybacks, interpreting various economic indicators (employment, inflation, GDP) to gauge market environments, and understanding complex financial structures like foreign stock listings (ADRs). Critical insights are also offered on the less-transparent aspects of market operations, such as the role of investment banks in supporting IPO prices, and practical advice on navigating high-risk activities like trading earnings reports, ultimately guiding listeners toward more sustainable and informed investment practices.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [ANT](https://www.google.com/finance/quote/ANT:NOT EXPLICITLY MENTIONED (IPO CONTEXT)) | Neutral | The discussion centered on the Anthropic IPO, specifically regarding allegations of investment banks 'stepping in' to prevent the stock from trading below its IPO price in the initial days/weeks. The host confirmed that this type of action, described as market manipulation by the caller, does occur on Wall Street to maintain client relationships and support new issues. |
+
+---
+
 ## Episode: I Bonds vs. TIPS: How to Choose Between These Inflation Hedges
 **Date:** 2026-11-23
 
