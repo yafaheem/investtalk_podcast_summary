@@ -2,6 +2,30 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Tokenized Stocks Explained: The Future of Markets or a Solution Looking for a Problem?
+**Date:** 2026-11-25
+
+### Topic Summary
+The main market, economic, or educational topic discussed by the hosts is **Tokenized Stocks and the Evolution of Market Structure**.
+
+Tokenized stocks are introduced as a significant development, potentially representing "the future of markets." The hosts explain that these are digital twins of traditional shares, linked one-to-one with an underlying security held in custody. Unlike derivatives, they carry the same economic rights, including dividends and voting. The primary advantages touted for tokenized stocks include near-instant (T0) settlement, 24/7 trading availability, and the potential for greater fractional ownership, allowing investors to place dollar-denominated orders rather than share-denominated ones. This move is supported by major players like the New York Stock Exchange and Nasdaq, who are reportedly pivoting towards new tokenized market structures.
+
+However, the discussion also delves into the complexities and risks associated with this emerging technology. Regulatory bodies, such as the SEC, have issued temporary innovation exemptions, allowing Tokenized Security Venues (TSVs) to operate, but challenges persist. Nasdaq, for instance, has raised concerns about fragmented liquidity and weakened price discovery if tokenized stocks trade outside the national market system. An IMF study found tokenized stocks to be significantly more volatile than their traditional counterparts, and decentralized exchanges often suffer from weak liquidity, leading to larger price gaps.
+
+The hosts caution that while institutional backing and technological potential are real, the current market for tokenized stocks is small and operates as a "live experiment." Existing investor protections, surveillance, and liquidity mechanisms are not yet equivalent to traditional markets. The long-term vision involves a multi-year process where settlement could permanently shift to T0, trading hours expand, and the distinction between traditional and digital securities blurs. However, for the average retail investor, no immediate changes are expected, and the advice is to observe the space rather than rush to participate due to the inherent risks and evolving regulatory framework.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+| [CPA](https://www.google.com/finance/quote/CPA:NYSE) | Hold/Buy | Solid, low-leverage Latin American airline with strong growth, balance sheet, and a 4.6% dividend. Margins are dipping due to temporary factors expected to correct. Good for income-oriented investors seeking international exposure. |
+| [WM](https://www.google.com/finance/quote/WM:NYSE) | Hold | Steady compounder in the industrial space with consistent revenue/income growth, strong defensive pricing power (31% EBITDA margins), and healthy free cash flow. Currently trading at an average valuation, making it a solid long-term hold. |
+| [CCJ](https://www.google.com/finance/quote/CCJ:NYSE) | Hold | Second largest uranium producer, held for clients due to a strong long-term nuclear demand thesis. Stock is volatile and down significantly from highs but nearing its 5-year low, maintaining the long-term outlook. |
+| [XME](https://www.google.com/finance/quote/XME:NYSE) | Buy/DCA | Equal-weighted Metals and Mining ETF just hit a 52-week low, offering broad exposure to cyclical sectors with potential for long-term returns. Benefits from small/mid-cap overweighting and a strong long-term commodity thesis. |
+| [TGT](https://www.google.com/finance/quote/TGT:NYSE) | Hold/Buy | Strong retailer with defensive consumer exposure, pays a growing dividend, and trades at a discount to peers. Was a successful value turnaround story and is considered a safer choice for value investors. |
+| [SN](https://www.google.com/finance/quote/SN:NYSE) | Neutral/Watchlist | High-growth consumer tech platform with incredible product diversification and strong performance, but its valuation (29x forward earnings) is currently 'too stretched' and near its five-year high. Recommend waiting for a pull-back. |
+
+---
+
 ## Episode: Best of Caller Questions - Thanksgiving Day Edition
 **Date:** 2026-11-24
 
