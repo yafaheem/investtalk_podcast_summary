@@ -2,6 +2,22 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Best of Caller Questions - Thanksgiving Edition
+**Date:** 2026-11-26
+
+### Topic Summary
+The main market, economic, or educational topic discussed by the hosts is **principles of informed investment and portfolio management for individual investors.** The podcast addresses a range of caller questions, consistently providing educational insights into how investors can build, manage, and understand their financial holdings within the broader market context.
+
+The hosts emphasize key aspects of portfolio construction and management, such as the importance of diversification, understanding different investment vehicles like ETFs and their appropriate use, and strategic approaches to dividends (e.g., opting for cash over DRIPs for flexibility). They also delve into personal finance and tax planning, explaining the nuances of Roth conversions, the optimal placement of various assets across different account types (taxable, Roth, Traditional IRA) based on tax brackets and trading activity, and how to leverage existing assets like home equity for investment. A recurring theme is the difficulty of market timing, instead advocating for a focus on strategic asset allocation and identifying sector rotations driven by changing economic and political landscapes.
+
+Beyond individual portfolio decisions, the discussion frequently touches on market mechanics and macroeconomic factors. Callers learn about how to access financial data (e.g., for share buybacks), the structure of international listings (ADRs), the process and liquidity implications of Initial Public Offerings (IPOs), and even the controversial practice of investment banks supporting IPO prices. Furthermore, the hosts highlight the significance of monitoring various economic indicators—from employment and inflation to GDP and interest rates—to discern the current business cycle phase and adjust investment strategies accordingly, noting the market's tendency to lead the economy.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+
+---
+
 ## Episode: Tokenized Stocks Explained: The Future of Markets or a Solution Looking for a Problem?
 **Date:** 2026-11-25
 
