@@ -2,6 +2,22 @@
 
 This file contains cumulative summaries and stock ticker verdicts extracted from the InvestTalk podcast.
 
+## Episode: Personal Finance Special - Black Friday Edition
+**Date:** 2026-11-27
+
+### Topic Summary
+The main educational topic discussed in the podcast transcript is **comprehensive personal financial planning and investment strategy**. The hosts emphasize the importance of taking a proactive, flexible, and holistic approach to managing one's finances across different life stages, moving beyond isolated financial decisions to align money management with broader life goals and evolving circumstances.
+
+The hosts delve into several key areas of personal finance. They begin by examining income generation from investments, challenging the traditional "obsession" with dividends. They highlight how declining dividend yields and the rise of share buybacks necessitate considering capital gains as a primary source of income, emphasizing the greater optionality and control over taxable events that selling appreciated assets provides. This focus on flexibility extends to college savings, where they compare 529 plans with taxable brokerage accounts, arguing that while tax-advantaged, 529s can be restrictive. They advocate for taxable accounts due to their adaptability for non-qualified expenses, diverse investment choices, and overall flexibility in uncertain life scenarios, stressing that an over-emphasis on avoiding taxes can sometimes compromise better financial outcomes.
+
+Further, the discussion covers Health Savings Accounts (HSAs) as powerful triple tax-advantaged vehicles, particularly for young and healthy individuals, advocating for their use as long-term investment accounts rather than mere spending accounts to maximize compounding for future healthcare costs or retirement. A significant portion of the transcript is dedicated to demystifying estate planning, debunking common myths such as the absolute authority of a will over beneficiary designations or the belief that a complex plan offers more security. The hosts strongly emphasize that estate plans are "living documents" that demand regular review and updates to reflect changing personal situations, family dynamics, and legal landscapes, thereby preventing potential family conflicts and ensuring assets are distributed according to one's true intentions. Ultimately, the podcast concludes that financial success is not defined by a singular monetary figure but by establishing a clear, adaptable plan that provides peace of mind and enables the achievement of diverse life goals, from retirement and education to charity, travel, and building a lasting legacy.
+
+### Stock Discussions & Verdicts
+| Ticker | Verdict | Reason |
+|---|---|---|
+
+---
+
 ## Episode: Best of Caller Questions - Thanksgiving Edition
 **Date:** 2026-11-26
 
